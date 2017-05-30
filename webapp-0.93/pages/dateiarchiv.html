@@ -1,0 +1,120 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<div id="file-archive">
+		<div class="row">
+			<div class="col-sm-12">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="table-responsive">
+					<table class="table table-striped datatable">
+						<thead>
+							<tr>
+								<th><!-- @structr:content(text/plain) -->Dateiname</th>
+								<!-- @structr:grant(admin,arwd) -->
+								<th><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->akt. Version</th>
+								<th><!-- @structr:content(text/plain) -->Referenziert in</th>
+								<th><!-- @structr:content(text/plain) -->Zugewiesener Versicherungstyp</th>
+								<th><!-- @structr:content(text/plain) -->Größe</th>
+								<th><!-- @structr:content(text/plain) -->Letzte Änderung</th>
+								<th><!-- @structr:content(text/plain) -->Format</th>
+								<th><!-- @structr:content(text/plain) --></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-structr-id="${document.id}" data-structr-meta-data-key="document" data-structr-meta-function-query="find('ConsultingDocument')">
+								<td><a href="${document.currentVersion.file.path}" target="_blank"><!-- @structr:content(text/plain) -->${document.name}</a></td>
+								<td><!-- @structr:content(text/plain) -->v${document.currentVersion.version}.0</td>
+								<!-- @structr:grant(admin,arwd) -->
+								<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${store('first', true)}<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span data-structr-meta-data-key="reference" data-structr-meta-function-query="document.documentReferences"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain), @structr:hide(retrieve('first')) -->, <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/vorlage/${reference.consultingFolderSection.rootSection.id}?section=${reference.consultingFolderSection.id}"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${reference.consultingFolderSection.rootSection.name}</a><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${store('first', false)}</span></td>
+								<td>
+									<button class="btn btn-sm btn-default select-insuranceType" data-document-id="${document.id}" data-target="#modal-select-insurance-type" data-toggle="modal" data-structr-meta-show-conditions="empty(document.insuranceType)"><!-- @structr:content(text/plain) -->Auswählen</button><a class="select-insuranceType" data-document-id="${document.id}" data-target="#modal-select-insurance-type" data-toggle="modal" data-structr-meta-hide-conditions="empty(document.insuranceType)"><!-- @structr:content(text/plain) -->${if(empty(document.insuranceType),'Keine Zuweisung', document.insuranceType.name)}</a>
+								</td>
+								<td><!-- @structr:content(text/plain) -->${document.currentVersion.file.size}</td>
+								<td><!-- @structr:content(text/plain) -->${date_format(document.lastModifiedDate, 'dd.MM.yyyy')}</td>
+								<td><!-- @structr:content(text/plain) -->${document.currentVersion.file.contentType}</td>
+								<td class=" text-nowrap"><a class="m-r-1" title="Datei editieren" href="javascript:void(0)" data-structr-action="edit:File" data-structr-attributes="name, title, description" data-structr-confirm="true" data-structr-edit-class="btn btn-xs btn-default m-r-1" data-structr-id="${document.id}" data-structr-reload="true"><i class="fa fa-pencil"></i></a><a title="Datei löschen" href="javascript:void(0)" data-structr-action="delete:ConsultingDocument" data-structr-confirm="true" data-structr-hide="edit" data-structr-id="${document.id}" data-structr-reload="true"><i class="fa fa-trash"></i></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12"><structr:component src="Neue Datei Hochladen - Knopf" data-structr-meta-name="Neue Datei Hochladen - Knopf">
+				</structr:component>
+				<structr:component src="Neue Datei Hochladen - Script" data-structr-meta-name="Neue Datei Hochladen - Script">
+				</structr:component>
+				<structr:component src="Upload-Bereich" data-structr-meta-shared-component-configuration="(store('file-upload-parent-id', me.homeDirectory.id),store('file-upload-type', 'File'),store('file-upload-section-id', 'none'))" data-structr-meta-name="Upload-Bereich">
+				</structr:component>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-select-insurance-type">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal"><span><!-- @structr:content(text/plain) -->X</span></button>
+						<h4 class="modal-title"><!-- @structr:content(text/plain) -->Versicherungskategorie</h4>
+					</div>
+					<div class="modal-body">
+						<ul class="list-group insurance-type-list">
+							<li class="list-group-item" data-insurance-id="${insuranceType.id}" data-structr-meta-name="li" data-structr-meta-data-key="insuranceType" data-structr-meta-function-query="find('InsuranceType')"><a><!-- @structr:content(text/plain) -->${insuranceType.name}</a></li>
+							<li class="list-group-item text-danger"><!-- @structr:content(text/plain) -->Zuweisung entfernen</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" data-dismiss="modal"><!-- @structr:content(text/plain) -->Abbrechen</button>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript"><!-- @structr:content(text/javascript) -->;$(function() {
+
+	$('li.list-group-item').on('click',function(li) {
+		
+		li.stopPropagation();
+
+		var self = $(this);
+		
+		var insuranceId = self.data('insuranceId');
+		if(insuranceId === undefined){
+			insuranceId = null;
+		}
+		
+		var documentId = $('ul.list-group.insurance-type-list').data('documentId');
+		
+		if (documentId) {
+
+			var insuranceType = $(this);
+			insuranceType.addClass('active');
+
+			$.ajax({
+				url: '/structr/rest/ConsultingDocument/' + documentId,
+				contentType: 'application/json; charset=UTF-8',
+				method: 'PUT',
+				data: JSON.stringify({
+					insuranceType: insuranceId
+				}),
+				statusCode: {
+					200: function() {
+						document.location.reload();
+					}
+				}
+
+			});
+
+
+		}		
+
+	});	
+	
+	$('.select-insuranceType').on('click', function() {
+		
+		var el = $(this);
+		var documentId = el.data('documentId');
+		
+		$('ul.list-group.insurance-type-list').data('documentId',documentId);
+		
+	});
+	
+});</script>
+		</div>
+	</div>
+</structr:template>

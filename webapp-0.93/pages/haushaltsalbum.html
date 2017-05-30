@@ -1,0 +1,274 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<div>
+		<div>
+			<div class="row">
+				<div class="col-sm-8 consulting-folder-left-col" data-structr-meta-show-conditions="empty(current)">
+					<div class="table-responsive">
+						<table class="table dataTable no-footer" id="inventory-table">
+							<thead>
+								<tr>
+									<th><!-- @structr:content(text/plain) -->Foto</th>
+									<th><!-- @structr:content(text/plain) -->Bezeichnung</th>
+									<th><!-- @structr:content(text/plain) -->Kategorie</th>
+									<th><!-- @structr:content(text/plain) -->Anschaffungswert</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr data-structr-meta-data-key="inventoryItem" data-structr-meta-function-query="me.inventoryItems">
+									<td><a href="/${first(inventoryItem.inventoryImages).id}" target="_blank"><img src="${first(inventoryItem.inventoryImages).tnSmall.path}"></a></td>
+									<td><!-- @structr:content(text/plain) -->${inventoryItem.name}</td>
+									<td><!-- @structr:content(text/plain) -->${inventoryItem.category}</td>
+									<td><!-- @structr:content(text/plain) -->${inventoryItem.value} €</td>
+									<td class="text-right"><a class="m-r-1" title="Bearbeiten" href="/${page.name}/${inventoryItem.id}"><i class="fa fa-pencil"></i></a><a title="Löschen" href="javascript:void(0);" data-structr-action="delete:InventoryItem" data-structr-confirm="true" data-structr-id="${inventoryItem.id}" data-structr-reload="true"><i class="fa fa-trash"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn btn-default" style="margin-right: 1em" href="/"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Zurück</a><span class="btn btn-primary" data-target="#modal-new-item" data-toggle="modal"><!-- @structr:content(text/plain) -->Eintrag hinzufügen</span>
+				</div>
+				<div class="col-sm-8 consulting-folder-left-col" data-structr-meta-show-conditions="not(empty(current))">
+					<div class="row">
+						<div class="col-sm-11">
+							<div>
+								<button class="btn btn-default" onclick="window.location.href='/${page.name}';"><!-- @structr:content(text/plain) -->Zurück zum Haushaltsalbum</button>
+								<hr>
+							</div>
+							<form id="inventory-item-form" action="javascript:void(0);" data-structr-id="${current.id}">
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Bezeichnung</label>
+									<input class="form-control" type="text" value="${current.name}" data-structr-name="name">
+								</div>
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Ort</label>
+									<select class="form-control" data-structr-meta-shared-component-configuration="each(split(property_info('InventoryItem', 'location').format, ','), store('location-enum-keys', merge(retrieve('location-enum-keys'), concat('{name:', data, '}'))))" data-structr-name="location" data-structr-type="Enum">
+										<option selected="${if(eq(current.location, enumKey.name), 'selected', null)}" data-structr-meta-data-key="enumKey" data-structr-meta-function-query="sort(from_json(retrieve('location-enum-keys')), 'name')"><!-- @structr:content(text/plain) -->${enumKey.name}</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Kategorie</label>
+									<select class="form-control" data-structr-meta-shared-component-configuration="each(split(property_info('InventoryItem', 'category').format, ','), store('category-enum-keys', merge(retrieve('category-enum-keys'), concat('{name:', data, '}'))))" data-structr-name="category" data-structr-type="Enum">
+										<option selected="${if(eq(current.category, enumKey.name), 'selected', null)}" data-structr-meta-data-key="enumKey" data-structr-meta-function-query="sort(from_json(retrieve('category-enum-keys')), 'name')"><!-- @structr:content(text/plain) -->${enumKey.name}</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Marke</label>
+									<input class="form-control" type="text" value="${current.brand}" data-structr-name="brand">
+								</div>
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Modell</label>
+									<input class="form-control" type="text" value="${current.model}" data-structr-name="model">
+								</div>
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Anschaffungswert</label>
+									<input class="form-control" type="text" value="${current.value}" data-structr-name="value">
+								</div>
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Kaufdatum</label>
+									<input class="form-control" type="text" value="${date_format(current.purchaseDate, 'dd.MM.yyyy')}" data-structr-name="purchaseDate" data-structr-type="Date">
+								</div>
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Rechnungen / Dokumente</label>
+									<div data-structr-meta-data-key="inventoryFile" data-structr-meta-function-query="current.inventoryFiles"><a href="/${inventoryFile.id}" target="_blank"><!-- @structr:content(text/plain) -->${inventoryFile.name}</a><a class="pull-right" href="javascript:void(0);" data-structr-action="delete:File" data-structr-confirm="true" data-structr-id="${inventoryFile.id}" data-structr-reload="true"><i class="fa fa-trash"></i></a></div>
+									<structr:component src="Upload-Bereich" data-structr-meta-shared-component-configuration="(store('file-upload-prefix', 'files-'),store('file-upload-inventory-file-item', current.id), store('file-upload-type', 'File'),store('file-upload-parent', me.clientFolder.id))" data-structr-meta-name="Upload-Bereich">
+									</structr:component><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${store('file-upload-prefix', 'files-')}<structr:component src="Neue Datei Hochladen - Knopf" data-structr-meta-shared-component-configuration="store('file-upload-prefix', 'files-')" data-structr-meta-name="Neue Datei Hochladen - Knopf">
+									</structr:component>
+									<structr:component src="Neue Datei Hochladen - Script" data-structr-meta-shared-component-configuration="store('file-upload-prefix', 'files-')" data-structr-meta-name="Neue Datei Hochladen - Script">
+									</structr:component>
+								</div>
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Bilder</label>
+									<div class="row">
+										<div class="col-xs-3" data-structr-meta-data-key="inventoryImage" data-structr-meta-function-query="current.inventoryImages">
+											<div style="position: relative; margin-bottom: 2em;"><a href="/${inventoryImage.id}" target="_blank"><img class="img-responsive" src="/${inventoryImage.id}"></a><a class="btn btn-xs" style="position: absolute; top: 0px; right: 0px;" title="Löschen" href="javascript:void(0);" data-structr-action="delete:Image" data-structr-confirm="true" data-structr-id="${inventoryImage.id}" data-structr-reload="true"><i class="fa fa-trash"></i></a></div>
+										</div>
+									</div>
+									<structr:component src="Upload-Bereich" data-structr-meta-shared-component-configuration="(store('file-upload-prefix', 'images-'),store('file-upload-inventory-image-item', current.id), store('file-upload-type', 'Image'),store('file-upload-parent', me.clientFolder.id))" data-structr-meta-name="Upload-Bereich">
+									</structr:component><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${store('file-upload-prefix', 'images-')}<structr:component src="Neue Datei Hochladen - Knopf" data-structr-meta-shared-component-configuration="store('file-upload-prefix', 'images-')" data-structr-meta-name="Neue Datei Hochladen - Knopf">
+									</structr:component>
+									<structr:component src="Neue Datei Hochladen - Script" data-structr-meta-shared-component-configuration="store('file-upload-prefix', 'images-')" data-structr-meta-name="Neue Datei Hochladen - Script">
+									</structr:component>
+								</div>
+								<hr>
+								<div class="form-group">
+									<button class="btn btn-primary pull-right" type="button" data-structr-action="save:InventoryItem" data-structr-attributes="name,location,category,brand,model,value,purchaseDate" data-structr-id="${current.id}" data-structr-reload="true"><!-- @structr:content(text/plain) -->Speichern</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 consulting-folder-right-col"><!-- @structr:content(text/html) -->${store('client', me)}
+${include('Agent Profile')}</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal-new-item">
+		<div class="modal-dialog">
+			<form>
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal"><span><!-- @structr:content(text/plain) -->x</span></button>
+						<h4 class="modal-title"><!-- @structr:content(text/plain) -->Neuer Eintrag</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label><!-- @structr:content(text/plain) -->Bezeichnung</label>
+							<input class="form-control" type="text" data-structr-name="name">
+							<input type="hidden" value="${me.id}" data-structr-name="client">
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Ort</label>
+									<select class="form-control" data-structr-meta-shared-component-configuration="each(split(property_info('InventoryItem', 'location').format, ','), store('location-enum-keys', merge(retrieve('location-enum-keys'), concat('{name:', data, '}'))))" data-structr-name="location">
+										<option data-structr-meta-data-key="enumKey" data-structr-meta-function-query="sort(from_json(retrieve('location-enum-keys')), 'name')"><!-- @structr:content(text/plain) -->${enumKey.name}</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Kategorie</label>
+									<select class="form-control" data-structr-meta-shared-component-configuration="each(split(property_info('InventoryItem', 'category').format, ','), store('category-enum-keys', merge(retrieve('category-enum-keys'), concat('{name:', data, '}'))))" data-structr-name="category">
+										<option data-structr-meta-data-key="enumKey" data-structr-meta-function-query="sort(from_json(retrieve('category-enum-keys')), 'name')"><!-- @structr:content(text/plain) -->${enumKey.name}</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Marke</label>
+									<input class="form-control" type="text" data-structr-name="brand">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Modell</label>
+									<input class="form-control" type="text" data-structr-name="model">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Anschaffungswert</label>
+									<input class="form-control" type="text" data-structr-name="value">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label><!-- @structr:content(text/plain) -->Kaufdatum</label>
+									<input class="form-control" id="purchase-date-input" type="text" data-structr-name="purchaseDate" data-structr-type="Date(dd.MM.yyyy)">
+								</div>
+								<script type="text/javascript"><!-- @structr:content(text/javascript) -->$(function() {
+	$('#purchase-date-input').datepicker({});
+});</script>
+							</div>
+						</div>
+						<div class="form-group">
+							<label><!-- @structr:content(text/plain) -->Dateien (Bilder / Rechnungen)</label>
+							<div>
+								<!-- @structr:link(/js/dropzone.js) -->
+								<script src="${link.path}" type="text/javascript"></script>
+								<!-- @structr:link(/css/file-upload.css) -->
+								<link href="${link.path}" rel="stylesheet" type="text/css">
+								<div class="row">
+									<div class="col-xs-4">
+										<div class="file-upload-area" id="multi-file-upload"><span class="dz-message"><!-- @structr:content(text/plain) -->Dateien hier ablegen</span></div>
+									</div>
+									<div class="col-xs-8">
+										<div style="vertical-align: top;">
+											<table class="table table-striped" id="file-status-container"></table>
+										</div>
+									</div>
+								</div>
+								<script type="text/javascript"><!-- @structr:content(text/javascript) -->$(function() {
+	var dz = $('#multi-file-upload').dropzone({
+		url: '/structr/upload',
+		previewTemplate : '&lt;div style="display:none"&gt;&lt;/div&gt;',
+		init: function() {
+			this.on('addedfile', function(file) {
+				var zone = $('#multi-file-upload');
+				zone.empty();
+				zone.append('&lt;span class="dz-message"&gt;Datei wird hochgeladen..&lt;/span&gt;');
+			});
+			this.on('sending', function(file, xhr, formData){
+				//formData.append('parent', '${me.clientFolder.id}');
+			});			
+			this.on('complete', function(file) {
+				var zone = $('#multi-file-upload');
+				if (file &amp;&amp; file.xhr) {
+					var id   = file.xhr.response;
+					if (id &amp;&amp; id.length == 32) {
+						if (file &amp;&amp; file.type) {
+							if (file.type.indexOf('image/') === 0) {
+								addToList('#image-list-input', id);
+							} else {
+								addToList('#file-list-input', id);
+							}
+						}
+						zone.empty();
+						zone.append('&lt;span class="dz-message"&gt;Dateien hier ablegen&lt;/span&gt;');
+						$('#file-status-container').append('&lt;tr id="container-' + id + '"&gt;&lt;td class="text-left"&gt;' + shorten(file.name, 40) + '&lt;/td&gt;&lt;td class="text-right"&gt;&lt;button class="btn btn-xs btn-danger" id="delete-' + id + '"&gt;&lt;i class="fa fa-close"/&gt;&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;');
+						$('#delete-' + id).on('click', function() {
+							$.ajax({
+								method: 'DELETE',
+								url: '/structr/rest/File/' + id,
+								statusCode: {
+									200: function(result) {
+										$('#container-' + id).remove();
+										removeFromList('#file-list-input', id);
+									},
+									401: function(result) {
+										console.log(result);
+									},
+									403: function(result) {
+										console.log(result);
+									},
+									404: function(result) {
+										console.log(result);
+									},
+									500: function(result) {
+										console.log(result);
+									}
+								}
+							});
+						});
+					}
+				}
+			});
+		}
+	});
+});
+
+function addToList(element, id) {
+	$(element).append('&lt;option selected="selected"&gt;' + id + '&lt;/option&gt;');
+}
+
+function removeFromList(element, id) {
+	$(element + ' option:selected').each(function(i, option) {
+		if (option.value === id) {
+			option.selected = false;
+		}
+	});
+}
+
+function shorten(str, len) {
+	if (str.length &gt; len) {
+		return str.substring(0, len) + '…';
+	}
+	return str;
+}</script>
+							</div>
+							<select class="hidden" id="file-list-input" multiple="multiple" data-structr-name="inventoryFiles" data-structr-type="File[]"></select>
+							<select class="hidden" id="image-list-input" multiple="multiple" data-structr-name="inventoryImages" data-structr-type="Image[]"></select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" data-dismiss="modal"><!-- @structr:content(text/plain) -->Abbrechen</button>
+						<button class="btn btn-primary" data-structr-action="create:InventoryItem" data-structr-attributes="name,brand,model,location,category,value,purchaseDate,client,inventoryImages,inventoryFiles" data-structr-reload="true"><!-- @structr:content(text/plain) -->Anlegen</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</structr:template>

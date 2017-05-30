@@ -1,0 +1,18 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<div class="col-md-4 col-md-offset-3">
+			<form class="form-signin">
+				<div class="form-group">
+					<label><!-- @structr:content(text/plain) -->Zugangskennung</label>
+					<input class="form-control" autofocus="autofocus" type="text" data-structr-name="username">
+				</div>
+				<div class="form-group">
+					<label><!-- @structr:content(text/plain) -->Passwort</label>
+					<input class="form-control" type="password" data-structr-name="password">
+				</div>
+				<button class="btn btn-default button-blue" data-structr-action="login" data-structr-attributes="username, password" data-structr-return="/startseite" data-structr-meta-name="button"><i class="fa fa-sign-in fa-fw"></i><span class="glyphicon glyphicon-login"></span><!-- @structr:content(text/plain) -->Anmelden</button>
+			</form>
+		</div>
+	</div>
+</structr:template>

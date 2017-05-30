@@ -1,0 +1,105 @@
+<!-- @structr:content(text/html) --><structr:template src="Kundenordner Template" data-structr-meta-name="Kundenordner Template">
+	<div>
+		<div class="table-responsive">
+			<table class="table" id="insurance-table">
+				<thead>
+					<tr>
+						<th><!-- @structr:private, @structr:content(text/plain) --></th>
+						<th><!-- @structr:private, @structr:content(text/plain) --></th>
+						<th><!-- @structr:content(text/plain) -->Versicherer</th>
+						<th><!-- @structr:content(text/plain) -->Nummer</th>
+						<th><!-- @structr:content(text/plain) -->Zahlung</th>
+						<th><!-- @structr:content(text/plain) -->Beitrag</th>
+						<th><!-- @structr:content(text/plain) -->Ablauf</th>
+						<th><!-- @structr:private, @structr:content(text/plain) --></th>
+					</tr>
+				</thead>
+				<tbody data-structr-meta-data-key="instype" data-structr-meta-rest-query="InsuranceType?sort=sortPriority">
+					<tr>
+						<td colspan="8"><i class="fa fa-caret-down" data-structr-meta-hide-conditions="eq(size(filter(instype.insurances, eq(data.clientFolder, retrieve('clientfolder')))),0)"></i><i class="m-r-1" data-structr-meta-show-conditions="eq(size(filter(instype.insurances, eq(data.clientFolder, retrieve('clientfolder')))),0)"></i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${{
+	var instype = Structr.get('instype');
+	var current = Structr.get('current');
+	
+	if (current == null) {
+		current = Structr.retrieve('clientfolder');
+	}
+	
+	if (current != null) {
+		if (instype.availableSubTypes.length == 1) {
+			Structr.store('insuranceTypeLink', '/versicherung?clientFolder=' + current.id + '&amp;subType=' + instype.availableSubTypes[0].id);
+		} else {
+			Structr.store('insuranceTypeLink', '/versicherung?clientFolder=' + current.id + '&amp;insuranceType=' + instype.id);
+		}
+	}
+}}<!-- @structr:content(text/plain) --> ${instype.name}<a href="${retrieve('insuranceTypeLink')}"><i class="fa fa-plus-circle m-l-1"></i></a></td>
+					</tr>
+					<tr data-structr-meta-data-key="insurance" data-structr-meta-function-query="filter(instype.insurances, eq(data.clientFolder, retrieve('clientfolder')))">
+						<td><!-- @structr:private, @structr:content(text/plain) --></td>
+						<td><a href="/versicherung/${insurance.id}?clientFolder=${insurance.clientFolder.id}"><!-- @structr:content(text/plain) -->${insurance.subType.name}</a></td>
+						<td><!-- @structr:content(text/plain) -->${insurance.company.name}</td>
+						<td><!-- @structr:content(text/plain) -->${insurance.insuranceNo}</td>
+						<td><!-- @structr:content(text/plain) -->${insurance.paymentType.name}</td>
+						<td><!-- @structr:content(text/plain) -->${number_format(insurance.amount, 'de', '#,##0.00')}</td>
+						<td><!-- @structr:content(text/plain) -->${date_format(insurance.expiryDate, 'dd.MM.yyyy')}</td>
+						<td class="text-nowrap"><a href="/versicherung/${insurance.id}" data-structr-meta-show-conditions="is_allowed(me, insurance, 'write')"><i class="fa fa-edit"></i></a><a href="javascript:void(0)" data-structr-action="delete:Insurance" data-structr-confirm="true" data-structr-id="${insurance.id}" data-structr-reload="true" data-structr-meta-show-conditions="is_allowed(me, insurance, 'write, delete')"><i class="fa fa-trash m-l-1"></i></a></td>
+					</tr>
+					<tr data-structr-meta-data-key="document" data-structr-meta-function-query="filter(instype.documents, eq(data.clientFolder, retrieve('clientfolder')))">
+						<td><!-- @structr:private, @structr:content(text/plain) --></td>
+						<td colspan="7"><!-- @structr:content(text/plain) -->${document.title}<a class="m-l-1" href="${document.documentVersion.file.path}" target="_blank"><!-- @structr:content(text/plain) -->${document.name}</a></td>
+					</tr>
+					<!-- @structr:grant(admin,arwd) -->
+					<tr>
+						<!-- @structr:grant(admin,arwd) -->
+						<td colspan="8"><!-- @structr:grant(admin,arwd) --><i class="fa fa-caret-down" data-structr-meta-hide-conditions="eq(size(filter(instype.insurances, eq(data.clientFolder, retrieve('clientfolder')))),0)"></i><!-- @structr:grant(admin,arwd) --><i class="m-r-1" data-structr-meta-show-conditions="eq(size(filter(instype.insurances, eq(data.clientFolder, retrieve('clientfolder')))),0)"></i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${{
+	var instype = Structr.get('instype');
+	var current = Structr.get('current');
+	
+	if (current == null) {
+		current = Structr.retrieve('clientfolder');
+	}
+	
+	if (current != null) {
+		if (instype.availableSubTypes.length == 1) {
+			Structr.store('insuranceTypeLink', '/versicherung?clientFolder=' + current.id + '&amp;subType=' + instype.availableSubTypes[0].id);
+		} else {
+			Structr.store('insuranceTypeLink', '/versicherung?clientFolder=' + current.id + '&amp;insuranceType=' + instype.id);
+		}
+	}
+}}<!-- @structr:grant(admin,arwd), @structr:content(text/plain) --> ${instype.name}<!-- @structr:grant(admin,arwd) --><a href="${retrieve('insuranceTypeLink')}"><!-- @structr:grant(admin,arwd) --><i class="fa fa-plus-circle m-l-1"></i></a></td>
+					</tr>
+				</tbody>
+			</table>
+			<script type="text/javascript"><!-- @structr:content(text/javascript) -->$(function() {
+	
+	// Add event listener for opening and closing details
+	$('#insurance-table tbody').on('click', '.toggle', function () {
+		
+		console.log('toggle table row');
+		
+		var tr = $(this).closest('tr');
+		var row = table.row(tr);
+
+		if (row.child.isShown()) {
+			// This row is already open - close it
+			row.child.hide();
+			tr.removeClass('shown');
+		} else {
+			// Open this row
+			row.child(format(row.data())).show();
+			tr.addClass('shown');
+		}
+	} );
+});
+
+function format(d) {
+    // `d` is the original data object for the row
+    return '&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;DKV&lt;/td&gt;&lt;td&gt;123.123.123.123&lt;/td&gt;&lt;td&gt;monatlich&lt;/td&gt;&lt;td&gt;12,34&lt;/td&gt;&lt;td&gt;01.01.2019&lt;/td&gt;&lt;/table&gt;';
+}</script>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="col-sm-12"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn btn-default" href="/"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Zurück<!-- @structr:grant(admin,arwd) --><i class="m-r-1" data-structr-meta-show-conditions="eq(size(filter(instype.insurances, eq(data.clientFolder, retrieve('clientfolder')))),0)"></i></a></div>
+		</div>
+	</div>
+</structr:template>

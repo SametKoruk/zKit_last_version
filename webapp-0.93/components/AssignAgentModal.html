@@ -1,0 +1,44 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><div class="modal modal-fade" id="modal-assign-agent" data-structr-meta-name="AssignAgentModal">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="modal-dialog" role="document">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<form>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="modal-content" data-structr-id="${current.id}">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-header">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="close" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</span></button>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<h4 class="modal-title"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Beratungsmappe einem Vermittler zuweisen</h4>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-body">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Vermittler auswählen</label>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<select class="form-control" data-structr-name="agent">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<option value="${agent.id}" selected="${if(eq(retrieve('AssignAgentModal_Agent').id, agent.id), 'selected', null)}" data-structr-meta-data-key="agent" data-structr-meta-function-query="retrieve('AssignAgentModal_Agent').agency.agents"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${agent.name}</option>
+						</select>
+					</div>
+					<!-- @structr:owner(admin) -->
+					<div class="form-group">
+						<!-- @structr:owner(admin) -->
+						<label><!-- @structr:owner(admin), @structr:content(text/plain) -->Information</label>
+						<input class="form-control" type="text" data-structr-name="comment">
+					</div>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-footer">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="btn btn-default" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Abbrechen</button>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="btn btn-primary" type="button" data-structr-action="assignAgent:ConsultingFolder" data-structr-attributes="agent,comment" data-structr-id="${current.id}" data-structr-reload="true"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Zuweisen</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

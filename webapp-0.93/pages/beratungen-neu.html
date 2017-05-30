@@ -1,0 +1,42 @@
+<!-- @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-9">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<structr:component src="Beratungsliste" data-structr-meta-name="Beratungsliste">
+					</structr:component>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-3">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<form>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Neue Beratung anlegen</label>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input class="form-control" placeholder="Thema" type="text" data-structr-name="name">
+						</div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group text-right">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input type="hidden" value="${current.id}" data-structr-name="client">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input type="hidden" value="${me.id}" data-structr-name="agent">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="btn btn-primary" data-structr-action="create:Consultation" data-structr-attributes="name, client, agent" data-structr-reload="true"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anlegen</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<structr:component src="CreateConsultingFolderModal" data-structr-meta-name="CreateConsultingFolderModal">
+	</structr:component>
+</structr:template>

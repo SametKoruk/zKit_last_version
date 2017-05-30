@@ -1,0 +1,173 @@
+<!-- @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<!-- @structr:grant(admin,arwd) -->
+	<div></div>
+	<!-- @structr:grant(admin,arwd) -->
+	<div>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="form-group"><!-- @structr:grant(admin,arwd) --><a class="btn btn-default pull-left" href="/startseite"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Zurück zur Startseite</a></div>
+			</div>
+		</div>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:grant(admin,arwd) -->
+		<form class="hidden" action="/structr/upload" enctype="multipart/form-data" method="post">
+			<!-- @structr:grant(admin,arwd) -->
+			<input name="parent" type="hidden" value="${first(find('Folder', 'name', me.id))}">
+			<!-- @structr:grant(admin,arwd) -->
+			<input name="redirectOnSuccess" type="hidden" value="/vermittler/${me.id}">
+			<!-- @structr:grant(admin,arwd) -->
+			<input name="user" type="hidden" value="${me.id}">
+			<!-- @structr:grant(admin,arwd) -->
+			<input name="new-file" placeholder="Bild auswählen" type="file">
+			<!-- @structr:grant(admin,arwd) -->
+			<input type="submit" value="Foto hochladen">
+		</form><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->#text
+		
+		<!-- @structr:grant(admin,arwd) -->
+		<form id="client-form" action="javascript:void(0)">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-sm-6">
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Titel/Agentur</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.title}" data-structr-name="title">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Name</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" required="required" type="text" value="${current.lastName}" data-structr-name="lastName">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Vorname</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" required="required" type="text" value="${current.firstName}" data-structr-name="firstName">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->E-Mail</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" required="required" type="email" value="${current.eMail}" data-structr-name="eMail">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Straße</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.street}" data-structr-name="street">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->PLZ</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.zipCode}" data-structr-name="zipCode">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Ort</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.city}" data-structr-name="city">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Telefon</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.phone}" data-structr-name="phone">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Telefax</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.fax}" data-structr-name="fax">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Mobil</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.mobile}" data-structr-name="mobile">
+					</div>
+				</div>
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-lg-5 col-lg-offset-1">
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group text-center">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->Bild</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<div class="m-b-1"><!-- @structr:grant(admin,arwd) --><img src="${me.img.path}"></div><!-- @structr:grant(admin,arwd) --><span class="upload-handle" id="upload-image-handle"><!-- @structr:grant(admin,arwd) --><i class="fa fa-plus-circle m-r-1"></i><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Bild hochladen</span>
+						<!-- @structr:grant(admin,arwd) -->
+						<script type="text/javascript"><!-- @structr:grant(admin,arwd), @structr:content(text/javascript) -->;$(function() {
+
+	$('#upload-image-handle').on('click', function() {
+		//console.log('clicked');
+		$('#file-upload').removeClass('hidden');
+		$('#upload-image-handle').addClass('hidden');
+		
+	});
+});</script>
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<structr:component src="Upload-Bereich" data-structr-meta-shared-component-configuration="(store('file-upload-parent-id', first( find('Folder', 'name', concat(me.name, '_', me.id))).id), store('file-upload-type', 'Image'))" data-structr-meta-name="Upload-Bereich">
+					</structr:component>
+					<!-- @structr:grant(admin,arwd) -->
+					<input type="hidden" value="${current.id}" data-structr-id="${client.id}" data-structr-name="client">
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group m-t-4">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Bemerkungen</label><!-- @structr:grant(admin,arwd) --><textarea class="form-control" role="" rows="10" cols="" data-structr-name="comments"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.comments}</textarea>
+					</div>
+				</div>
+			</div>
+			<!-- @structr:grant(admin,arwd) -->
+			<hr>
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-sm-12">
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group pull-right">
+						<!-- @structr:grant(admin,arwd) -->
+						<button class="btn btn-default pull-right" data-structr-action="create:Agent" data-structr-append-id="true" data-structr-attributes="title,lastName,firstName,eMail,phone,fax,mobile,street,zipCode,city,comments" data-structr-reload="true" data-structr-return="/vermittler" data-structr-meta-show-conditions="empty(current)"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Neu anlegen</button>
+						<!-- @structr:grant(admin,arwd) -->
+						<button class="btn btn-default pull-right button-blue" data-structr-action="save:Agent" data-structr-append-id="false" data-structr-attributes="title,lastName,firstName,eMail,phone,fax,mobile,street,zipCode,city,comments" data-structr-id="${current.id}" data-structr-reload="true" data-structr-return="/startseite" data-structr-meta-hide-conditions="empty(current)"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Speichern</button>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!-- @structr:grant(admin,arwd) -->
+		<script type="text/javascript"><!-- @structr:grant(admin,arwd), @structr:content(text/javascript) -->;$(function() {
+  $('#client-form').validate();
+});</script>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-3"><!-- @structr:grant(admin,arwd) --><span><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Angelegt am: <!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(current.createdDate, 'dd.MM.yyyy')}</span></div>
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-3"><!-- @structr:grant(admin,arwd) --><span><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Letzte Änderung: <!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(current.lastModifiedDate, 'dd.MM.yyyy')}</span></div>
+		</div>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-12"></div>
+		</div>
+	</div>
+</structr:template>

@@ -1,0 +1,203 @@
+<!-- @structr:content(text/html) --><structr:template src="Kundenordner Template" data-structr-meta-name="Kundenordner Template">
+	<div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group"><a class="btn btn-default pull-left" href="/versicherungen/${retrieve('clientfolder').id}"><!-- @structr:content(text/plain) -->Zurück zur Übersicht</a></div>
+			</div>
+		</div><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->&lt;!--
+Versicherung: ${current.id}
+Kategorie: ${current.insuranceType.name}
+Art: ${current.subType.name}
+Felder: ${extract(current.subType.fields, 'name')}
+Attribute: ${join(extract(current.subType.fields, 'attrName'), ',')}
+
+---
+${if(
+	empty(request.subType),
+	store('subtype', current.subType),
+	store('subtype', find('InsuranceSubType', request.subType))
+)}
+
+empty subtype? ${empty(retrieve('subtype'))}
+${if(
+	empty(retrieve('subtype')),
+	store('instype', find('InsuranceType', request.insuranceType)),
+	store('instype', retrieve('subtype').insuranceType)
+)}
+Kategorie: ${retrieve('instype').name}
+mögliche Arten: ${extract(retrieve('instype').availableSubTypes, 'name')}
+
+Art (SubType): ${retrieve('subtype').name}
+Felder: ${extract(retrieve('subtype').fields, 'name')}
+Attribute: ${join(extract(retrieve('subtype').fields, 'attrName'), ',')}
+--&gt;
+		
+		<hr>
+		<form id="insurance-form" action="javascript:void(0)">
+			<div class="row">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-sm-6">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${request.subType}</label>
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group" data-structr-meta-data-key="field" data-structr-meta-function-query="if(empty(current), retrieve('subtype').fields, current.subType.fields)" data-structr-meta-show-conditions="and(or(eq(field._path.column, 1), empty(field._path.column)), not(eq(field.attrName, 'comments')))">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${field.name}
+${request.subType}</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<select class="form-control" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-meta-show-conditions="eq(field.inputType, 'select')">
+							<!-- @structr:grant(admin,arwd) -->
+							<option><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) --></option>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Option-Repeater" data-structr-meta-name="Option-Repeater">
+							</structr:template>
+						
+						</select>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<input class="form-control aux-type-not-currency" type="text" value="${get(current, field.attrName)}" data-structr-name="${field.attrName}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="and(eq(field.inputType, 'input[type=text]'), not(eq(field.auxType, 'currency')))">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<input class="form-control aux-type-currency" type="text" value="${number_format(get(current, field.attrName), 'de', '##,###,##0.00')}" data-structr-name="${field.attrName}" data-structr-meta-show-conditions="and(eq(field.inputType, 'input[type=text]'), eq(field.auxType, 'currency'))"><textarea class="form-control" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-raw-value="${get(current, field.attrName)}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="eq(field.inputType, 'textarea')"><!-- @structr:content(text/plain) -->${get(current, field.attrName)}
+${request.subType}</textarea>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<input class="form-control" checked="${eq(get(current, field.attrName), true)}" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-raw-value="${get(current, field.attrName)}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="eq(field.inputType, 'input[type=checkbox]')">
+					</div>
+				</div>
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-sm-6">
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group" data-structr-meta-data-key="field" data-structr-meta-function-query="if(empty(current), retrieve('subtype').fields, current.subType.fields)" data-structr-meta-show-conditions="and(eq(field._path.column, 2), not(eq(field.attrName, 'comments')))">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${field.name}</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<select class="form-control" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-meta-show-conditions="eq(field.inputType, 'select')">
+							<!-- @structr:grant(admin,arwd) -->
+							<option><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) --></option>
+							<!-- @structr:grant(admin,arwd) -->
+							<option value="${option.id}" selected="${if(eq(option.id, get(get(current, field.attrName), 'id')), 'selected', null)}" data-structr-meta-data-key="option" data-structr-meta-function-query="find(field.dataType)"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${option.name}</option>
+						</select>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<input class="form-control aux-type-not-currency" type="text" value="${get(current, field.attrName)}" data-structr-name="${field.attrName}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="and(eq(field.inputType, 'input[type=text]'), not(eq(field.auxType, 'currency')))">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<input class="form-control aux-type-currency" type="text" value="${number_format(get(current, field.attrName), 'de', '##,###,##0.00')}" data-structr-name="${field.attrName}" data-structr-meta-show-conditions="and(eq(field.inputType, 'input[type=text]'), eq(field.auxType, 'currency'))"><!-- @structr:grant(admin,arwd) --><textarea class="form-control" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-raw-value="${get(current, field.attrName)}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="eq(field.inputType, 'textarea')"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${get(current, field.attrName)}</textarea>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<input checked="${if(get(current, field.attrName), 'checked', null)}" type="checkbox" value="true" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-raw-value="${get(current, field.attrName)}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="eq(field.inputType, 'input[type=checkbox]')">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group" data-structr-meta-data-key="field" data-structr-meta-function-query="if(empty(current), retrieve('subtype').fields, current.subType.fields)" data-structr-meta-show-conditions="eq(field.attrName, 'comments')">
+						<label><!-- @structr:content(text/plain) -->${field.name}</label>
+						<select class="form-control" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-meta-show-conditions="eq(field.inputType, 'select')">
+							<option><!-- @structr:private, @structr:content(text/plain) --></option>
+							<option value="${option.id}" selected="${if(eq(option.id, get(get(current, field.attrName), 'id')), 'selected', null)}" data-structr-meta-data-key="option" data-structr-meta-function-query="find(field.dataType)"><!-- @structr:content(text/plain) -->${option.name}</option>
+						</select>
+						<!-- @structr:owner(admin) -->
+						<input class="form-control aux-type-not-currency" type="text" value="${get(current, field.attrName)}" data-structr-name="${field.attrName}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="and(eq(field.inputType, 'input[type=text]'), not(eq(field.auxType, 'currency')))">
+						<!-- @structr:owner(admin) -->
+						<input class="form-control aux-type-currency" type="text" value="${number_format(get(current, field.attrName), 'de', '##,###,##0.00')}" data-structr-name="${field.attrName}" data-structr-meta-show-conditions="and(eq(field.inputType, 'input[type=text]'), eq(field.auxType, 'currency'))"><textarea class="form-control" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-raw-value="${get(current, field.attrName)}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="eq(field.inputType, 'textarea')"><!-- @structr:content(text/plain) -->${get(current, field.attrName)}</textarea>
+						<!-- @structr:owner(admin) -->
+						<input checked="${if(get(current, field.attrName), 'checked', null)}" type="checkbox" value="true" data-structr-attr="${field.attrName}" data-structr-name="${field.attrName}" data-structr-raw-value="${get(current, field.attrName)}" data-structr-type="${field.dataType}" data-structr-meta-show-conditions="eq(field.inputType, 'input[type=checkbox]')">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group pull-right">
+						<button class="btn btn-default pull-right" data-structr-action="create:Insurance" data-structr-append-id="true" data-structr-attributes="clientFolder,insuranceType,subType,${join(extract(retrieve('subtype').fields, 'attrName'), ',')}" data-structr-reload="true" data-structr-return="/versicherung" data-structr-meta-show-conditions="empty(current)"><!-- @structr:content(text/plain) -->Versicherung neu anlegen</button>
+						<button class="btn btn-default pull-right" id="save-insurance-values-button" data-structr-action="save:Insurance" data-structr-append-id="false" data-structr-attributes="clientFolder,insuranceType,subType,${join(extract(retrieve('subtype').fields, 'attrName'), ',')}" data-structr-id="${current.id}" data-structr-reload="true" data-structr-meta-hide-conditions="empty(current)"><!-- @structr:content(text/plain) -->Speichern</button>
+						<!-- @structr:grant(admin,arwd) -->
+						<input type="hidden" value="${retrieve('instype').id}" data-structr-name="insuranceType">
+						<!-- @structr:grant(admin,arwd) -->
+						<input type="hidden" value="${retrieve('clientfolder').id}" data-structr-name="clientFolder">
+					</div>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->$(function() {
+		
+		$('#save-insurance-values-button').on('click', function() {
+			$('input.aux-type-currency').each(function(i, input) {
+				var value = $(input).val();
+				value = value.replace('.', '');
+				value = value.replace(',', '.');
+				$(input).value = value;
+			});
+		});
+	});</script>
+			</div>
+		</form>
+		<hr data-structr-meta-hide-conditions="empty(current)">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="row" data-structr-meta-hide-conditions="empty(current)">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anhänge</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="table-responsive no-overflow">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<table class="table">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<thead>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<tr>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Art</th>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name</th>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Datum</th>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anhang</th>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --></th>
+							</tr>
+						</thead>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<tbody>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<tr data-structr-meta-data-key="attachment" data-structr-meta-function-query="current.attachments">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td data-structr-attr="documentType" data-structr-edit-class="form-control" data-structr-raw-value="${attachment.documentType.id}" data-structr-type="DocumentType"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${attachment.documentType.name}</td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td data-structr-attr="title" data-structr-edit-class="form-control"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${attachment.title}</td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(attachment.lastModifiedDate, 'dd.MM.yyyy HH:mm')}</td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td><a href="${attachment.documentVersion.file.path}" target="_blank"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${attachment.name}</a></td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td><a href="javascript:void(0)" data-structr-action="edit:ClientDocument" data-structr-attributes="documentType,title,date" data-structr-id="${attachment.id}" data-structr-reload="true"><i class="fa fa-edit"></i></a><a class="m-l-1" href="javascript:void(0)" data-structr-action="delete:ClientDocument" data-structr-confirm="true" data-structr-id="${attachment.id}" data-structr-reload="true" data-structr-meta-show-conditions="is_allowed(me, attachment, 'delete')"><i class="fa fa-trash"></i></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div><span id="upload-file-handle"><i class="fa fa-plus-circle m-l-8px m-r-1"></i><!-- @structr:content(text/plain) -->Neuen Anhang hochladen</span>
+				<structr:component src="Upload-Bereich" data-structr-meta-shared-component-configuration="(store('file-upload-insurance-id', current.id),store('file-upload-type', 'File'))" data-structr-meta-name="Upload-Bereich">
+				</structr:component>
+				<script type="text/javascript"><!-- @structr:content(text/javascript) -->;$(function() {
+
+	$('#upload-file-handle').on('click', function() {
+		//console.log('clicked');
+		$('#file-upload').removeClass('hidden');
+		$('#upload-file-handle').addClass('hidden');
+		
+	});
+});</script>
+			</div>
+		</div>
+		<script type="text/javascript"><!-- @structr:content(text/javascript) -->;$(function() {
+  $('#insurance-form').validate();
+});</script>
+		<hr>
+		<div class="row" data-structr-meta-hide-conditions="empty(current)">
+			<div class="col-sm-4"><span><!-- @structr:content(text/plain) -->Angelegt am: <!-- @structr:content(text/plain) -->${date_format(current.createdDate, 'dd.MM.yyyy')}</span></div>
+			<div class="col-sm-4"><span><!-- @structr:content(text/plain) -->Letzte Änderung: <!-- @structr:content(text/plain) -->${date_format(current.lastModifiedDate, 'dd.MM.yyyy')}</span></div>
+			<div class="col-sm-4">
+				<div class="pull-right" data-structr-meta-hide-conditions="empty(current)">
+					<button class="btn btn-danger" data-structr-action="delete:Insurance" data-structr-confirm="true" data-structr-hide="edit" data-structr-id="${current.id}" data-structr-reload="true" data-structr-return="/kundenordner(${me.clientFolder.id}"><!-- @structr:content(text/plain) -->Versicherung löschen</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</structr:template>

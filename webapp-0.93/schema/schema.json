@@ -1,0 +1,2278 @@
+{
+  "definitions": {
+    "Agency": {
+      "$extends": "#/definitions/Group",
+      "methods": {
+        "onCreate": {
+          "comment": "",
+          "source": "{\n\t// create role groups..\n\tStructr.this.members.push(Structr.create(\u0027Group\u0027, {\n\t\tname: \u0027Agenturleitung\u0027,\n\t\tisAgencyGroup: true\n\t}));\n\t\n\tStructr.this.members.push(Structr.create(\u0027Group\u0027, {\n\t\tname: \u0027Vermittler\u0027,\n\t\tisAgencyGroup: true\n\t}));\n}"
+        }
+      },
+      "properties": {
+        "agents": {
+          "$link": "#/definitions/AgencyEMPLOYSAgent",
+          "items": {
+            "$ref": "#/definitions/Agent"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "AgencyEMPLOYSAgent": {
+      "$source": "#/definitions/Agency",
+      "$target": "#/definitions/Agent",
+      "cardinality": "OneToMany",
+      "rel": "EMPLOYS",
+      "sourceName": "agency",
+      "targetName": "agents",
+      "type": "object"
+    },
+    "Agent": {
+      "$extends": "#/definitions/User",
+      "methods": {
+        "onCreate": {
+          "comment": "",
+          "source": "{\n\tvar self \u003d Structr.this;\n\n\tStructr.create(\u0027DocumentArchive\u0027, \u0027name\u0027, (self.name + \u0027_archive\u0027), \u0027agent\u0027, self);\n\t\n\tif (self.agency \u003d\u003d null) {\n\t\t\n\t\treturn Structr.error(422, \u0027Cant create Agent without Agency! Use page /userverwaltung !\u0027);\n\t\t\n\t} else {\n\t\t\n\t\tself.agency.members.push(self);\n\t\t\n\t\t// Grant agency read permissions on all members\n\t\tStructr.grant(self.agency, self, \u0027read\u0027);\n\t}\n}"
+        }
+      },
+      "properties": {
+        "advisesClients": {
+          "$link": "#/definitions/AgentADVISESClient",
+          "items": {
+            "$ref": "#/definitions/Client"
+          },
+          "type": "array"
+        },
+        "agency": {
+          "$link": "#/definitions/AgencyEMPLOYSAgent",
+          "$ref": "#/definitions/Agency",
+          "type": "object"
+        },
+        "archive": {
+          "$link": "#/definitions/AgentMANAGESFileArchive",
+          "$ref": "#/definitions/DocumentArchive",
+          "type": "object"
+        },
+        "assignedChecklistPoints": {
+          "$link": "#/definitions/AgentASSIGNEDChecklistPoint",
+          "items": {
+            "$ref": "#/definitions/ChecklistPoint"
+          },
+          "type": "array"
+        },
+        "checksChecklistPoints": {
+          "$link": "#/definitions/AgentCHECKSChecklistPoint",
+          "items": {
+            "$ref": "#/definitions/ChecklistPoint"
+          },
+          "type": "array"
+        },
+        "city": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        },
+        "consultations": {
+          "$link": "#/definitions/AgentPLANSConsultation",
+          "items": {
+            "$ref": "#/definitions/Consultation"
+          },
+          "type": "array"
+        },
+        "facebook": {
+          "indexed": true,
+          "type": "string"
+        },
+        "fax": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        },
+        "homepage": {
+          "indexed": true,
+          "type": "string"
+        },
+        "mobile": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        },
+        "noOfConsultingFolders": {
+          "indexed": true,
+          "readFunction": "size(this.managesConsultingFolders)",
+          "type": "function"
+        },
+        "offlineMode": {
+          "indexed": true,
+          "type": "boolean"
+        },
+        "phone": {
+          "indexed": true,
+          "type": "string"
+        },
+        "signatureHtml": {
+          "contentType": "",
+          "default": "\u003cp\u003eMit freundlichen Grüßen,\u003c/p\u003e\\n\u003cp\u003eIhr Zurich Kundenservice\u003c/p\u003e",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        },
+        "signatureText": {
+          "contentType": "",
+          "default": "Mit freundlichen Grüßen,\\nIhr Zurich Kundenservice",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        },
+        "street": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        },
+        "title": {
+          "indexed": true,
+          "type": "string"
+        },
+        "whatsapp": {
+          "indexed": true,
+          "type": "string"
+        },
+        "zipCode": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "public": [
+          "id",
+          "isUser",
+          "name",
+          "offlineMode",
+          "type"
+        ],
+        "ui": [
+          "city",
+          "facebook",
+          "fax",
+          "homepage",
+          "mobile",
+          "noOfConsultingFolders",
+          "offlineMode",
+          "phone",
+          "signatureHtml",
+          "signatureText",
+          "street",
+          "title",
+          "whatsapp",
+          "zipCode"
+        ]
+      }
+    },
+    "AgentADVISESClient": {
+      "$source": "#/definitions/Agent",
+      "$target": "#/definitions/Client",
+      "cardinality": "OneToMany",
+      "rel": "ADVISES",
+      "sourceName": "agent",
+      "targetName": "advisesClients",
+      "type": "object"
+    },
+    "AgentASSIGNEDChecklistPoint": {
+      "$source": "#/definitions/Agent",
+      "$target": "#/definitions/ChecklistPoint",
+      "cardinality": "OneToMany",
+      "rel": "ASSIGNED",
+      "sourceName": "assignedAgent",
+      "targetName": "assignedChecklistPoints",
+      "type": "object"
+    },
+    "AgentCHECKSChecklistPoint": {
+      "$source": "#/definitions/Agent",
+      "$target": "#/definitions/ChecklistPoint",
+      "cardinality": "OneToMany",
+      "rel": "CHECKS",
+      "sourceName": "checkedBy",
+      "targetName": "checksChecklistPoints",
+      "type": "object"
+    },
+    "AgentMANAGESFileArchive": {
+      "$source": "#/definitions/Agent",
+      "$target": "#/definitions/DocumentArchive",
+      "cardinality": "OneToOne",
+      "rel": "MANAGES",
+      "sourceName": "agent",
+      "targetName": "archive",
+      "type": "object"
+    },
+    "AgentPLANSConsultation": {
+      "$source": "#/definitions/Agent",
+      "$target": "#/definitions/Consultation",
+      "cardinality": "OneToMany",
+      "rel": "PLANS",
+      "sourceName": "agent",
+      "targetName": "consultations",
+      "type": "object"
+    },
+    "ArchivedConsultingFolder": {
+      "$extends": "#/definitions/ConsultingFolder",
+      "properties": {
+        "archiveDate": {
+          "format": "date-time",
+          "indexed": true,
+          "type": "string"
+        },
+        "belongedToClient": {
+          "$link": "#/definitions/ClientHADArchivedConsultingFolder",
+          "$ref": "#/definitions/Client",
+          "type": "object"
+        },
+        "comments": {
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "archiveDate",
+          "comments"
+        ]
+      }
+    },
+    "Checklist": {
+      "methods": {
+        "onCreate": {
+          "comment": "Automatically creates a number of points given by the agenda array and links them to the checklist.",
+          "source": "{\n\tvar self \u003d Structr.this;\n\t\n\tvar template \u003d self.template;\n\t\n\tif(template !\u003d null){\n\t\tself.name \u003d template.name;\n\t\t\n\t\t//create checklist points\n\t\tvar agenda \u003d template.agenda;\n\n\t\tfor(var i in agenda){\n\n\t\t\tvar point \u003d Structr.create(\"ChecklistPoint\", \"description\", agenda[i]);\n\t\t\tpoint.checklist \u003d self;\n\n\t\t}\n\t}\n\t\n\t\n}"
+        },
+        "onCreate01": {
+          "comment": "",
+          "source": "copy_permissions(this.consultingFolder, this)"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\t// recurse into checklist points\n\tStructr.this.checklistPoints.forEach(function(point) {\n\t\tpoint.updatePermissions(params);\n\t});\n\n}"
+        }
+      },
+      "properties": {
+        "checklistPoints": {
+          "$link": "#/definitions/ChecklistCONSISTS_OFChecklistPoint",
+          "items": {
+            "$ref": "#/definitions/ChecklistPoint"
+          },
+          "type": "array"
+        },
+        "consultingFolder": {
+          "$link": "#/definitions/ConsultingFolderHASChecklist",
+          "$ref": "#/definitions/ConsultingFolder",
+          "type": "object"
+        },
+        "template": {
+          "$link": "#/definitions/ChecklistTemplateIS_TEMPLATE_FORChecklist",
+          "$ref": "#/definitions/ChecklistTemplate",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "ChecklistCONSISTS_OFChecklistPoint": {
+      "$source": "#/definitions/Checklist",
+      "$target": "#/definitions/ChecklistPoint",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "CONSISTS_OF",
+      "sourceName": "checklist",
+      "targetName": "checklistPoints",
+      "type": "object"
+    },
+    "ChecklistPoint": {
+      "methods": {
+        "onCreate": {
+          "comment": "",
+          "source": "copy_permissions(this.checklist, this)"
+        },
+        "sendMessage": {
+          "comment": "",
+          "source": "{\n\tvar self \u003d Structr.get(\u0027this\u0027);\n\n\tvar sender \u003d Structr.find(\u0027Agent\u0027, Structr.retrieve(\u0027senderId\u0027));\n\tvar agent \u003d Structr.find(\u0027Agent\u0027, Structr.retrieve(\u0027agentId\u0027));\n\n\tvar fullLink \u003d Structr.concat(Structr.template(\u0027clientLoginMail-linkBase\u0027, \u0027de\u0027, self), \u0027/beratungsmappe/\u0027, self.checklist.consultingFolder.id);\n\tStructr.store(\u0027link\u0027, fullLink);\n\n\tStructr.store(\u0027checklist-name\u0027, self.description);\n\tStructr.store(\u0027consultingfolder-name\u0027, self.checklist.consultingFolder.name);\n\tStructr.store(\u0027sender-name\u0027, sender.name);\n\n\tStructr.store(\u0027signatureText\u0027, sender.signatureText);\n\tStructr.store(\u0027signatureHtml\u0027, sender.signatureHtml);\n\n\n\tStructr.send_html_mail(\n\t\tStructr.template(\u0027clientLoginMail-senderAddress\u0027, \u0027de\u0027, sender),\n\t\tsender.name,\n\t\tagent.eMail,\n\t\tagent.name,\n\t\tStructr.template(\u0027checklistPoint-Reminder-subject\u0027, \u0027de\u0027, agent),\n\t\tStructr.template(\u0027checklistPoint-Reminder-html\u0027, \u0027de\u0027, agent),\n\t\tStructr.template(\u0027checklistPoint-Reminder-text\u0027, \u0027de\u0027, agent)\n\t);\n}"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n}"
+        }
+      },
+      "properties": {
+        "assignedAgent": {
+          "$link": "#/definitions/AgentASSIGNEDChecklistPoint",
+          "$ref": "#/definitions/Agent",
+          "type": "object"
+        },
+        "checkDate": {
+          "datePattern": "",
+          "default": "",
+          "format": "date-time",
+          "indexed": true,
+          "type": "string"
+        },
+        "checked": {
+          "default": "false",
+          "indexed": true,
+          "type": "boolean"
+        },
+        "checkedBy": {
+          "$link": "#/definitions/AgentCHECKSChecklistPoint",
+          "$ref": "#/definitions/Agent",
+          "type": "object"
+        },
+        "checklist": {
+          "$link": "#/definitions/ChecklistCONSISTS_OFChecklistPoint",
+          "$ref": "#/definitions/Checklist",
+          "type": "object"
+        },
+        "description": {
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "checkDate",
+          "checked",
+          "description"
+        ]
+      }
+    },
+    "ChecklistTemplate": {
+      "methods": {
+        "createChecklist": {
+          "comment": "",
+          "source": "{\n\tvar self \u003d Structr.this;\n\tvar consultingFolderId \u003d Structr.retrieve(\u0027folderId\u0027);\n\tvar checklist \u003d Structr.create(\u0027Checklist\u0027,\u0027template\u0027,self);\n\n\tif(consultingFolderId !\u003d null){\n\t\t\n\t\tvar folder \u003d Structr.find(\u0027ConsultingFolder\u0027,\u0027id\u0027,consultingFolderId)[0];\n\t\tchecklist.consultingFolder \u003d folder;\n\t\t\t\n\t}\n}"
+        },
+        "onCreate": {
+          "comment": "",
+          "source": "set(this,\u0027visibleToAuthenticatedUsers\u0027,true);"
+        }
+      },
+      "properties": {
+        "agenda": {
+          "default": "",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "checklists": {
+          "$link": "#/definitions/ChecklistTemplateIS_TEMPLATE_FORChecklist",
+          "items": {
+            "$ref": "#/definitions/Checklist"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "agenda"
+        ]
+      }
+    },
+    "ChecklistTemplateIS_TEMPLATE_FORChecklist": {
+      "$source": "#/definitions/ChecklistTemplate",
+      "$target": "#/definitions/Checklist",
+      "aclReadMask": "Add",
+      "aclResolution": "In",
+      "cardinality": "OneToMany",
+      "rel": "IS_TEMPLATE_FOR",
+      "sourceName": "template",
+      "targetName": "checklists",
+      "type": "object"
+    },
+    "Client": {
+      "$extends": "#/definitions/User",
+      "methods": {
+        "activateAccount": {
+          "comment": "",
+          "source": "{\n\tvar self \u003d Structr.this;\n\tvar token \u003d Structr.retrieve(\u0027initialToken\u0027);\n\t\n\tif (token \u003d\u003d\u003d self.initialToken) {\n\t\tself.initialToken \u003d null;\n\t} else {\n\t\tStructr.error(422, \u0027Token stimmt nicht mit gespeichertem Initialtoken ein!\u0027);\n\t}\n}"
+        },
+        "allowAccess": {
+          "comment": "",
+          "source": "{\n\tvar self \u003d Structr.this;\n\tvar me \u003d Structr.me;\n\tvar accessAllowed \u003d Structr.retrieve(\u0027accessAllowed\u0027);\n\t\n\tif (self.id \u003d\u003d\u003d me.id) {\n\t\tif (self.clientFolder !\u003d null \u0026\u0026 self.clientFolder !\u003d undefined) {\n\t\t\tself.clientFolder.accessAllowed \u003d accessAllowed;\n\t\t}\n\t}\n}"
+        },
+        "onCreate": {
+          "comment": "Update 2017-02-02: ClientFolders\nare now automatically created upon\ncreating a client",
+          "source": "{\n\tvar self \u003d Structr.this;\n\t\n\tself.fullName \u003d (self.firstName !\u003d null ? self.firstName : \u0027\u0027) + \u0027 \u0027 + (self.lastName !\u003d null ? self.lastName : \u0027\u0027);\n\tself.name \u003d self.fullName;\n\n\tself.clientFolder \u003d Structr.create(\u0027ClientFolder\u0027, \u0027client\u0027, self);\n}"
+        },
+        "onSave": {
+          "comment": "",
+          "source": "(\n\tset(this, \u0027fullName\u0027, concat(this.firstName, \u0027 \u0027, this.lastName)),\n\tset(this, \u0027name\u0027, concat(this.firstName, \u0027 \u0027, this.lastName))\n)\n"
+        },
+        "sendLoginToken": {
+          "comment": "Sends a mail with a login\ntoken to the client\n\n\nUpdate 2017-02-02: ClientFolders\nare now automatically created upon\ncreating a client - therefor we\ndon\u0027t need to check/create a\nClientFolder\n\nUpdate 2017-04-13:\nUse Agents Signature\n\nUpdate 2017-04-18:\nGenerate initial token",
+          "source": "{\n\tvar confKey \u003d java.util.UUID.randomUUID().toString();\n\tconfKey \u003d confKey.replace(\u0027-\u0027, \u0027\u0027);\n\n\tvar self \u003d Structr.get(\u0027this\u0027);\n\tself.confirmationKey \u003d confKey;\n\n\tvar fullLink \u003d Structr.concat(Structr.template(\u0027clientLoginMail-linkBase\u0027, \u0027de\u0027, self), \u0027/reset-password?key\u003d\u0027, confKey, \u0027\u0026target\u003d/einstellungen\u0027);\n\tStructr.store(\u0027link\u0027, fullLink);\n\n\tStructr.store(\u0027signatureText\u0027, self.agent.signatureText);\n\tStructr.store(\u0027signatureHtml\u0027, self.agent.signatureHtml);\n\t\n\tStructr.send_html_mail(\n\t\tStructr.template(\u0027clientLoginMail-senderAddress\u0027, \u0027de\u0027, self),\n\t\tStructr.template(\u0027clientLoginMail-sender\u0027, \u0027de\u0027, self),\n\t\tself.eMail,\n\t\tself.name,\n\t\tStructr.template(\u0027clientLoginMail-subject\u0027, \u0027de\u0027, self),\n\t\tStructr.template(\u0027clientLoginMail-html\u0027, \u0027de\u0027, self),\n\t\tStructr.template(\u0027clientLoginMail-text\u0027, \u0027de\u0027, self)\n\t);\n\t\n\tself.loginSendDate \u003d new Date();\n\n\tself.initialToken \u003d parseInt(Math.random() * 9000) + 1000;\n}"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\tStructr.this.clientFolder.updatePermissions(params);\n\t\n\tStructr.this.consultations.forEach(function(consultation) {\n\t\tconsultation.updatePermissions(params);\n\t});\n}"
+        }
+      },
+      "properties": {
+        "agent": {
+          "$link": "#/definitions/AgentADVISESClient",
+          "$ref": "#/definitions/Agent",
+          "type": "object"
+        },
+        "archivedConsultingFolders": {
+          "$link": "#/definitions/ClientHADArchivedConsultingFolder",
+          "items": {
+            "$ref": "#/definitions/ArchivedConsultingFolder"
+          },
+          "type": "array"
+        },
+        "city": {
+          "indexed": true,
+          "type": "string"
+        },
+        "clientFolder": {
+          "$link": "#/definitions/ClientHASClientFolder",
+          "$ref": "#/definitions/ClientFolder",
+          "type": "object"
+        },
+        "comments": {
+          "contentType": "",
+          "default": "",
+          "format": "multi-line",
+          "indexed": true,
+          "type": "string"
+        },
+        "consultations": {
+          "$link": "#/definitions/ConsultationIS_FORClient",
+          "items": {
+            "$ref": "#/definitions/Consultation"
+          },
+          "type": "array"
+        },
+        "fax": {
+          "indexed": true,
+          "type": "string"
+        },
+        "houseNumber": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        },
+        "initialToken": {
+          "indexed": true,
+          "type": "string"
+        },
+        "insuranceCheck": {
+          "indexed": true,
+          "type": "string"
+        },
+        "inventoryItems": {
+          "$link": "#/definitions/ClientINVENTORYInventoryItem",
+          "items": {
+            "$ref": "#/definitions/InventoryItem"
+          },
+          "type": "array"
+        },
+        "loginSendDate": {
+          "format": "date-time",
+          "indexed": true,
+          "type": "string"
+        },
+        "mobile": {
+          "indexed": true,
+          "type": "string"
+        },
+        "phone": {
+          "indexed": true,
+          "type": "string"
+        },
+        "street": {
+          "indexed": true,
+          "type": "string"
+        },
+        "zipCode": {
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "city",
+          "comments",
+          "fax",
+          "houseNumber",
+          "initialToken",
+          "insuranceCheck",
+          "loginSendDate",
+          "mobile",
+          "phone",
+          "street",
+          "zipCode"
+        ]
+      }
+    },
+    "ClientDocument": {
+      "methods": {
+        "onCreate01": {
+          "comment": "",
+          "source": "{\n\tvar self     \u003d Structr.this;\n\tvar fileName \u003d self.documentVersion.file.name;\n\tvar title    \u003d self.documentVersion.file.nameWithoutFileExtension;\n\t\n\tself.name \u003d fileName;\n\tself.title \u003d title;\n\t\n\tif (self.consultation !\u003d null) {\n\t\t\n\t\tif (self.consultation.client !\u003d null) {\n\t\t\n\t\t\tStructr.grant(self.consultation.client, self, \u0027read\u0027);\n\t\t\t\n\t\t} else {\n\t\t\n\t\t\tStructr.log(\"No client found for consultation.client!\");\n\t\t\t\n\t\t}\n\t\t\n\t} else {\n\t\n\t\tStructr.log(\"No consultation found!\");\n\t\t\n\t}\n\t\n}"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\tStructr.this.documentVersion.updatePermissions(params);\n}"
+        }
+      },
+      "properties": {
+        "clientFolder": {
+          "$link": "#/definitions/ClientFolderCONTAINSClientDocument",
+          "$ref": "#/definitions/ClientFolder",
+          "type": "object"
+        },
+        "consultation": {
+          "$link": "#/definitions/ConsultationIS_RELATEDClientDocument",
+          "$ref": "#/definitions/Consultation",
+          "type": "object"
+        },
+        "documentType": {
+          "$link": "#/definitions/ClientDocumentIS_OF_TYPEDocumentType",
+          "$ref": "#/definitions/DocumentType",
+          "type": "object"
+        },
+        "documentVersion": {
+          "$link": "#/definitions/ClientDocumentREFERENCESDocumentVersion",
+          "$ref": "#/definitions/DocumentVersion",
+          "type": "object"
+        },
+        "insurance": {
+          "$link": "#/definitions/InsuranceCONTAINSClientDocument",
+          "$ref": "#/definitions/Insurance",
+          "type": "object"
+        },
+        "insuranceType": {
+          "$link": "#/definitions/ClientDocumentBELONGS_TOInsuranceType",
+          "$ref": "#/definitions/InsuranceType",
+          "type": "object"
+        },
+        "title": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "title"
+        ]
+      }
+    },
+    "ClientDocumentBELONGS_TOInsuranceType": {
+      "$source": "#/definitions/ClientDocument",
+      "$target": "#/definitions/InsuranceType",
+      "cardinality": "ManyToOne",
+      "rel": "BELONGS_TO",
+      "sourceName": "documents",
+      "targetName": "insuranceType",
+      "type": "object"
+    },
+    "ClientDocumentIS_OF_TYPEDocumentType": {
+      "$source": "#/definitions/ClientDocument",
+      "$target": "#/definitions/DocumentType",
+      "cardinality": "ManyToOne",
+      "rel": "IS_OF_TYPE",
+      "sourceName": "clientDocuments",
+      "targetName": "documentType",
+      "type": "object"
+    },
+    "ClientDocumentREFERENCESDocumentVersion": {
+      "$source": "#/definitions/ClientDocument",
+      "$target": "#/definitions/DocumentVersion",
+      "cardinality": "OneToOne",
+      "rel": "REFERENCES",
+      "sourceName": "clientDocumentReferences",
+      "targetName": "documentVersion",
+      "type": "object"
+    },
+    "ClientFolder": {
+      "methods": {
+        "onCreate01": {
+          "comment": "",
+          "source": "(\n\tset(this, \u0027name\u0027, concat(this.client.name, \u0027_\u0027 ,this.client.id)),\n\tcopy_permissions(this.client, this)\n\n)\n"
+        },
+        "onCreate02": {
+          "comment": "- adds agency grant for the clientFolder\n- allows client to read/write the clientfolder",
+          "source": "{\n\tvar self \u003d Structr.this;\n\tStructr.grant(self.client, self, \u0027read, write\u0027);\n}"
+        },
+        "requestCheck": {
+          "comment": "",
+          "source": "{\n\tvar self \u003d Structr.this;\n\tvar accessAllowed \u003d Structr.retrieve(\u0027accessAllowed\u0027);\n\tvar comment \u003d Structr.retrieve(\u0027comment\u0027);\n\t\n\tif (accessAllowed !\u003d null) {\n\t\tself.accessAllowed \u003d accessAllowed;\n\t}\n\t\n\tvar mailContent \u003d \n\t\tself.client.fullName\n\t\t\t+ \u0027 hat einen Check angefordert.\\n\u0027\n\t\t\t+ \u0027\\n\\nDetails siehe https://z-kit.de/versicherungen/\u0027\n\t\t\t+ self.id;\n\tif(comment !\u003d null \u0026\u0026 comment.length \u003e 0){\n\t\t\tmailContent+\u003d \u0027\\n\\nKommentar:\\n\u0027\n\t\t\t+ comment;\t\t\n\t}\n\t\n\tStructr.send_plaintext_mail(\n\t\t\u0027benachrichtigungen-check@z-kit.de\u0027,\n\t\t\u0027Z-Kit Versicherungs-Check\u0027,\n\t\tself.client.agent.eMail,\n\t\tself.client.agent.name,\n\t\t\u0027Check angefordert von \u0027 + self.client.fullName,\n\t\tmailContent\n\t);\n\n\tStructr.call(\u0027addLogEvent\u0027, \u0027eventType\u0027, \u0027requestcheck\u0027, \u0027context\u0027, self.client.name);\n\t\n}"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\t// recurse into client documents\n\tStructr.this.clientDocuments.forEach(function(doc) {\n\t\tdoc.updatePermissions(params);\n\t});\n\n\t// recurse into document versions\n\tStructr.this.insurances.forEach(function(insurance) {\n\t\tinsurance.updatePermissions(params);\n\t});\n}"
+        }
+      },
+      "properties": {
+        "accessAllowed": {
+          "indexed": true,
+          "type": "boolean"
+        },
+        "accessAllowedLast": {
+          "indexed": true,
+          "type": "boolean"
+        },
+        "client": {
+          "$link": "#/definitions/ClientHASClientFolder",
+          "$ref": "#/definitions/Client",
+          "type": "object"
+        },
+        "clientDocuments": {
+          "$link": "#/definitions/ClientFolderCONTAINSClientDocument",
+          "items": {
+            "$ref": "#/definitions/ClientDocument"
+          },
+          "type": "array"
+        },
+        "insurances": {
+          "$link": "#/definitions/ClientFolderCONTAINSInsurance",
+          "items": {
+            "$ref": "#/definitions/Insurance"
+          },
+          "type": "array"
+        },
+        "lastAccessed": {
+          "format": "date-time",
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "accessAllowed",
+          "accessAllowedLast",
+          "lastAccessed"
+        ]
+      }
+    },
+    "ClientFolderCONTAINSClientDocument": {
+      "$source": "#/definitions/ClientFolder",
+      "$target": "#/definitions/ClientDocument",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "CONTAINS",
+      "sourceName": "clientFolder",
+      "targetName": "clientDocuments",
+      "type": "object"
+    },
+    "ClientFolderCONTAINSInsurance": {
+      "$source": "#/definitions/ClientFolder",
+      "$target": "#/definitions/Insurance",
+      "cardinality": "OneToMany",
+      "rel": "CONTAINS",
+      "sourceName": "clientFolder",
+      "targetName": "insurances",
+      "type": "object"
+    },
+    "ClientHADArchivedConsultingFolder": {
+      "$source": "#/definitions/Client",
+      "$target": "#/definitions/ArchivedConsultingFolder",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "HAD",
+      "sourceName": "belongedToClient",
+      "targetName": "archivedConsultingFolders",
+      "type": "object"
+    },
+    "ClientHASClientFolder": {
+      "$source": "#/definitions/Client",
+      "$target": "#/definitions/ClientFolder",
+      "cardinality": "OneToOne",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "HAS",
+      "sourceName": "client",
+      "targetName": "clientFolder",
+      "type": "object"
+    },
+    "ClientINVENTORYInventoryItem": {
+      "$source": "#/definitions/Client",
+      "$target": "#/definitions/InventoryItem",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "INVENTORY",
+      "sourceName": "client",
+      "targetName": "inventoryItems",
+      "type": "object"
+    },
+    "Consultation": {
+      "methods": {
+        "onCreate": {
+          "comment": "",
+          "source": "(\n\tcopy_permissions(this.client, this),\n\n\tif(this.requestedByClient, send_plaintext_mail(\n\t\t\u0027kundenservice@z-kit.de\u0027,\n\t\t\u0027Z-Kit Benachrichtigungsservice\u0027,\n\t\tthis.agent.eMail,\n\t\tthis.agent.name,\n\t\tconcat(\u0027Neuer Beratungstermin angefordert für \u0027, date_format(this.date, \u0027dd.MM.yyyy\u0027), \u0027 von \u0027, this.client.fullName),\n\t\tconcat(this.client.fullName,\n\t\t\t\u0027 hat einen neuen Beratungstermin angefordert für \u0027,\n\t\t\tdate_format(this.date, \u0027dd.MM.yyyy\u0027),\n\t\t\t\u0027.\\n\\nKommentare:\\n\u0027,\n\t\t\tthis.comments,\n\t\t\t\u0027\\n\\nDetails siehe https://z-kit.de/beratungen/\u0027,\n\t\t\tthis.client.clientFolder.id\n\t\t)\n\t), null)\n)"
+        },
+        "onSave": {
+          "comment": "",
+          "source": "copy_permissions(this.client, this)"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\t// recurse into appointments\n\tStructr.this.appointments.forEach(function(appointment) {\n\t\tappointment.updatePermissions(params);\n\t});\n\n\t// recurse into document versions\n\tStructr.this.consultingFolder.updatePermissions(params);\n}"
+        }
+      },
+      "properties": {
+        "agent": {
+          "$link": "#/definitions/AgentPLANSConsultation",
+          "$ref": "#/definitions/Agent",
+          "type": "object"
+        },
+        "appointments": {
+          "$link": "#/definitions/ConsultationAPPOINTMENTConsultingAppointment",
+          "items": {
+            "$ref": "#/definitions/ConsultingAppointment"
+          },
+          "type": "array"
+        },
+        "client": {
+          "$link": "#/definitions/ConsultationIS_FORClient",
+          "$ref": "#/definitions/Client",
+          "type": "object"
+        },
+        "comments": {
+          "contentType": "",
+          "default": "",
+          "format": "multi-line",
+          "type": "string"
+        },
+        "consultingFolder": {
+          "$link": "#/definitions/ConsultationHASConsultingFolder",
+          "$ref": "#/definitions/ConsultingFolder",
+          "type": "object"
+        },
+        "relatedClientDocuments": {
+          "$link": "#/definitions/ConsultationIS_RELATEDClientDocument",
+          "items": {
+            "$ref": "#/definitions/ClientDocument"
+          },
+          "type": "array"
+        },
+        "requestedByClient": {
+          "indexed": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "comments",
+          "requestedByClient"
+        ]
+      }
+    },
+    "ConsultationAPPOINTMENTConsultingAppointment": {
+      "$source": "#/definitions/Consultation",
+      "$target": "#/definitions/ConsultingAppointment",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "APPOINTMENT",
+      "sourceName": "consultation",
+      "targetName": "appointments",
+      "type": "object"
+    },
+    "ConsultationHASConsultingFolder": {
+      "$source": "#/definitions/Consultation",
+      "$target": "#/definitions/ConsultingFolder",
+      "cardinality": "OneToOne",
+      "rel": "HAS",
+      "sourceName": "consultation",
+      "targetName": "consultingFolder",
+      "type": "object"
+    },
+    "ConsultationIS_FORClient": {
+      "$source": "#/definitions/Consultation",
+      "$target": "#/definitions/Client",
+      "cardinality": "ManyToOne",
+      "cascade": {
+        "delete": "targetToSource"
+      },
+      "rel": "IS_FOR",
+      "sourceName": "consultations",
+      "targetName": "client",
+      "type": "object"
+    },
+    "ConsultationIS_RELATEDClientDocument": {
+      "$source": "#/definitions/Consultation",
+      "$target": "#/definitions/ClientDocument",
+      "cardinality": "OneToMany",
+      "rel": "IS_RELATED",
+      "sourceName": "consultation",
+      "targetName": "relatedClientDocuments",
+      "type": "object"
+    },
+    "ConsultingAppointment": {
+      "methods": {
+        "onCreate": {
+          "comment": "",
+          "source": "copy_permissions(this.consultation.client, this)\n"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n}"
+        }
+      },
+      "properties": {
+        "consultation": {
+          "$link": "#/definitions/ConsultationAPPOINTMENTConsultingAppointment",
+          "$ref": "#/definitions/Consultation",
+          "type": "object"
+        },
+        "date": {
+          "datePattern": "dd.MM.yyyy",
+          "default": "",
+          "format": "date-time",
+          "indexed": true,
+          "type": "string"
+        },
+        "showOnFrontPage": {
+          "indexed": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "date",
+          "showOnFrontPage"
+        ]
+      }
+    },
+    "ConsultingDocument": {
+      "methods": {
+        "onCreate01": {
+          "comment": "",
+          "source": "(\n\tif(empty(this.name), set(this, \u0027name\u0027, first(this.versions).file.name), null),\n\tset(this, \u0027title\u0027, first(split(this.name, \u0027.\u0027))),\n)"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\t// recurse into document versions\n\tStructr.this.versions.forEach(function(version) {\n\t\tversion.updatePermissions(params);\n\t});\n}"
+        }
+      },
+      "properties": {
+        "currentVersion": {
+          "$link": "#/definitions/ConsultingDocumentCURRENTDocumentVersion",
+          "$ref": "#/definitions/DocumentVersion",
+          "type": "object"
+        },
+        "description": {
+          "contentType": "",
+          "default": "",
+          "format": "multi-line",
+          "type": "string"
+        },
+        "documentReferences": {
+          "$link": "#/definitions/DocumentReferenceREFERENCESConsultingDocument",
+          "items": {
+            "$ref": "#/definitions/DocumentReference"
+          },
+          "type": "array"
+        },
+        "iconClass": {
+          "indexed": true,
+          "readFunction": "{\n\t\tvar file \u003d Structr.this;\n\t\tvar fileName \u003d file.name;\n\t\tvar contentType \u003d Structr.this.contentType;\n\n\t\tvar result \u003d \u0027fa-file-o\u0027;\n\n\t\tif (contentType) {\n\n\t\t\tswitch (contentType) {\n\n\t\t\t\tcase \u0027text/plain\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-file-text-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/pdf\u0027:\n\t\t\t\tcase \u0027application/postscript\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-file-pdf-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/x-pem-key\u0027:\n\t\t\t\tcase \u0027application/pkix-cert+pem\u0027:\n\t\t\t\tcase \u0027application/x-iwork-keynote-sffkey\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-key\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/x-trash\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-trash-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/octet-stream\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-terminal\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/x-shellscript\u0027:\n\t\t\t\tcase \u0027application/javascript\u0027:\n\t\t\t\tcase \u0027application/xml\u0027:\n\t\t\t\tcase \u0027text/html\u0027:\n\t\t\t\tcase \u0027text/xml\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-file-code-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/java-archive\u0027:\n\t\t\t\tcase \u0027application/zip\u0027:\n\t\t\t\tcase \u0027application/rar\u0027:\n\t\t\t\tcase \u0027application/x-bzip\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-file-archive-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/vnd.openxmlformats-officedocument.wordprocessingml.document\u0027:\n\t\t\t\tcase \u0027application/vnd.oasis.opendocument.text\u0027:\n\t\t\t\tcase \u0027application/msword\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-file-word-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\u0027:\n\t\t\t\tcase \u0027application/vnd.oasis.opendocument.spreadsheet\u0027:\n\t\t\t\tcase \u0027application/vnd.ms-excel\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-file-excel-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/vnd.openxmlformats-officedocument.presentationml.presentation\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-file-powerpoint-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027image/jpeg\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-picture-o\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase \u0027application/vnd.oasis.opendocument.chart\u0027:\n\t\t\t\t\tresult \u003d \u0027fa-line-chart\u0027;\n\t\t\t\t\tbreak;\n\n\t\t\t\tdefault:\n\t\t\t\t\tif (contentType.indexOf(\u0027image/\u0027) \u003d\u003d\u003d 0) {\n\t\t\t\t\t\tresult \u003d \u0027fa-file-image-o\u0027;\n\t\t\t\t\t} else if (contentType.indexOf(\u0027text/\u0027) \u003d\u003d\u003d 0) {\n\t\t\t\t\t\tresult \u003d \u0027fa-file-text-o\u0027;\n\t\t\t\t\t}\n\t\t\t}\n\n\t\t\tif (fileName \u0026\u0026 fileName.indexOf(\u0027.\u0027) \u003e\u003d 0) {\n\n\t\t\t\tvar fileExtensionPosition \u003d fileName.lastIndexOf(\u0027.\u0027) + 1;\n\t\t\t\tvar fileExtension \u003d fileName.substring(fileExtensionPosition);\n\n\t\t\t\t// add file extension css class to control colors\n\t\t\t\tresult \u003d fileExtension + \u0027 \u0027 + result;\n\t\t\t}\n\t\t}\n\n\t\treturn \u0027fa \u0027 + result;\n}",
+          "type": "function"
+        },
+        "insuranceType": {
+          "$link": "#/definitions/ConsultingDocumentGETS_COPIED_TOInsuranceType",
+          "$ref": "#/definitions/InsuranceType",
+          "type": "object"
+        },
+        "lastUpdatedFromEmail": {
+          "datePattern": "",
+          "default": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "title": {
+          "indexed": true,
+          "type": "string"
+        },
+        "updatedFromEmail": {
+          "indexed": true,
+          "type": "boolean"
+        },
+        "versions": {
+          "$link": "#/definitions/ConsultingDocumentVERSIONDocumentVersion",
+          "items": {
+            "$ref": "#/definitions/DocumentVersion"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "views": {
+        "template": [
+          "id",
+          "name"
+        ],
+        "ui": [
+          "description",
+          "iconClass",
+          "lastUpdatedFromEmail",
+          "title",
+          "updatedFromEmail"
+        ]
+      }
+    },
+    "ConsultingDocumentCURRENTDocumentVersion": {
+      "$source": "#/definitions/ConsultingDocument",
+      "$target": "#/definitions/DocumentVersion",
+      "cardinality": "OneToOne",
+      "rel": "CURRENT",
+      "sourceName": "consultingDocumentCurrent",
+      "targetName": "currentVersion",
+      "type": "object"
+    },
+    "ConsultingDocumentGETS_COPIED_TOInsuranceType": {
+      "$source": "#/definitions/ConsultingDocument",
+      "$target": "#/definitions/InsuranceType",
+      "cardinality": "ManyToOne",
+      "rel": "GETS_COPIED_TO",
+      "sourceName": "consultingDocument",
+      "targetName": "insuranceType",
+      "type": "object"
+    },
+    "ConsultingDocumentVERSIONDocumentVersion": {
+      "$source": "#/definitions/ConsultingDocument",
+      "$target": "#/definitions/DocumentVersion",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "VERSION",
+      "sourceName": "consultingDocument",
+      "targetName": "versions",
+      "type": "object"
+    },
+    "ConsultingFolder": {
+      "$extends": "#/definitions/ConsultingFolderTemplate",
+      "methods": {
+        "archiveConsultingFolder": {
+          "comment": "Archives the consulting folder - setting additional text information (param \"comments\")",
+          "source": "{\n\tvar self \u003d Structr.this;\n\n\tif (self.type !\u003d\u003d \u0027ConsultingFolder\u0027) {\n\t\treturn;\n\t}\n\t\n\tvar comments \u003d Structr.retrieve(\u0027comments\u0027);\n\tvar client \u003d self.client;\n\t\n\tvar currentDate \u003d Structr.get(\u0027now\u0027);\n\t\n\tvar archiveDate \u003d Structr.date_format(currentDate, \u0027yyyy-MM-dd HH:mm\u0027);\n\t\n\tself.name \u003d self.name + \u0027 (Archiviert \u0027 + archiveDate + \u0027)\u0027;\n\tself.showOnFrontPage \u003d false;\n\t\n\tStructr.unlock_system_properties_once(self);\n\tself.type \u003d \u0027ArchivedConsultingFolder\u0027;\n\t\n\tself.client \u003d null;\n\t\n\tvar newEl \u003d Structr.find(\u0027ArchivedConsultingFolder\u0027, self.id);\n\t\n\tnewEl.comments \u003d comments;\n\tnewEl.belongedToClient \u003d client;\n\tnewEl.archiveDate \u003d new Date();\n}"
+        },
+        "assignAgent": {
+          "comment": "",
+          "source": "{\n\tvar me \u003d Structr.me;\n\tvar consultingFolder \u003d Structr.this;\n\t\n\n\tvar agentId \u003d Structr.retrieve(\u0027agent\u0027);\n\tvar agent \u003d Structr.find(\u0027Agent\u0027, agentId);\n\tvar comment \u003d Structr.retrieve(\u0027comment\u0027);\n\t\n\tif (agent !\u003d null) {\n\t\tconsultingFolder.agent \u003d agent;\n\t\t\n\t\tvar tObj \u003d new org.structr.core.GraphObjectMap();\n\t\t\t\n\t\tStructr.set(tObj, \u0027client\u0027,\u0027\u0027);\n\t\t\n\t\tif(consultingFolder.client !\u003d null){\n\t\t\tStructr.set(tObj,\u0027client\u0027,consultingFolder.client.name);\n\t\t} else if(consultingFolder.belongedToClient !\u003d null){\n\t\t\tStructr.set(tObj,\u0027client\u0027,consultingFolder.belongedToClient.name);\n\t\t}\n\t\t\n\t\t\n\t\tStructr.set(tObj,\u0027id\u0027,consultingFolder.id);\n\t\tStructr.set(tObj,\u0027comment\u0027,comment);\n\t\t\n\t\tif(agent.eMail !\u003d null){\n\t\t\n\t\t\tStructr.send_html_mail(\n\t\t\t\tStructr.template(\u0027assignAgentMail-senderMail\u0027, \u0027de\u0027, me),\n\t\t\t\tme.name,\n\t\t\t\tagent.eMail,\n\t\t\t\tagent.name,\n\t\t\t\t\u0027Ihnen wurde eine Beratungsmappe zugewiesen\u0027,\n\t\t\t\tStructr.template(\u0027assignAgentMail-html\u0027, \u0027de\u0027, tObj),\n\t\t\t\tStructr.template(\u0027assignAgentMail-text\u0027, \u0027de\u0027, tObj)\n\t\t\t);\n\t\t\t\n\t\t} else {\n\t\t\n\t\t\tStructr.log(\u0027Assigned new agent to ConsultingFolder (\u0027 + consultingFolder.id + \u0027) without e-mail.\u0027);\n\t\t\t\n\t\t}\n\n\t} else {\n\t\tStructr.log(\u0027Cant assign agent (\u0027 + agentId + \u0027) to ConsultingFolder (\u0027 + consultingFolder.id + \u0027)\u0027);\n\t}\t\n}"
+        },
+        "onCreate01": {
+          "comment": "",
+          "source": "(\n\tset(this, \u0027name\u0027, this.consultation.client.name),\n\tcopy_permissions(this.consultation, this)\n)"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\tStructr.this.checklist.updatePermissions(params);\n}"
+        }
+      },
+      "properties": {
+        "checklist": {
+          "$link": "#/definitions/ConsultingFolderHASChecklist",
+          "$ref": "#/definitions/Checklist",
+          "type": "object"
+        },
+        "consultation": {
+          "$link": "#/definitions/ConsultationHASConsultingFolder",
+          "$ref": "#/definitions/Consultation",
+          "type": "object"
+        },
+        "presented": {
+          "format": "date-time",
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "presented"
+        ]
+      }
+    },
+    "ConsultingFolderHASChecklist": {
+      "$source": "#/definitions/ConsultingFolder",
+      "$target": "#/definitions/Checklist",
+      "cardinality": "OneToOne",
+      "rel": "HAS",
+      "sourceName": "consultingFolder",
+      "targetName": "checklist",
+      "type": "object"
+    },
+    "ConsultingFolderSection": {
+      "methods": {
+        "createDeepCopy": {
+          "comment": "creates a deep copy of the folder section",
+          "source": "{\n\tvar thisSection                \u003d Structr.this;\n\tvar params                     \u003d Structr.retrieve(\u0027params\u0027);\n\tvar newConsultingFolderSection \u003d Structr.create(\u0027ConsultingFolderSection\u0027, {\n\t\tname: thisSection.name,\n\t\tparent: params.parent,\n\t\tposition: thisSection.position\n\t});\n\n\tvar newSectionParams \u003d {\n\t\tparent: newConsultingFolderSection\n\t};\n\t\n\t// create new document references\n\tif (thisSection.documentReferences \u0026\u0026 thisSection.documentReferences.length \u003e 0) {\n\n\t\tthisSection.documentReferences.forEach(function(reference) {\n\t\t\t\n\t\t\tvar newReference \u003d Structr.create(\u0027DocumentReference\u0027, {\n\t\t\t\tname: reference.name,\n\t\t\t\ttitle: reference.title,\n\t\t\t\tversion: reference.version,\n\t\t\t\tdescription: reference.description,\n\t\t\t\tconsultingDocument: reference.consultingDocument,\n\t\t\t\tconsultingFolderSection: newConsultingFolderSection\n\t\t\t});\n\t\t});\n\t}\n\n\t// clone subsections\n\tif (thisSection.sections \u0026\u0026 thisSection.sections.length \u003e 0) {\n\t\tthisSection.sections.forEach(function(otherSection) {\n\n\t\t\tvar sec \u003d otherSection.createDeepCopy({ params: newSectionParams });\n\t\t\tnewConsultingFolderSection.sections.push(sec);\n\n\t\t});\n\t}\n\t\t\n\treturn newConsultingFolderSection;\n}\n"
+        },
+        "moveDown": {
+          "comment": "INcrements the current position by one\nif another element has that position, it is DEcremented by one",
+          "source": "(\n\teach(\n\t\tthis.parent.sections, \n\t\tif (\n\t\t\teq(data.position, add(this.position, 1)),\n\t\t\tset(data, \u0027position\u0027, subt(data.position, 1)),\n\t\t\t()\n\t\t)\n\t),\n\tset(this, \u0027position\u0027, add(this.position, 1))\n)"
+        },
+        "moveUp": {
+          "comment": "DEcrements the current position by one\nif another element has that position, it is INcremented by one",
+          "source": "(\n\teach(\n\t\tthis.parent.sections, \n\t\tif (\n\t\t\teq(data.position, subt(this.position, 1)),\n\t\t\tset(data, \u0027position\u0027, add(data.position, 1)),\n\t\t\t()\n\t\t)\n\t),\n\tset(this, \u0027position\u0027, subt(this.position, 1))\n)"
+        },
+        "onCreate01": {
+          "comment": "initializes the position of the section with at the end of the list",
+          "source": "(\n\tset(this, \u0027position\u0027, size(this.parent.sections)),\n\tthis.reindexLevel(),\n\tcopy_permissions(this.rootSection.consultation, this)\n)"
+        },
+        "reindexLevel": {
+          "comment": "reindexes the current level by sorting it and then resetting the positions",
+          "source": "each(\n\tsort(this.parent.sections, \u0027position\u0027),\n\t(\n\t\tset(data, \u0027position\u0027, get_counter(0)),\n\t\tinc_counter(0)\n\t)\n)"
+        },
+        "removeDocument": {
+          "comment": "",
+          "source": "set(this, \u0027consultingDocuments\u0027, filter(this.consultingDocuments, not(eq(data.id, retrieve(\u0027documentId\u0027)))))"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\t// recurse into sections\n\tStructr.this.sections.forEach(function(section) {\n\t\tsection.updatePermissions(params);\n\t});\n\n\t// recurse into document versions\n\tStructr.this.documentReferences.forEach(function(reference) {\n\t\treference.updatePermissions(params);\n\t});\n}"
+        }
+      },
+      "properties": {
+        "documentReferences": {
+          "$link": "#/definitions/ConsultingFolderSectionHASDocumentReference",
+          "items": {
+            "$ref": "#/definitions/DocumentReference"
+          },
+          "type": "array"
+        },
+        "isFirst": {
+          "indexed": true,
+          "readFunction": "eq(\n\t0,\n\tsize(\n\t\tfilter(this.parent.sections, lt(data.position, this.position))\n\t)\n)",
+          "type": "function"
+        },
+        "isLast": {
+          "indexed": true,
+          "readFunction": "eq(\n\t0,\n\tsize(\n\t\tfilter(this.parent.sections, gt(data.position, this.position))\n\t)\n)",
+          "type": "function"
+        },
+        "parent": {
+          "$link": "#/definitions/ConsultingFolderSectionCONTAINSConsultingFolderSection",
+          "$ref": "#/definitions/ConsultingFolderSection",
+          "type": "object"
+        },
+        "position": {
+          "default": "0",
+          "indexed": true,
+          "type": "integer"
+        },
+        "rootSection": {
+          "indexed": true,
+          "readFunction": "if(empty(this.parent), this, this.parent.rootSection)",
+          "type": "function"
+        },
+        "sections": {
+          "$link": "#/definitions/ConsultingFolderSectionCONTAINSConsultingFolderSection",
+          "items": {
+            "$ref": "#/definitions/ConsultingFolderSection"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "views": {
+        "public": [
+          "id",
+          "name",
+          "owner",
+          "type"
+        ],
+        "template": [
+          "id",
+          "name"
+        ],
+        "ui": [
+          "isFirst",
+          "isLast",
+          "position",
+          "rootSection"
+        ]
+      }
+    },
+    "ConsultingFolderSectionCONTAINSConsultingFolderSection": {
+      "$source": "#/definitions/ConsultingFolderSection",
+      "$target": "#/definitions/ConsultingFolderSection",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "CONTAINS",
+      "sourceName": "parent",
+      "targetName": "sections",
+      "type": "object"
+    },
+    "ConsultingFolderSectionHASDocumentReference": {
+      "$source": "#/definitions/ConsultingFolderSection",
+      "$target": "#/definitions/DocumentReference",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "HAS",
+      "sourceName": "consultingFolderSection",
+      "targetName": "documentReferences",
+      "type": "object"
+    },
+    "ConsultingFolderTemplate": {
+      "$extends": "#/definitions/ConsultingFolderSection",
+      "methods": {
+        "createConsultingFolderFromTemplate": {
+          "comment": "",
+          "source": "{\n\tvar thisTemplate        \u003d Structr.this;\n\tvar consultationId      \u003d Structr.retrieve(\u0027consultationId\u0027);\n\tvar newConsultingFolder \u003d Structr.create(\u0027ConsultingFolder\u0027, {\n\t\tconsultation: consultationId\n\t});\n\n\tvar newSectionParams \u003d {\n\t\tparent: newConsultingFolder,\n\t\tname: thisTemplate.name\n\t};\n\n\tif (thisTemplate.sections \u0026\u0026 thisTemplate.sections.length \u003e 0) {\n\t\tthisTemplate.sections.forEach(function(otherSection) {\n\n\t\t\tvar sec \u003d otherSection.createDeepCopy({ params: newSectionParams });\n\t\t\tnewConsultingFolder.sections.push(sec);\n\n\t\t});\n\t}\n\n\treturn newConsultingFolder;\n}"
+        },
+        "createConsultingFolderFromTemplates": {
+          "comment": "Erstellt aus mehr als einem\nTemplate eine neue Beratungsmappe. ",
+          "source": "{\n\tvar thisTemplate        \u003d Structr.this;\n\tvar consultationId      \u003d Structr.retrieve(\u0027consultationId\u0027);\n\tvar templateIds\t\t\t\u003d Structr.retrieve(\u0027templates\u0027);\n\tvar templates \u003d [];\n\t\n\t// get the templates for each id\n\ttemplateIds.forEach(function(id){\n\t\ttemplates.push(Structr.find(\u0027ConsultingFolderTemplate\u0027, id));\n\t});\t\n\t\n\t// create new consultation folder\n\tvar newConsultingFolder \u003d Structr.create(\u0027ConsultingFolder\u0027, {\n\t\tconsultation: consultationId\n\t});\n\t\n\ttemplates.forEach(function(template) {\n\t\tif (template.sections \u0026\u0026 template.sections.length \u003e 0) {\n\t\t\ttemplate.sections.forEach(function(otherSection) {\n\t\t\t\t\n\t\t\t\tvar newSectionParams \u003d {\n\t\t\t\t\tparent: newConsultingFolder,\n\t\t\t\t\tname: template.name\n\t\t\t\t};\n\t\t\t\tvar sec \u003d otherSection.createDeepCopy({ params: newSectionParams });\n\t\t\t\tnewConsultingFolder.sections.push(sec);\n\n\t\t\t});\n\t\t}\n\t});\n\n\treturn newConsultingFolder;\n}"
+        }
+      },
+      "type": "object",
+      "views": {
+        "public": [
+          "id",
+          "type"
+        ]
+      }
+    },
+    "DataFeed": {
+      "type": "object"
+    },
+    "DocumentArchive": {
+      "properties": {
+        "agent": {
+          "$link": "#/definitions/AgentMANAGESFileArchive",
+          "$ref": "#/definitions/Agent",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "DocumentReference": {
+      "methods": {
+        "copyToClientFolder": {
+          "comment": "",
+          "source": "{\n\tvar insuranceType         \u003d Structr.retrieve(\u0027insuranceType\u0027);\n\tvar insurance\t\t\t  \u003d Structr.retrieve(\u0027insurance\u0027);\n\tvar clientId              \u003d Structr.retrieve(\u0027client\u0027);\n\tvar thisDoc               \u003d Structr.this;\n\t\n\tvar client \u003d Structr.find(\u0027Client\u0027, clientId);\n\tif (client \u003d\u003d null) {\n\t\n\t\tStructr.log(\u0027Unable to copy document reference \u0027 + Structr.this.id + \u0027 to client folder, client with ID \u0027 + clientId + \u0027 not found!\u0027);\n\t\tStructr.error(422, \u0027Client with ID \u0027 + clientId + \u0027 not found.\u0027);\n\t\t\n\t} else {\n\t\t\n\t\tvar consultingFolder   \u003d thisDoc.consultingFolderSection.rootSection;\n\t\tvar consultation       \u003d consultingFolder.consultation;\n\t\t\n\t\tStructr.log(\u0027insuranceType: \u0027 + insuranceType);\n\t\tStructr.log(\u0027insurance: \u0027     + insurance);\n\t\tStructr.log(\u0027clientFolder:  \u0027 + client.clientFolder.id);\n\t\tStructr.log(\u0027consultation:  \u0027 + consultation.id);\n\t\tStructr.log(\u0027client:        \u0027 + client.id);\n\t\n\t\tvar newDocument \u003d Structr.create(\u0027ClientDocument\u0027, {\n\t\t\tdocumentVersion: thisDoc.documentVersion,\n\t\t\tclientFolder: client.clientFolder,\n\t\t\tconsultation: consultation,\n\t\t\tinsuranceType: insuranceType,\n\t\t\tinsurance: insurance,\n\t\t\ttitle: thisDoc.title,\n\t\t\tdescription: thisDoc.description\n\t\t});\n\t}\n}\n"
+        },
+        "onCreate": {
+          "comment": "",
+          "source": "(\n\tset(this, \u0027title\u0027, this.consultingDocument.currentVersion.file.nameWithoutFileExtension),\n\tcopy_permissions(this.consultingFolderSection.rootSection.consultation, this)\n)"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\t// update consulting document\n\tStructr.this.consultingDocument.updatePermissions(params);\n}"
+        }
+      },
+      "properties": {
+        "consultingDocument": {
+          "$link": "#/definitions/DocumentReferenceREFERENCESConsultingDocument",
+          "$ref": "#/definitions/ConsultingDocument",
+          "type": "object"
+        },
+        "consultingFolderSection": {
+          "$link": "#/definitions/ConsultingFolderSectionHASDocumentReference",
+          "$ref": "#/definitions/ConsultingFolderSection",
+          "type": "object"
+        },
+        "description": {
+          "indexed": true,
+          "type": "string"
+        },
+        "documentVersion": {
+          "indexed": true,
+          "readFunction": "if(empty(this.version), this.consultingDocument.currentVersion, first(filter(this.consultingDocument.versions, eq(this.version, data.version))))",
+          "type": "function"
+        },
+        "downloadName": {
+          "indexed": true,
+          "readFunction": "concat(this.documentVersion.file.nameWithoutFileExtension, \u0027_\u0027, this.id, \u0027.\u0027, this.documentVersion.file.fileExtension)",
+          "type": "function"
+        },
+        "title": {
+          "indexed": true,
+          "type": "string"
+        },
+        "version": {
+          "indexed": true,
+          "type": "integer"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "description",
+          "documentVersion",
+          "downloadName",
+          "title",
+          "version"
+        ]
+      }
+    },
+    "DocumentReferenceREFERENCESConsultingDocument": {
+      "$source": "#/definitions/DocumentReference",
+      "$target": "#/definitions/ConsultingDocument",
+      "cardinality": "ManyToOne",
+      "cascade": {
+        "delete": "targetToSource"
+      },
+      "rel": "REFERENCES",
+      "sourceName": "documentReferences",
+      "targetName": "consultingDocument",
+      "type": "object"
+    },
+    "DocumentType": {
+      "methods": {
+        "onCreate01": {
+          "comment": "",
+          "source": "set(this, \u0027visibleToAuthenticatedUsers\u0027, true)"
+        }
+      },
+      "properties": {
+        "clientDocuments": {
+          "$link": "#/definitions/ClientDocumentIS_OF_TYPEDocumentType",
+          "items": {
+            "$ref": "#/definitions/ClientDocument"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "DocumentVersion": {
+      "methods": {
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\tStructr.this.file.updatePermissions(params);\n}"
+        }
+      },
+      "properties": {
+        "clientDocumentReferences": {
+          "$link": "#/definitions/ClientDocumentREFERENCESDocumentVersion",
+          "$ref": "#/definitions/ClientDocument",
+          "type": "object"
+        },
+        "consultingDocument": {
+          "$link": "#/definitions/ConsultingDocumentVERSIONDocumentVersion",
+          "$ref": "#/definitions/ConsultingDocument",
+          "type": "object"
+        },
+        "consultingDocumentCurrent": {
+          "$link": "#/definitions/ConsultingDocumentCURRENTDocumentVersion",
+          "$ref": "#/definitions/ConsultingDocument",
+          "type": "object"
+        },
+        "file": {
+          "$link": "#/definitions/DocumentVersionFILE_REFERENCEFile",
+          "$ref": "#/definitions/File",
+          "type": "object"
+        },
+        "version": {
+          "indexed": true,
+          "type": "integer"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "version"
+        ]
+      }
+    },
+    "DocumentVersionFILE_REFERENCEFile": {
+      "$source": "#/definitions/DocumentVersion",
+      "$target": "#/definitions/File",
+      "cardinality": "OneToOne",
+      "cascade": {
+        "delete": "always"
+      },
+      "rel": "FILE_REFERENCE",
+      "sourceName": "documentVersionFileReference",
+      "targetName": "file",
+      "type": "object"
+    },
+    "FeedItem": {
+      "type": "object"
+    },
+    "FeedItemContent": {
+      "type": "object"
+    },
+    "FeedItemEnclosure": {
+      "type": "object"
+    },
+    "File": {
+      "$extends": "https://structr.org/v1.1/definitions/FileBase",
+      "methods": {
+        "createConsultingDocument": {
+          "comment": "This method is called via\nthe function property\nconsultingFolderSection.\nIf the property is\nincluded in a POST request,\nthis method will be\nexecuted.\n",
+          "source": "{\n\tvar consultingFolderSectionId \u003d Structr.retrieve(\u0027value\u0027);\n\tvar fileName                  \u003d Structr.retrieve(\u0027name\u0027);\n\tvar title                     \u003d Structr.retrieve(\u0027title\u0027);\n\tvar description               \u003d Structr.retrieve(\u0027description\u0027);\n\tvar owner                     \u003d Structr.retrieve(\u0027owner\u0027);\n\tvar documentReference         \u003d null;\n\tvar file                      \u003d Structr.this;\n\t\n\tif (owner \u003d\u003d null) {\n\t\towner \u003d Structr.me;\n\t}\n\t\n\tif (consultingFolderSectionId.length \u003d\u003d 32) {\n\t\n \t\t// create new document reference\n\t\tdocumentReference \u003d Structr.create(\u0027DocumentReference\u0027, {\n\t\t\tconsultingFolderSection: consultingFolderSectionId,\n\t\t\ttitle: title,\n\t\t\tdescription: description,\n\t\t\towner: owner\n\t\t});\n\t}\n\n\t// create new consulting document\n\tvar consultingDocument \u003d Structr.create(\u0027ConsultingDocument\u0027, {\n\t\tdocumentReferences: documentReference !\u003d null ? [ documentReference ] : null,\n\t\towner: owner\n\t});\n\n\t// create document version\n\tvar documentVersion \u003d Structr.create(\u0027DocumentVersion\u0027, {\n\t\tversion: 1,\n\t\tfile: file,\n\t\tconsultingDocumentCurrent: consultingDocument,\n\t\tconsultingDocument: consultingDocument,\n\t\towner: owner\n\t});\n\t\n\tfile.owner \u003d owner;\n\tfile.name \u003d fileName;\n}"
+        },
+        "createInsuranceAttachment": {
+          "comment": "This method is called via\nthe function property\ninsurance.\nIf the property is\nincluded in a POST request,\nthis method will be\nexecuted.",
+          "source": "{\n\tvar insuranceId \u003d Structr.retrieve(\u0027insuranceId\u0027);\n\t\n\t// the insurance object contains all information we need\n\t// to create a ClientDocument for this file and link it.\n\t\n\tvar insurance \u003d Structr.find(\u0027Insurance\u0027, insuranceId);\n\tif (insurance !\u003d null) {\n\t\t\n\t\tvar documentVersion \u003d Structr.create(\u0027DocumentVersion\u0027, {\n\t\t\tfile: Structr.this\n\t\t});\n\t\t\n\t\tvar clientDocument \u003d Structr.create(\u0027ClientDocument\u0027, {\n\t\t\tclientFolder: insurance.clientFolder,\n\t\t\tinsurance: insurance,\n\t\t\tdocumentVersion: documentVersion,\n\t\t\tname: Structr.this.name,\n\t\t\ttitle: Structr.this.nameWithoutFileExtension\n\t\t});\n\t\t\n\t} else {\n\t\t\n\t\tStructr.log(\u0027No insurance found for ID \u0027 + insuranceId);\n\t}\n}"
+        },
+        "createNewVersion": {
+          "comment": "This method is called via\nthe function property\nnewVersionRequested.\nIf the property is\nincluded in a POST request,\nthis method will be\nexecuted.\n",
+          "source": "{\n\tvar referenceId \u003d Structr.retrieve(\u0027value\u0027);\n\tvar reference   \u003d Structr.find(\u0027DocumentReference\u0027, referenceId);\n\t\n\tif (reference !\u003d null) {\n\t\t\n\t\tvar doc               \u003d reference.consultingDocument;\n\t\tvar currentVersion    \u003d doc.currentVersion;\n\t\tvar nextVersionNumber \u003d currentVersion.version + 1;\n\t\t\n\t\tStructr.create(\u0027DocumentVersion\u0027, {\n\t\t\tversion: nextVersionNumber,\n\t\t\tconsultingDocument: doc,\n\t\t\tconsultingDocumentCurrent: doc,\n\t\t\tfile: Structr.this\n\t\t});\n\t\t\n\t} else {\n\t\t\n\t\tStructr.log(\u0027Reference with ID \u0027 + referenceId + \u0027 NOT found!\u0027);\n\t}\n\t\n}"
+        },
+        "updateContentFromUpload": {
+          "comment": "",
+          "source": "{\n\tvar regex \u003d new RegExp(\u0027_[0-9a-f]{32}\u0027);\n\tvar match \u003d regex.exec(Structr.this.nameWithoutFileExtension);\n\t\n\tif (match \u0026\u0026 match.length) {\n\t\t\n\t\tvar referenceId \u003d match[0].substring(1);\n\t\tvar reference   \u003d Structr.find(\u0027DocumentReference\u0027, referenceId);\n\t\t\n\t\tStructr.log(\u0027Reference: \u0027 + reference.id);\n\t\t\n\t\tif (Structr.this.email !\u003d null) {\n\t\t\tStructr.this.email.referenceId \u003d referenceId\n\t\t}\n\t\n\t\tif (reference !\u003d null) {\n\t\t\t\n\t\t\tvar name \u003d \u0027Kopie von \u0027 + reference.documentVersion.file.name;\n\t\t\tvar date  \u003d Structr.dateFormat(Structr.this.createdDate, \u0027dd.MM.yyyy, HH:mm\u0027);\n\t\n\t\t\t// create a new consulting document and reference for this file and\n\t\t\t// copy the consulting folder section to link it next to the original file\n\t\t\tStructr.this.createConsultingDocument({\n\t\t\t\tvalue: reference.consultingFolderSection.id,\n\t\t\t\towner: reference.owner,\n\t\t\t\tname: name,\n\t\t\t\ttitle: Structr.this.email.subject,\n\t\t\t\tdescription: Structr.this.email.text\n\t\t\t});\n\t\t\n\t\t} else {\n\t\t\n\t\t\tStructr.log(\u0027Unable to find document with UUID \u0027 + originalUuid + \u0027, cannot replace contents.\u0027);\n\t\t}\n\t\t\n\t} else {\n\t\t\n\t\tStructr.log(\u0027Unable to extract UUID from source string \u0027 + Structr.this.nameWithoutFileExtension);\n\t}\n}\n"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n}"
+        }
+      },
+      "properties": {
+        "consultingFolderSection": {
+          "indexed": true,
+          "readFunction": "\u0027\u0027",
+          "type": "function",
+          "writeFunction": "{\n\tStructr.this.createConsultingDocument({ value: Structr.get(\u0027value\u0027)});\n}"
+        },
+        "description": {
+          "indexed": true,
+          "type": "string"
+        },
+        "documentVersionFileReference": {
+          "$link": "#/definitions/DocumentVersionFILE_REFERENCEFile",
+          "$ref": "#/definitions/DocumentVersion",
+          "type": "object"
+        },
+        "email": {
+          "$link": "#/definitions/ReceivedEmailATTACHMENTFile",
+          "$ref": "#/definitions/ReceivedEmail",
+          "type": "object"
+        },
+        "fileExtension": {
+          "indexed": true,
+          "readFunction": "last(split(this.name, \u0027.\u0027))",
+          "type": "function"
+        },
+        "insurance": {
+          "indexed": true,
+          "readFunction": "\u0027\u0027",
+          "type": "function",
+          "writeFunction": "{\n\tvar value \u003d Structr.get(\u0027value\u0027);\n\tStructr.log(\u0027value: \u0027 + value);\n\tStructr.this.createInsuranceAttachment({ insuranceId: value });\n}"
+        },
+        "inventoryFileItem": {
+          "$link": "#/definitions/InventoryItemINVENTORY_FILEFile",
+          "$ref": "#/definitions/InventoryItem",
+          "type": "object"
+        },
+        "nameWithoutFileExtension": {
+          "default": "",
+          "indexed": true,
+          "readFunction": "join(filter(split(this.name, \u0027.\u0027), not(equal(data, this.fileExtension))), \u0027\u0027)",
+          "type": "function"
+        },
+        "newVersionRequested": {
+          "default": "",
+          "indexed": true,
+          "readFunction": "\u0027\u0027",
+          "type": "function",
+          "writeFunction": "{\n\tStructr.this.createNewVersion({value: Structr.get(\u0027value\u0027)});\n}"
+        },
+        "title": {
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "consultingFolderSection",
+          "description",
+          "fileExtension",
+          "insurance",
+          "nameWithoutFileExtension",
+          "newVersionRequested",
+          "title"
+        ]
+      }
+    },
+    "Folder": {
+      "$extends": "https://structr.org/v1.1/definitions/Folder",
+      "methods": {
+        "updateNameForConsultingFolder": {
+          "comment": "",
+          "source": "{\n\t\n\tvar self \u003d Structr.this;\n\n\tvar folder \u003d self.consultingFolder;\n\tif(folder !\u003d null \u0026\u0026 folder.name !\u003d null){\n\t\tvar name \u003d folder.name;\n\t\tself.name \u003d Structr.concat(name,\u0027-\u0027,self.id);\n\t} else {\n\t\tself.name \u003d self.id;\n\t}\t\n\n}"
+        }
+      },
+      "type": "object"
+    },
+    "Group": {
+      "$extends": "https://structr.org/v1.1/definitions/Group",
+      "properties": {
+        "isAgencyGroup": {
+          "indexed": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "isAgencyGroup"
+        ]
+      }
+    },
+    "Helper": {
+      "methods": {
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tvar targetId \u003d Structr.retrieve(\u0027target\u0027);\n\tvar target   \u003d Structr.find(\u0027AbstractNode\u0027, targetId);\n\n\tif (target !\u003d null \u0026\u0026 typeof target.updatePermissions \u003d\u003d\u003d \u0027function\u0027) {\n\n\t\tvar params \u003d {\n\t\t\ttarget: Structr.retrieve(\u0027target\u0027),\n\t\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t\t};\n\n\t\ttarget.updatePermissions(params);\n\t\t\n\t} else {\n\t\t\n\t\tStructr.log(\u0027Target with ID \u0027 + targetId + \u0027 is null or has no updatePermissions function.\u0027);\n\t}\n}\n"
+        }
+      },
+      "type": "object"
+    },
+    "Image": {
+      "$extends": "https://structr.org/v1.1/definitions/Image",
+      "methods": {
+        "onCreate01": {
+          "comment": "Make User images visible to authenticated users",
+          "source": "(\n\tif (\n\t\tempty(this.user),\n\t\t(),\n\t\tset(this, \u0027visibleToAuthenticatedUsers\u0027, true)\n\t)\n)"
+        }
+      },
+      "properties": {
+        "inventoryImageItem": {
+          "$link": "#/definitions/InventoryItemINVENTORY_IMAGEImage",
+          "$ref": "#/definitions/InventoryItem",
+          "type": "object"
+        },
+        "user": {
+          "$link": "#/definitions/ImagePICTURE_OFUser",
+          "$ref": "#/definitions/User",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "ImagePICTURE_OFUser": {
+      "$source": "#/definitions/Image",
+      "$target": "#/definitions/User",
+      "aclReadMask": "Add",
+      "aclResolution": "In",
+      "cardinality": "OneToOne",
+      "cascade": {
+        "delete": "targetToSource"
+      },
+      "rel": "PICTURE_OF",
+      "sourceName": "img",
+      "targetName": "user",
+      "type": "object"
+    },
+    "Insurance": {
+      "methods": {
+        "onCreate": {
+          "comment": "",
+          "source": "(\n\tset(this, \u0027name\u0027, concat(this.subType.name, \u0027-\u0027, this.clientFolder.client.name)),\n\tgrant(this.clientFolder.client, this, \u0027read, write\u0027),\n\tcopy_permissions(this.clientFolder.client, this)\n)"
+        },
+        "onSave": {
+          "comment": "",
+          "source": "(\nset(this, \u0027name\u0027, concat(this.subType.name, \u0027-\u0027, this.clientFolder.client.name)),\n)"
+        },
+        "updatePermissions": {
+          "comment": "",
+          "source": "{\n\tStructr.includeJs(\u0027backend-helper.js\u0027);\n\t\n\tvar params \u003d {\n\t\taction: Structr.retrieve(\u0027action\u0027),\n\t\tprincipal: Structr.retrieve(\u0027principal\u0027),\n\t\tpermissions: Structr.retrieve(\u0027permissions\u0027)\n\t};\n\n\t// set permissions on object\n\tsetObjectPermissions(\n\t\tStructr.this,\n\t\tparams.action,\n\t\tparams.principal,\n\t\tparams.permissions\n\t);\n\t\n\t/*\n\t// recurse into sections\n\tStructr.this.sections.forEach(function(section) {\n\t\tsection.updatePermissions(params);\n\t});\n\n\t// recurse into document versions\n\tStructr.this.documentReferences.forEach(function(reference) {\n\t\treference.updatePermissions(params);\n\t});\n\t*/\n}"
+        }
+      },
+      "properties": {
+        "amount": {
+          "default": "",
+          "indexed": true,
+          "readFunction": "quot(this.amountCents, 100)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027amountCents\u0027, round(round(mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100), 2)))"
+        },
+        "amountCents": {
+          "indexed": true,
+          "type": "long"
+        },
+        "attachments": {
+          "$link": "#/definitions/InsuranceCONTAINSClientDocument",
+          "items": {
+            "$ref": "#/definitions/ClientDocument"
+          },
+          "type": "array"
+        },
+        "baseSum": {
+          "default": "",
+          "indexed": true,
+          "readFunction": "quot(this.baseSumCents, 100)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027baseSumCents\u0027, round(round(mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100), 2)))"
+        },
+        "baseSumCents": {
+          "indexed": true,
+          "type": "long"
+        },
+        "clientFolder": {
+          "$link": "#/definitions/ClientFolderCONTAINSInsurance",
+          "$ref": "#/definitions/ClientFolder",
+          "type": "object"
+        },
+        "company": {
+          "$link": "#/definitions/InsuranceCompanyOFFERSInsurance",
+          "$ref": "#/definitions/InsuranceCompany",
+          "type": "object"
+        },
+        "deductible": {
+          "default": "",
+          "indexed": true,
+          "readFunction": "quot(this.deductibleCents, 100)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027deductibleCents\u0027, round(round(mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100), 2)))"
+        },
+        "deductibleCents": {
+          "indexed": true,
+          "type": "long"
+        },
+        "expiryDate": {
+          "datePattern": "dd.MM.yyyy",
+          "default": "",
+          "format": "date-time",
+          "indexed": true,
+          "type": "string"
+        },
+        "garage": {
+          "indexed": true,
+          "type": "boolean"
+        },
+        "hospitalAllowance": {
+          "indexed": true,
+          "readFunction": "quot(this.hospitalAllowanceCents, 100)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027hospitalAllowanceCents\u0027, round(round(mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100), 2)))"
+        },
+        "hospitalAllowanceCents": {
+          "indexed": true,
+          "type": "long"
+        },
+        "insuranceNo": {
+          "indexed": true,
+          "type": "string"
+        },
+        "insuranceType": {
+          "$link": "#/definitions/InsuranceIS_OF_TYPEInsuranceType",
+          "$ref": "#/definitions/InsuranceType",
+          "type": "object"
+        },
+        "insuredSumOnDeath": {
+          "indexed": true,
+          "readFunction": "quot(this.insuredSumOnDeathCents, 100.0)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027insuredSumOnDeathCents\u0027, round(round(mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100), 2)))"
+        },
+        "insuredSumOnDeathCents": {
+          "indexed": true,
+          "type": "long"
+        },
+        "livingArea": {
+          "indexed": true,
+          "type": "long"
+        },
+        "manufacturerKeyNumber": {
+          "indexed": true,
+          "type": "string"
+        },
+        "paymentType": {
+          "$link": "#/definitions/InsuranceHAS_PAYMENT_TYPEPaymentType",
+          "$ref": "#/definitions/PaymentType",
+          "type": "object"
+        },
+        "pension": {
+          "indexed": true,
+          "readFunction": "quot(this.pensionCents, 100)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027pensionCents\u0027, round(round(mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100), 2)))"
+        },
+        "pensionCents": {
+          "indexed": true,
+          "type": "long"
+        },
+        "reconstruction": {
+          "indexed": true,
+          "type": "boolean"
+        },
+        "sickPay": {
+          "indexed": true,
+          "readFunction": "quot(this.sickPayCents, 100)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027sickPayCents\u0027, round(round(mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100), 2)))"
+        },
+        "sickPayCents": {
+          "indexed": true,
+          "type": "long"
+        },
+        "specialCoverage": {
+          "indexed": true,
+          "type": "boolean"
+        },
+        "subType": {
+          "$link": "#/definitions/InsuranceIS_OF_SUBTYPEInsuranceSubType",
+          "$ref": "#/definitions/InsuranceSubType",
+          "type": "object"
+        },
+        "sumInsured": {
+          "default": "",
+          "indexed": true,
+          "readFunction": "quot(this.sumInsuredCents, 100)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027sumInsuredCents\u0027, round(round(mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100), 2)))"
+        },
+        "sumInsuredCents": {
+          "indexed": true,
+          "type": "long"
+        },
+        "typeClasses": {
+          "indexed": true,
+          "type": "string"
+        },
+        "vehicleType": {
+          "indexed": true,
+          "type": "string"
+        },
+        "yearOfManufacture": {
+          "indexed": true,
+          "type": "integer"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "amount",
+          "amountCents",
+          "baseSum",
+          "baseSumCents",
+          "deductible",
+          "deductibleCents",
+          "expiryDate",
+          "garage",
+          "hospitalAllowance",
+          "hospitalAllowanceCents",
+          "insuranceNo",
+          "insuredSumOnDeath",
+          "insuredSumOnDeathCents",
+          "livingArea",
+          "manufacturerKeyNumber",
+          "pension",
+          "pensionCents",
+          "reconstruction",
+          "sickPay",
+          "sickPayCents",
+          "specialCoverage",
+          "sumInsured",
+          "sumInsuredCents",
+          "typeClasses",
+          "vehicleType",
+          "yearOfManufacture"
+        ]
+      }
+    },
+    "InsuranceCONTAINSClientDocument": {
+      "$source": "#/definitions/Insurance",
+      "$target": "#/definitions/ClientDocument",
+      "cardinality": "OneToMany",
+      "rel": "CONTAINS",
+      "sourceName": "insurance",
+      "targetName": "attachments",
+      "type": "object"
+    },
+    "InsuranceCompany": {
+      "methods": {
+        "onCreate01": {
+          "comment": "",
+          "source": "set(this, \u0027visibleToAuthenticatedUsers\u0027, true)"
+        }
+      },
+      "properties": {
+        "insurances": {
+          "$link": "#/definitions/InsuranceCompanyOFFERSInsurance",
+          "items": {
+            "$ref": "#/definitions/Insurance"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "InsuranceCompanyOFFERSInsurance": {
+      "$source": "#/definitions/InsuranceCompany",
+      "$target": "#/definitions/Insurance",
+      "cardinality": "OneToMany",
+      "rel": "OFFERS",
+      "sourceName": "company",
+      "targetName": "insurances",
+      "type": "object"
+    },
+    "InsuranceDataField": {
+      "methods": {
+        "onCreate01": {
+          "comment": "",
+          "source": "set(this, \u0027visibleToAuthenticatedUsers\u0027, true)"
+        }
+      },
+      "properties": {
+        "attrName": {
+          "indexed": true,
+          "type": "string"
+        },
+        "auxType": {
+          "indexed": true,
+          "type": "string"
+        },
+        "comment": {
+          "indexed": true,
+          "type": "string"
+        },
+        "dataType": {
+          "indexed": true,
+          "type": "string"
+        },
+        "inputType": {
+          "indexed": true,
+          "type": "string"
+        },
+        "subTypes": {
+          "$link": "#/definitions/InsuranceSubTypeHASInsuranceDataField",
+          "items": {
+            "$ref": "#/definitions/InsuranceSubType"
+          },
+          "type": "array"
+        },
+        "unit": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "attrName",
+          "auxType",
+          "comment",
+          "dataType",
+          "inputType",
+          "unit"
+        ]
+      }
+    },
+    "InsuranceHAS_PAYMENT_TYPEPaymentType": {
+      "$source": "#/definitions/Insurance",
+      "$target": "#/definitions/PaymentType",
+      "cardinality": "ManyToOne",
+      "rel": "HAS_PAYMENT_TYPE",
+      "sourceName": "insurances",
+      "targetName": "paymentType",
+      "type": "object"
+    },
+    "InsuranceIS_OF_SUBTYPEInsuranceSubType": {
+      "$source": "#/definitions/Insurance",
+      "$target": "#/definitions/InsuranceSubType",
+      "cardinality": "ManyToOne",
+      "rel": "IS_OF_SUBTYPE",
+      "sourceName": "insurances",
+      "targetName": "subType",
+      "type": "object"
+    },
+    "InsuranceIS_OF_TYPEInsuranceType": {
+      "$source": "#/definitions/Insurance",
+      "$target": "#/definitions/InsuranceType",
+      "cardinality": "ManyToOne",
+      "rel": "IS_OF_TYPE",
+      "sourceName": "insurances",
+      "targetName": "insuranceType",
+      "type": "object"
+    },
+    "InsuranceSubType": {
+      "methods": {
+        "onCreate01": {
+          "comment": "",
+          "source": "set(this, \u0027visibleToAuthenticatedUsers\u0027, true)"
+        }
+      },
+      "properties": {
+        "fields": {
+          "$link": "#/definitions/InsuranceSubTypeHASInsuranceDataField",
+          "items": {
+            "$ref": "#/definitions/InsuranceDataField"
+          },
+          "type": "array"
+        },
+        "insuranceType": {
+          "$link": "#/definitions/InsuranceTypeHASInsuranceSubType",
+          "$ref": "#/definitions/InsuranceType",
+          "type": "object"
+        },
+        "insurances": {
+          "$link": "#/definitions/InsuranceIS_OF_SUBTYPEInsuranceSubType",
+          "items": {
+            "$ref": "#/definitions/Insurance"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "InsuranceSubTypeHASInsuranceDataField": {
+      "$source": "#/definitions/InsuranceSubType",
+      "$target": "#/definitions/InsuranceDataField",
+      "cascade": {
+        "create": "sourceToTarget"
+      },
+      "properties": {
+        "column": {
+          "indexed": true,
+          "type": "integer"
+        },
+        "position": {
+          "indexed": true,
+          "type": "integer"
+        }
+      },
+      "rel": "HAS",
+      "sourceName": "subTypes",
+      "targetName": "fields",
+      "type": "object",
+      "views": {
+        "ui": [
+          "column",
+          "position"
+        ]
+      }
+    },
+    "InsuranceType": {
+      "methods": {
+        "onCreate01": {
+          "comment": "",
+          "source": "set(this, \u0027visibleToAuthenticatedUsers\u0027, true)"
+        },
+        "onCreate02": {
+          "comment": "Automatically set a default sortPrioty depending on the currently highest index.",
+          "source": "{\n\tvar types \u003d Structr.find(\u0027InsuranceType\u0027);\n\tif(types.length \u003e 0){\n\t\tvar typesWithPrio \u003d types.filter(function(data){\n\t\t\tif(Structr.empty(data.sortPriority)){\n\t\t\t\treturn false;\t\n\t\t\t} else {\n\t\t\t\treturn true;\n\t\t\t}\n\t\t});\n\n\t\tif(typesWithPrio.length \u003e 0){\n\t\t\ttypesWithPrio.sort(function(a,b){\n\t\t\t\treturn b.sortPriority-a.sortPriority;\n\t\t\t});\n\n\t\t\tvar maxPrio \u003d typesWithPrio[0].sortPriority;\n\n\t\t\tvar self \u003d Structr.get(\u0027this\u0027);\n\t\t\tself.sortPriority \u003d maxPrio + 1;\n\t\t}\n\t}\n}"
+        }
+      },
+      "properties": {
+        "availableSubTypes": {
+          "$link": "#/definitions/InsuranceTypeHASInsuranceSubType",
+          "items": {
+            "$ref": "#/definitions/InsuranceSubType"
+          },
+          "type": "array"
+        },
+        "consultingDocument": {
+          "$link": "#/definitions/ConsultingDocumentGETS_COPIED_TOInsuranceType",
+          "items": {
+            "$ref": "#/definitions/ConsultingDocument"
+          },
+          "type": "array"
+        },
+        "documents": {
+          "$link": "#/definitions/ClientDocumentBELONGS_TOInsuranceType",
+          "items": {
+            "$ref": "#/definitions/ClientDocument"
+          },
+          "type": "array"
+        },
+        "insurances": {
+          "$link": "#/definitions/InsuranceIS_OF_TYPEInsuranceType",
+          "items": {
+            "$ref": "#/definitions/Insurance"
+          },
+          "type": "array"
+        },
+        "sortPriority": {
+          "default": "0",
+          "indexed": true,
+          "type": "integer"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "sortPriority"
+        ]
+      }
+    },
+    "InsuranceTypeHASInsuranceSubType": {
+      "$source": "#/definitions/InsuranceType",
+      "$target": "#/definitions/InsuranceSubType",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "create": "sourceToTarget"
+      },
+      "rel": "HAS",
+      "sourceName": "insuranceType",
+      "targetName": "availableSubTypes",
+      "type": "object"
+    },
+    "InventoryItem": {
+      "properties": {
+        "brand": {
+          "indexed": true,
+          "type": "string"
+        },
+        "category": {
+          "contentType": "",
+          "default": "",
+          "enum": [
+            "Computer",
+            "Elektrogeraete",
+            "Fahrrad",
+            "Haushalt",
+            "Hobby",
+            "Moebel",
+            "Raumaustattung",
+            "Sammlung",
+            "Sonstiges",
+            "Werkzeug",
+            "Wertsachen"
+          ],
+          "indexed": true,
+          "type": "string"
+        },
+        "client": {
+          "$link": "#/definitions/ClientINVENTORYInventoryItem",
+          "$ref": "#/definitions/Client",
+          "type": "object"
+        },
+        "inventoryFiles": {
+          "$link": "#/definitions/InventoryItemINVENTORY_FILEFile",
+          "items": {
+            "$ref": "#/definitions/File"
+          },
+          "type": "array"
+        },
+        "inventoryImages": {
+          "$link": "#/definitions/InventoryItemINVENTORY_IMAGEImage",
+          "items": {
+            "$ref": "#/definitions/Image"
+          },
+          "type": "array"
+        },
+        "location": {
+          "contentType": "",
+          "default": "",
+          "enum": [
+            "Abstellraum",
+            "Badezimmer",
+            "Balkon",
+            "Dachboden",
+            "Esszimmer",
+            "Garage",
+            "Garten",
+            "Keller",
+            "Kinderzimmer",
+            "Kueche",
+            "Schlafzimmer",
+            "WC",
+            "Wohnzimmer"
+          ],
+          "indexed": true,
+          "type": "string"
+        },
+        "model": {
+          "indexed": true,
+          "type": "string"
+        },
+        "purchaseDate": {
+          "datePattern": "dd.MM.yyyy",
+          "format": "date-time",
+          "indexed": true,
+          "type": "string"
+        },
+        "rawValue": {
+          "indexed": true,
+          "type": "long"
+        },
+        "value": {
+          "default": "",
+          "indexed": true,
+          "readFunction": "number_format(quot(this.rawValue, 100), \u0027de\u0027, \u0027#,###,##0.00\u0027)",
+          "type": "function",
+          "writeFunction": "set(this, \u0027rawValue\u0027, mult(num(str_replace(str_replace(value, \u0027\\\\.\u0027, \u0027\u0027), \u0027,\u0027, \u0027.\u0027)), 100))"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "brand",
+          "category",
+          "location",
+          "model",
+          "purchaseDate",
+          "rawValue",
+          "value"
+        ]
+      }
+    },
+    "InventoryItemINVENTORY_FILEFile": {
+      "$source": "#/definitions/InventoryItem",
+      "$target": "#/definitions/File",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "INVENTORY_FILE",
+      "sourceName": "inventoryFileItem",
+      "targetName": "inventoryFiles",
+      "type": "object"
+    },
+    "InventoryItemINVENTORY_IMAGEImage": {
+      "$source": "#/definitions/InventoryItem",
+      "$target": "#/definitions/Image",
+      "cardinality": "OneToMany",
+      "cascade": {
+        "delete": "sourceToTarget"
+      },
+      "rel": "INVENTORY_IMAGE",
+      "sourceName": "inventoryImageItem",
+      "targetName": "inventoryImages",
+      "type": "object"
+    },
+    "LogEvent": {
+      "properties": {
+        "context": {
+          "indexed": true,
+          "type": "string"
+        },
+        "count": {
+          "default": "0",
+          "indexed": true,
+          "type": "integer"
+        },
+        "eventType": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "context",
+          "count",
+          "eventType"
+        ]
+      }
+    },
+    "MailTemplate": {
+      "$extends": "https://structr.org/v1.1/definitions/MailTemplate",
+      "type": "object"
+    },
+    "ODSExporter": {
+      "type": "object"
+    },
+    "ODTExporter": {
+      "type": "object"
+    },
+    "Page": {
+      "$extends": "https://structr.org/v1.1/definitions/Page",
+      "methods": {
+        "onSave": {
+          "comment": "",
+          "source": "(\n\tstore(\u0027appcache-page\u0027,\n\t\tfirst(\n\t\t\tfind(\n\t\t\t\t\u0027Page\u0027,\n\t\t\t\t\u0027name\u0027,\n\t\t\t\tconcat(\n\t\t\t\t\tthis.name,\n\t\t\t\t\t\u0027.appcache\u0027\n\t\t\t\t)\n\t\t\t)\n\t\t)\n\t)\n,\n\tif(\n\t\tempty(retrieve(\u0027appcache-page\u0027)),\n\t\tnull,\n\t\tset(\n\t\t\tfirst(\n\t\t\t\tfind(\n\t\t\t\t\t\u0027Page\u0027,\n\t\t\t\t\t\u0027name\u0027,\n\t\t\t\t\tconcat(\n\t\t\t\t\t\tthis.name,\n\t\t\t\t\t\t\u0027.appcache\u0027\n\t\t\t\t\t)\n\t\t\t\t)\n\t\t\t),\n\t\t\t\u0027lastCacheUpdate\u0027,\n\t\t\tget(this, \u0027lastModifiedDate\u0027)\n\t\t)\n\t)\n)"
+        }
+      },
+      "properties": {
+        "lastCacheUpdate": {
+          "datePattern": "",
+          "default": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "titleOverride": {
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "lastCacheUpdate",
+          "titleOverride"
+        ]
+      }
+    },
+    "PaymentItemNode": {
+      "type": "object"
+    },
+    "PaymentNode": {
+      "type": "object"
+    },
+    "PaymentType": {
+      "properties": {
+        "insurances": {
+          "$link": "#/definitions/InsuranceHAS_PAYMENT_TYPEPaymentType",
+          "items": {
+            "$ref": "#/definitions/Insurance"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ReceivedEmail": {
+      "properties": {
+        "file": {
+          "$link": "#/definitions/ReceivedEmailATTACHMENTFile",
+          "$ref": "#/definitions/File",
+          "type": "object"
+        },
+        "ownerMailAddress": {
+          "indexed": true,
+          "type": "string"
+        },
+        "referenceId": {
+          "contentType": "",
+          "default": "",
+          "format": "",
+          "indexed": true,
+          "type": "string"
+        },
+        "subject": {
+          "indexed": true,
+          "type": "string"
+        },
+        "text": {
+          "indexed": true,
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "ownerMailAddress",
+          "referenceId",
+          "subject",
+          "text"
+        ]
+      }
+    },
+    "ReceivedEmailATTACHMENTFile": {
+      "$source": "#/definitions/ReceivedEmail",
+      "$target": "#/definitions/File",
+      "cardinality": "OneToOne",
+      "rel": "ATTACHMENT",
+      "sourceName": "email",
+      "targetName": "file",
+      "type": "object"
+    },
+    "Salutation": {
+      "properties": {
+        "userHas": {
+          "$link": "#/definitions/UserHASSalutation",
+          "items": {
+            "$ref": "#/definitions/User"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "User": {
+      "$extends": "https://structr.org/v1.1/definitions/User",
+      "methods": {
+        "deleteCurrentAvatar": {
+          "comment": "",
+          "source": "{\n\tvar self \u003d Structr.get(\u0027this\u0027);\n\tStructr.delete(self.img);\n}"
+        }
+      },
+      "properties": {
+        "firstName": {
+          "indexed": true,
+          "type": "string"
+        },
+        "fullName": {
+          "indexed": true,
+          "type": "string"
+        },
+        "img": {
+          "$link": "#/definitions/ImagePICTURE_OFUser",
+          "$ref": "#/definitions/Image",
+          "type": "object"
+        },
+        "lastName": {
+          "indexed": true,
+          "type": "string"
+        },
+        "salutation": {
+          "$link": "#/definitions/UserHASSalutation",
+          "$ref": "#/definitions/Salutation",
+          "type": "object"
+        }
+      },
+      "type": "object",
+      "views": {
+        "ui": [
+          "firstName",
+          "fullName",
+          "lastName"
+        ]
+      }
+    },
+    "UserHASSalutation": {
+      "$source": "#/definitions/User",
+      "$target": "#/definitions/Salutation",
+      "cardinality": "ManyToOne",
+      "rel": "HAS",
+      "sourceName": "userHas",
+      "targetName": "salutation",
+      "type": "object"
+    },
+    "VideoFile": {
+      "type": "object"
+    },
+    "Widget": {
+      "$extends": "https://structr.org/v1.1/definitions/Widget",
+      "type": "object"
+    },
+    "XMPPClient": {
+      "type": "object"
+    }
+  },
+  "id": "https://structr.org/schema/cac322e1026d4f33b672a9fed5529f67/#"
+}

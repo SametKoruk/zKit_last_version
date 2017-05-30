@@ -1,0 +1,152 @@
+<!-- @structr:content(text/html) --><structr:template src="Agent Profile" data-structr-meta-name="Agent Profile">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row toggle-agent"><i class="fa fa-chevron-right toggle-agent-area"></i></div>
+	<div class="row">
+		<div class="col-lg12 agent-area-profile"><img class="img-responsive" src="/${if(empty(get(get(retrieve('client'), 'agent'), 'img')), 'img/default_avatar.png', retrieve('client').agent.img.id)}"></div>
+	</div>
+	<div class="row m-t-1">
+		<div class="col-sm-12"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) --><span>
+				<label><!-- @structr:content(text/plain) -->${retrieve('client').agent.title}</label>
+			</span>
+			<h4><!-- @structr:content(text/plain) -->${retrieve('client').agent.firstName} ${retrieve('client').agent.lastName}</h4>
+		</div>
+	</div>
+	<div class="row m-t-1">
+		<div class="col-lg-2 agent-map-marker"><i class="fa fa-map-marker"></i></div>
+		<div class="col-sm-10">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.street}</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.zipCode} ${retrieve('client').agent.city}</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div data-structr-meta-hide-conditions="empty(retrieve('client').agent.phone)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Telefon: <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="tel:${retrieve('client').agent.phone}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.phone}</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div data-structr-meta-hide-conditions="empty(retrieve('client').agent.mobile)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Mobil: <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="tel:${retrieve('client').agent.mobile}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.mobile}</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div data-structr-meta-hide-conditions="empty(retrieve('client').agent.fax)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Fax: <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="tel:${retrieve('client').agent.fax}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.fax}</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div data-structr-meta-hide-conditions="empty(retrieve('client').agent.eMail)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Mail: <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="mailto:${retrieve('client').agent.eMail}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.eMail}</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div data-structr-meta-hide-conditions="empty(retrieve('client').agent.whatsapp)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Whatsapp: <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.whatsapp}</span></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div data-structr-meta-hide-conditions="empty(retrieve('client').agent.facebook)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Facebook: <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="${retrieve('client').agent.facebook}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.facebook}</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div data-structr-meta-hide-conditions="empty(retrieve('client').agent.homepage)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Homepage: <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="${retrieve('client').agent.homepage}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').agent.homepage}</a></div>
+		</div>
+	</div>
+	<div class="row m-t-1">
+		<div class="col-sm-12"><!-- @structr:content(text/plain) -->${retrieve('client').agent.comments}</div>
+	</div>
+	<div class="row m-t-1">
+		<div class="col-sm-12">
+			<div class="well"><a class="link-white" href="javascript:void(0)" data-target="#modal-consultation-dialog" data-toggle="modal"><i class="fa fa-chevron-circle-right"></i><!-- @structr:content(text/plain) -->Beratungstermin vereinbaren</a></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="well"><a class="link-white" href="javascript:void(0)" data-target="#modal-check-dialog" data-toggle="modal"><i class="fa fa-chevron-circle-right"></i><!-- @structr:content(text/plain) -->Check anfordern</a></div>
+		</div>
+	</div>
+	<div class="row m-t-1">
+		<div class="col-sm-12">
+			<div class="form-group">
+				<input class="${retrieve('clientfolder')}" id="allow-access" checked="${if(retrieve('clientfolder').accessAllowed, 'checked', null)}" disabled="${if(eq(me.type, 'Client'), null, 'true')}" name="allow-access" type="checkbox" data-client-id="${me.id}">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label class="normal" for="allow-access"><!-- @structr:content(text/plain) --> Einsicht erlauben </label><i class="fa fa-info-circle"></i>
+			</div>
+		</div>
+	</div>
+	<div class="row m-t-1 m-b-1" data-structr-meta-hide-conditions="or(empty(retrieve('client')), empty(retrieve('client').insuranceCheck))">
+		<div class="col-sm-12">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="insurance-check-seal"></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="insurance-check-date"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('client').insuranceCheck}</div>
+		</div>
+	</div>
+	<div class="modal modal-fade" id="modal-consultation-dialog">
+		<div class="modal-dialog">
+			<form>
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" type="button" data-dismiss="modal"><span><!-- @structr:content(text/plain) -->×</span></button>
+						<h4 class="modal-title"><!-- @structr:content(text/plain) -->Beratungstermin vereinbaren</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="comments"><!-- @structr:content(text/plain) -->Zieltermin</label>
+							<input class="form-control" type="text" data-structr-name="date" data-structr-type="Date">
+						</div>
+						<div class="form-group">
+							<label for="comments"><!-- @structr:content(text/plain) -->Kommentare</label><textarea class="form-control" data-structr-name="comments"></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="hidden" value="${retrieve('client').agent.id}" data-structr-name="agent">
+						<input type="hidden" value="${me.id}" data-structr-name="client">
+						<input type="hidden" value="true" data-structr-name="requestedByClient">
+						<button class="btn btn-default m-r-1" type="button" data-dismiss="modal"><!-- @structr:content(text/plain) -->Abbrechen</button>
+						<button class="btn btn-blue" type="button" data-structr-action="create:Consultation" data-structr-attributes="date,agent,client,comments,requestedByClient" data-structr-reload="true"><!-- @structr:content(text/plain) -->Terminanfrage senden</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="modal modal-fade" id="modal-check-dialog">
+		<div class="modal-dialog">
+			<form>
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" type="button" data-dismiss="modal"><span><!-- @structr:content(text/plain) -->×</span></button>
+						<h4 class="modal-title"><!-- @structr:content(text/plain) -->Check anfordern</h4>
+					</div>
+					<div class="modal-body">
+						<p data-structr-meta-show-conditions="retrieve('clientfolder').accessAllowed"><!-- @structr:content(text/plain) -->Sie haben der Dateneinsicht bereits zugestimmt, vielen Dank.
+
+Sie können direkt den Check anfordern.</p>
+						<p data-structr-meta-hide-conditions="retrieve('clientfolder').accessAllowed"><!-- @structr:content(text/plain) -->Damit ich Sie optimal beraten kann, stimmen Sie bitte noch der Dateneinsicht zu.</p>
+						<div class="form-group" data-structr-meta-hide-conditions="retrieve('clientfolder').accessAllowed">
+							<input id="allow-checkbox-dialog" checked="${if(retrieve('clientfolder').accessAllowed, 'checked', null)}" type="checkbox" data-structr-name="accessAllowed" data-structr-type="Boolean">
+							<label class="normal" for="allow-checkbox-dialog"><!-- @structr:content(text/plain) --> Zustimmung zur Dateneinsicht</label>
+						</div>
+						<div class="form-group">
+							<label><!-- @structr:content(text/plain) -->Kommentar</label><textarea class="form-control" data-structr-name="comment" data-structr-type="String"></textarea>
+						</div>
+						<script type="text/javascript"><!-- @structr:content(text/javascript) -->;$(function() {
+
+	$('#allow-checkbox-dialog').on('click', function() {
+		
+		var inp = $(this);
+		var btn = $('button[data-structr-action="requestCheck:ClientFolder"]');
+		if (inp.is(':checked')) {
+			btn.removeAttr('disabled').removeClass('disabled');
+		} else {
+			btn.attr('disabled', 'disabled').addClass('disabled');
+		}
+		
+	});
+/*
+	$('button[data-structr-action="requestCheck:ClientFolder"]').on('click', function() {
+		
+		var btn = $(this);
+		
+		$('#modal-check-dialog .modal-body p').html('Die Anfrage wurde an Ihren Vermittler versandt.');
+		
+		$('#modal-check-dialog .modal-body .form-group').remove();
+		
+		$('#modal-check-dialog button.btn[data-dismiss="modal"]').text('Schließen');
+		
+		btn.remove();
+	});
+*/	
+});</script>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" type="button" data-dismiss="modal"><!-- @structr:content(text/plain) -->Abbrechen</button>
+						<button class="btn btn-primary ${if(retrieve('clientfolder').accessAllowed, '', 'disabled')}" disabled="${if(retrieve('clientfolder').accessAllowed, null, 'disabled')}" type="button" data-structr-action="requestCheck:ClientFolder" data-structr-attributes="accessAllowed,comment" data-structr-id="${retrieve('clientfolder').id}" data-structr-reload="true"><!-- @structr:content(text/plain) -->Check jetzt anfordern</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</structr:template>

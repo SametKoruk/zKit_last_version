@@ -1,0 +1,199 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<div data-structr-meta-hide-conditions="empty(current)">
+		<div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-6">
+						<div>
+							<label><!-- @structr:content(text/plain) -->Kategorie</label>
+						</div>
+						<p><!-- @structr:content(text/plain) -->
+							
+							<select id="selected-categories" multiple="true">
+								<option data-section-id="${section.id}" data-structr-meta-data-key="section" data-structr-meta-rest-query="ConsultingFolderSection"><!-- @structr:content(text/plain) -->${section.name}</option>
+							</select><!-- @structr:content(text/plain) -->
+						
+						</p>
+					</div>
+					<div class="col-sm-6"></div>
+				</div>
+				<div class="row">
+					<div>
+						<div class="col-sm-6">
+							<div>
+								<label><!-- @structr:content(text/plain) -->Name des Dokuments</label>
+								<input class="form-control" id="document-name" placeholder="${current.name}" type="text" value="${current.name}" data-structr-name="name">
+							</div>
+						</div>
+						<div class="col-sm-6"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6" data-structr-meta-name="div">
+						<div>
+							<label><!-- @structr:content(text/plain) -->Datei</label>
+							<select class="form-control" id="file-selector">
+								<option data-file-id="${file.id}" data-structr-meta-data-key="file" data-structr-meta-function-query="filter(find(&quot;File&quot;), not(equal(data.name,&quot;&quot;)))" data-structr-meta-hide-conditions="file.isThumbnail"><!-- @structr:content(text/plain) -->${file.name}</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-6"></div>
+				</div>
+				<script type="text/javascript"><!-- @structr:content(text/javascript) -->$(function() {
+	
+	
+	//Initialize the select inputs with select2
+	$('#selected-categories').select2({
+
+		width: '100%'
+
+	});
+	
+	$('#file-selector').select2({
+		
+		width: '100%'
+		
+	});
+	
+
+		
+	//Get the documents sections and files and flag them as 'selected' within the list of all possible sections	
+	$.get('/structr/rest/ConsultingDocument/${current.id}/template', function(data){
+
+		var sections = data.result.sections;
+
+		$('#selected-categories option').each(function(i,option){
+
+			for(var i = 0; i &lt; sections.length; i++){
+
+				if($(option).text() == sections[i].name){
+
+					$(option).addClass('selected').attr('selected', true);	
+
+				}
+
+			}
+
+		});
+		
+		var fileId = data.result.fileRefId;
+		
+		$('#file-selector option').each(function(i, f){
+		
+			var file = $(f);
+			
+			if(file.data("file-id") == fileId){
+			
+				file.addClass('selected').attr('selected', true);
+				
+			}
+			
+		});
+
+		$('#selected-categories').trigger('change');
+		$('#file-selector').trigger('change');
+
+	});	
+		
+	
+});</script>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<button class="btn btn-default" id="button-save-document-and-return"><!-- @structr:content(text/plain) -->Speichern &amp; Zurück</button>
+					<button class="btn btn-default" id="button-save-document" data-structr-reload="true"><!-- @structr:content(text/plain) -->Speichern</button>
+					<button class="btn btn-default" id="return-button"><!-- @structr:content(text/plain) -->Zurück</button>
+				</div>
+				<div class="col-sm-6"></div>
+				<!-- @structr:link(/js/helper.js) -->
+				<script src="${link.path}" type="text/javascript"></script>
+				<script type="text/javascript"><!-- @structr:content(text/javascript) -->function saveDocument(reload){
+
+	var selectedCategoryOptions = $('#selected-categories :selected');
+
+	var sections = [];
+
+
+	selectedCategoryOptions.each(function(i, section){		
+
+		var secId = $(section).data('section-id');
+
+		sections.push({ id: secId });
+
+	});
+
+
+	var documentName = $('#document-name').val();
+
+	var selectedFileOption = $('#file-selector').find('option:selected');
+
+	var file = [{ id: selectedFileOption.data('file-id') }];
+	
+	$.ajax({
+
+		url: '/structr/rest/ConsultingDocument/${current.id}',
+		type: 'PUT',
+		contentType: 'application/json',
+		data: JSON.stringify({
+			name: documentName,
+			sections: sections,
+			files: file
+
+		}),
+		statusCode: {
+			200: function() {
+				if(reload){
+					window.location.reload();
+				}
+			},
+			201: function() {
+				if(reload){
+					window.location.reload(); 
+				}
+			}
+		}
+
+	});	
+		
+}
+
+$(function() {
+	
+	$('#return-button').on('click',function(){
+		
+		var returnURL = '/vorlage/'+GetURLParameter('template') + '?section=' + GetURLParameter('section');
+		
+		window.location.href = returnURL;
+		
+		
+	});
+	
+	$('#button-save-document-and-return').on('click', function() {
+		
+		saveDocument(false);
+		var returnURL = '/vorlage/'+GetURLParameter('template') + '?section=' + GetURLParameter('section');
+		window.location.href = returnURL;
+		
+	});
+	
+	
+	$('#button-save-document').on('click', function() {
+
+		saveDocument(true);		
+
+	});
+	
+	
+});</script>
+			</div>
+			<div class="row">
+				<div class="col-sm-3"><span><!-- @structr:content(text/plain) -->Angelegt am: <!-- @structr:content(text/plain) -->${date_format(current.createdDate, 'dd.MM.yyyy')}</span></div>
+				<div class="col-sm-3"><span><!-- @structr:content(text/plain) -->Letzte Änderung: <!-- @structr:content(text/plain) -->${date_format(current.lastModifiedDate, 'dd.MM.yyyy')}</span></div>
+			</div>
+		</div>
+	</div>
+	<div data-structr-meta-show-conditions="empty(current)">
+		<h3><!-- @structr:content(text/plain) -->Fehler</h3>
+		<p><!-- @structr:content(text/plain) -->Es wurde keine gültige Referenz zu einem Dokument in der URL spezifiziert.</p>
+	</div>
+</structr:template>

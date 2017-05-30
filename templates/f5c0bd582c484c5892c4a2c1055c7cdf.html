@@ -1,0 +1,8 @@
+${store('ConsultationCreateModal_Agent', me)}
+${
+	if (
+		eq(current.type, 'ConsultingFolder'),
+		store('ConsultationCreateModal_Client', current.client),
+		store('ConsultationCreateModal_Client', current.belongedToClient)
+	)
+}

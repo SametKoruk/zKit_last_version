@@ -1,0 +1,119 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><div data-structr-meta-name="Beratungsliste">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div data-structr-meta-data-key="consultation" data-structr-meta-function-query="if(empty(current), retrieve('client').consultations, current.consultations)">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${consultation.name}</h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->${{
+    var consultation = Structr.get('consultation');
+	var list         = [];
+	
+	consultation.appointments.forEach(function(appointment) {
+		list.push(appointment);
+	});
+	
+	consultation.relatedClientDocuments.forEach(function(doc) {
+		list.push(doc);
+	});
+	
+	list.sort(function(a, b) {
+		
+		var dateA = a.type === 'ConsultingAppointment' ? a.date : a.createdDate;
+		var dateB = b.type === 'ConsultingAppointment' ? b.date : b.createdDate;
+		
+		var timeA = dateA.getTime();
+		var timeB = dateB.getTime();
+		
+		return timeA &lt; timeB ? 1 : timeA &gt; timeB ? -1 : 0;
+	});
+	
+	
+	Structr.store('sortedConsultations', new java.util.ArrayList(list));
+}}
+		
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div data-structr-meta-data-key="item" data-structr-meta-function-query="retrieve('sortedConsultations')">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h4 data-structr-meta-show-conditions="eq(item.type, 'ConsultingAppointment')"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Termin ${date_format(item.date, 'dd.MM.yyyy')}</h4>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h5 data-structr-meta-show-conditions="eq(item.type, 'ClientDocument')"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->${date_format(item.createdDate, 'dd.MM.yyyy')} &lt;u&gt;&lt;a href="${item.documentVersion.file.path}" target="_blank"&gt;${item.title}&lt;/a&gt;&lt;/u&gt;</h5>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div style="margin-top: 2em;"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn btn-primary btn-xs" href="/beratungsmappe/${consultation.consultingFolder.id}" data-structr-meta-show-conditions="and(eq(me.type, 'Agent'), not(empty(consultation.consultingFolder)))"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Beratungsmappe öffnen</a>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<button class="btn btn-primary btn-xs" data-consultation-id="${consultation.id}" data-target="#modal-new-consulting-folder" data-toggle="modal" data-structr-meta-show-conditions="and(eq(me.type, 'Agent'), empty(consultation.consultingFolder))"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Beratungsmappe anlegen</button>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<button class="btn btn-default btn-xs new-consultation-appointment" data-consultation-id="${consultation.id}" data-structr-meta-show-conditions="eq(me.type, 'Agent')"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Neuen Termin anlegen</button>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="modal fade" id="modal-new-consultation" tabindex="-1" role="dialog">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="modal-dialog" role="document">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<form>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-content">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-header">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="close" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</span></button>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<h4 class="modal-title"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Neuen Beratungstermin anlegen</h4>
+					</div>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-body">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Termin</label>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input class="form-control datepicker-enabled" data-structr-name="date" data-structr-type="Date">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input id="consultation-id" type="hidden" data-structr-name="consultation">
+						</div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Beschreibung</label><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><textarea class="form-control" data-structr-name="comments"></textarea>
+						</div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Auf Startseite anzeigen</label>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input checked="checked" type="checkbox" data-structr-name="showOnFrontPage" data-structr-type="Boolean">
+						</div>
+					</div>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-footer">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="btn btn-default" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Abbrechen</button>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="btn btn-primary" type="button" data-structr-action="create:ConsultingAppointment" data-structr-attributes="consultation, date, showOnFrontPage, comments" data-structr-reload="true"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anlegen</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->$(function() {
+	
+	$('.new-consultation-appointment').on('click', function(e) {
+		
+		console.log(e);
+		
+		var target = e.currentTarget;
+		var consultationId = $(target).data('consultationId');
+		
+		if (consultationId &amp;&amp; consultationId.length === 32) {
+		
+			$('#consultation-id').val(consultationId);
+			$('#modal-new-consultation').modal();
+		}
+		
+	});
+	
+});</script><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain), @structr:show(and(eq(me.type, 'Agent'), eq(size(current.consultations), 0))) -->Keine Beratungen vorhanden. Verwenden Sie das Eingabefeld rechts um eine neue Beratung anzulegen.<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain), @structr:show(and(eq(me.type, 'Client'), eq(size(current.consultations), 0), eq(size(retrieve('client').consultations), 0))) -->Keine Beratungen vorhanden.
+
+</div>

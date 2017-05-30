@@ -1,0 +1,21 @@
+<!-- @structr:content(text/html) --><structr:template src="Kundenordner Template" data-structr-meta-name="Kundenordner Template">
+	<div>
+		<hr>
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<div class="text-center"><a href="/versicherungen/${current.id}"><i class="fa fa-list-alt" style="font-size: 10em; color: #003399"></i></a><a href="/versicherungen/${current.id}">
+						<h4><!-- @structr:content(text/plain) -->Versicherungsübersicht</h4>
+					</a></div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<div class="text-center"><a href="/beratungen/${retrieve('client').id}"><i class="fa fa-handshake-o" style="font-size: 10em; color: #003399"></i></a><a href="/beratungen/${retrieve('clientfolder').id}">
+						<h4><!-- @structr:content(text/plain) -->Beratungen</h4>
+					</a></div>
+			</div>
+		</div>
+		<hr>
+	</div>
+</structr:template>

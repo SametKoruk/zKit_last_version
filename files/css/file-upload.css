@@ -1,0 +1,11 @@
+
+.file-upload-area {
+	border: 2px dashed #ccc;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: #f5f5f5;
+	text-align: center;
+	color: #999;
+	cursor: pointer;
+}
+

@@ -1,0 +1,291 @@
+<!-- @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-12">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->Vermittler (${size(find('Agent'))})</h3>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-12">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<table class="table table-bordered table-striped">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<thead>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<tr>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Vermittler</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Logins</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Letzter Login des Vermittlers</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Letzte Aktivität des Vermittlers</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Kunden</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Beratungsmappen</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Beratungstermine</th>
+					</tr>
+				</thead>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<tbody>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<tr data-structr-meta-data-key="agent" data-structr-meta-rest-query="Agent">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${agent.name}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${{
+	var agent = Structr.get('agent');
+	var loginEvents = Structr.find('LogEvent', 'eventType', 'login', 'context', agent.name);
+
+	if (loginEvents.length === 1) {
+		Structr.store('timeStamp', Structr.dateFormat(loginEvents[0].lastModifiedDate, 'dd.MM.Y HH:mm:ss'));
+		Structr.print(loginEvents[0].count);
+	} else {
+		Structr.store('timeStamp', '-');
+		Structr.print('-');
+	}
+}}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('timeStamp')}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(agent.lastModifiedDate, 'dd.MM.Y HH:mm:ss')}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${size(agent.advisesClients)}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${size(agent.managesConsultingFolders)}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${size(agent.consultations)}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<hr>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-12">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->Kunden (${size(find('Client'))})</h3>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-12">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<table class="table table-bordered table-striped">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<thead>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<tr>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Kunde</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Logins</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Letzter Login des Kunden</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Letzte Aktivität des Kunden</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Einsicht erlaubt</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Selbst angelegte Versicherungen</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Nicht selbst angelegte Versicherungen</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Selbst in Kundenordner hochgeladene Dokumente</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Nicht selbst in Kundenordner hochgeladene Dokumente</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Angeforderte Checks</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --># Angeforderte Kontaktwünsche</th>
+					</tr>
+				</thead>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<tbody>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<tr data-structr-meta-data-key="client" data-structr-meta-rest-query="Client">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${client.name}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${{
+	var client = Structr.get('client');
+	var loginEvents = Structr.find('LogEvent', 'eventType', 'login', 'context', client.name);
+
+	if (loginEvents.length === 1) {
+		Structr.store('timeStamp', Structr.dateFormat(loginEvents[0].lastModifiedDate, 'dd.MM.Y HH:mm:ss'));
+		Structr.print(loginEvents[0].count);
+	} else {
+		Structr.store('timeStamp', '-');
+		Structr.print('-');
+	}
+}}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('timeStamp')}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(client.lastModifiedDate, 'dd.MM.Y HH:mm:ss')}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${if(eq(client.clientFolder.accessAllowed, true), 'ja', 'nein')}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${(store('clientInsurances', size(find('Insurance', 'owner', client))), retrieve('clientInsurances'))}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${int(subt(size(client.clientFolder.insurances), retrieve('clientInsurances')))}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${(store('clientDocuments', size(find('ClientDocument', 'owner', client))), retrieve('clientDocuments'))}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${{
+	var client = Structr.get('client');
+	var numberOfOwnedClientDocuments = Structr.retrieve('clientDocuments');
+
+	var documentsInClientFolder = 0;
+	var documentsAttachedToInsurances = 0;
+
+	if (client.clientFolder != null) {
+		documentsInClientFolder = client.clientFolder.clientDocuments.length;
+
+		if (client.clientFolder.insurances != null) {
+			client.clientFolder.insurances.forEach(function(ins) {
+				if (ins.attachments != null) {
+					documentsAttachedToInsurances += ins.attachments.length;
+				}
+			});
+		}
+	}
+
+	var dox = parseInt(documentsInClientFolder) + documentsAttachedToInsurances - numberOfOwnedClientDocuments;
+	if (dox != 0) {
+		Structr.print(""+ dox);
+	}
+}}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${get(first(find('LogEvent', 'eventType', 'requestcheck', 'context', client.name)), 'count')}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${size(find('Consultation', 'client', client, 'requestedByClient', true))}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<hr>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-4"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Wie oft wurde welche Seite aufgerufen?</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-8">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="b82be059045c41da97a2a7018a8c7d0f">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="row">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="col-sm-6"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.context}</div>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="col-sm-6"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.count}</div>
+				</div>
+			</structr:template>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<hr>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-4"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anzahl angemeldeter Kunden (gesamt)</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-8"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${size(find('Client'))}</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<hr>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-4"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anzahl Kunden pro Vermittler</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-8">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-3"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->angelegt</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-2"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${quot(size(find('Client')), size(find('Agent')))}</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-7"></div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-3"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->angemeldet</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-2"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${
+	quot(
+		size(
+			filter( find('Client'), empty(data.confirmationKey) )
+		),
+		size(find('Agent'))
+	)
+}</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-7"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->User, die den Anmelde-Link geklickt haben</div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-3"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->aktiv</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-2"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${
+	quot(
+		size(
+			filter( find('Client'), gt(size(data.inventoryItems), 0) )
+		),
+		size(find('Agent'))
+	)
+}</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-7"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->User, die mindestens einen Gegenstand auf ihrer Haushaltsliste haben.</div>
+			</div>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<hr>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-4"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anzahl Vermittler pro Agentur</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-8">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-4"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anzahl Agenturen (insg)</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-8"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${size(find('Agency'))}</div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-4"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anzahl Vermittler (insg)</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-8"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${size(find('Agent'))}</div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<hr>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-4"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anzahl Vermittler (insg)</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-8"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${quot(size(find('Agent')), size(find('Agency')))}</div>
+			</div>
+		</div>
+	</div>
+</structr:template>

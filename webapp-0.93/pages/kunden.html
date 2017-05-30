@@ -1,0 +1,56 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="CreateConsultingFolderModal" data-structr-meta-name="CreateConsultingFolderModal">
+		</structr:component>
+	</div>
+	<div class="table-responsive">
+		<!-- @structr:private -->
+		<hr>
+		<table class="table table-striped datatable">
+			<thead>
+				<tr>
+					<th><!-- @structr:content(text/plain) -->Nachname</th>
+					<th><!-- @structr:content(text/plain) -->Vorname</th>
+					<th><!-- @structr:content(text/plain) -->PLZ</th>
+					<th><!-- @structr:content(text/plain) -->Ort</th>
+					<th><!-- @structr:content(text/plain) -->Letzte Änderung</th>
+					<th><!-- @structr:content(text/plain) -->Beratungen</th>
+					<th><!-- @structr:content(text/plain) -->Kundenordner</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-structr-id="${client.id}" data-structr-meta-data-key="client" data-structr-meta-function-query="if(empty(request.client), find('Client'), merge(search('Client', 'lastName', request.client), search('Client', 'firstName', request.client), , search('Client', 'city', request.client)))">
+					<td><a href="/kunde/${client.id}"><!-- @structr:content(text/plain) -->${client.lastName}</a></td>
+					<td><!-- @structr:content(text/plain) -->${client.firstName}</td>
+					<td><!-- @structr:content(text/plain) -->${client.zipCode}</td>
+					<td><!-- @structr:content(text/plain) -->${client.city}</td>
+					<td><!-- @structr:content(text/html) -->&lt;span class="hidden"&gt;${num(client.lastModifiedDate)}&lt;/span&gt;${date_format(client.lastModifiedDate, 'dd.MM.yyyy')}</td>
+					<td><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/beratungen-neu/${client.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-list"></i></a></td>
+					<td><a title="Kundenordner einsehen" href="/versicherungsuebersicht/${client.clientFolder.id}" data-structr-meta-hide-conditions="empty(client.clientFolder)"><i class="fa fa-folder-open"></i></a><a title="Kundenordner anlegen" href="javascript:void(0)" data-structr-action="create:ClientFolder" data-structr-append-id="true" data-structr-attributes="client" data-structr-id="${client.id}" data-structr-reload="true" data-structr-return="/kundenordner" data-structr-meta-show-conditions="empty(client.clientFolder)"><i class="fa fa-plus"></i></a>
+						<input type="hidden" value="${client.id}" data-structr-id="${client.id}" data-structr-name="client">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- @structr:private -->
+		<hr>
+		<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script type="text/javascript"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->var clientId;
+;$(function() {
+	
+	$('#create-consulting-folder').on('mousedown', function() {
+		
+		//clientId = $(this).data('client-id');
+		//console.log(clientId);
+		
+	});
+	
+});</script>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="col-sm-4"><!-- @structr:grant(admin,arwd) --><a class="btn btn-primary" href="/kunde" data-structr-meta-show-conditions="eq(me.type, 'Agent')"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Neuer Kunde</a></div>
+	</div>
+</structr:template>

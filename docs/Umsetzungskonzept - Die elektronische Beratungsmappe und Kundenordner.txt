@@ -1,0 +1,123 @@
+Die elektronische Beratungsmappe und Kundenordner
+
+Grundschema:
+
+- Individuelle Web-Anwendung mit Baumstruktur zur Ablage von Ordnern und Dateien
+- Inhaltsobjekte mit individuellen Metadaten
+
+- Zusätzliche Anforderungen Dateistruktur:
+  - Symbolische Links (Dateien werden in Beratungsmappe verlinkt, jedoch in Kundenordner kopiert)
+
+Technische Anforderungen:
+
+- Web-Anwendung soll auch mobil funktionieren
+- Upload über Kamera des Mobilgerät
+- Ziel-Auflösung: 1366 x 768
+- Internet Explorer 10 (!)
+- Mobil: Viewport 1024x768 bzw. 768x1024 (Portrait)
+- Touch-fähig
+
+
+
+Inhaltsobjekte:
+
+- Kundenordner (=> digitale Akte)
+- Beratungsmappe
+- Versicherung
+- Versicherungstyp
+  - je nach Versicherungstyp gibt es unterschiedliche Metadatensätze
+- Rubrik (Beratungsmappe)
+- Kategorie (Kundenordner)
+- Versicherungkategorie
+- Beratungstermin
+- Datei
+  - Foto
+  - Video
+  - PDF-Datei
+  - Formular
+  - Notiz (Textdateien oder Metadaten)
+- Vorlage
+  - Vorlagen sind Ordner, die mit Dateien vorbefüllt/-verlinkt sind
+  - 
+- Versicherer (wird auch als Werteliste genutzt)
+
+Rollen und Aktionen
+
+- Vermittler/Berater
+  - legt Kunden an
+  - pflegt Dateien und Vorlagen
+
+- Kunde
+  - Online-Zugang (über Kundencenter => verlinkt oder integriert?)
+  - kann eigenen Kundenordner einsehen
+  - dort nur für Kunden freigegebene Dokumente
+  - kann Dokumente hochladen, z.B. Fremdverträge (Scan? Photo?)
+  - kann Dokumente für Ansicht durch Vermittler freigebenn ("Einsicht erlauben")
+  - Dokumente bearbeiten und löschen
+  - "Check anfordern": Kunde bittet Vermittler um Prüfung/Beurteilung
+
+Schnittstellen:
+
+- Zurich Cockpit
+- ZAS
+- webLife
+- ...
+- Zurich SafE
+
+Funktionen:
+
+- Suche/Filter: Vermittler kann auf der Startseite erst Kunden suchen/auswählen, so dass Kunden nicht die Gesamtliste oder andere Kunden sehen (Disktretion)
+- Idee: System blendet Infos über/von andere(n) Kunden generell ausgegraut/verpixelt dar mit Schlosssymbol, so dass Vermittler entscheiden kann, ob diese angezeigt werden sollen.
+- Terminvereinbarung
+- Versicherungsprofil
+
+Weitere Funktionen in späteren Ausbaustufen:
+
+- für Vermittler
+
+  - Policen auslesen (Text-/Strukturerkennung?)
+  - Diktierfunktion
+  - Ausbau zu Kundenportal
+
+- für Kunden
+
+  - Wertsachenerfassung
+  - Dokumenten-Safe
+
+Basissystem:
+
+  - Standalone-Server
+  - zunächst eine Instanz
+  - Subdomäne von structr.com
+  - HTTPS
+
+
+Seiten:
+
+- Gemeinsamer Login für Vemittler/Berater und Kunden
+  - System erkennt Rolle basierend auf Login-Daten
+  - "Passwort vergessen"-Funktion
+
+- Startseite mit Suche
+  - Vermittler kann sich im Beisein des Kunden anmelden, ohne auf die Kundenliste zu gelangen
+  - Idee: System merkt sich den zuletzt aufgerufenen Kunden, so ist das System für den nächsten Kundentermin schon vorbereitet.
+  - Kunden gelangen direkt auf Kundenseite
+
+
+- Kundenseite
+  - Übersicht über Dokumente
+
+- Versicherungsübersicht
+  - tabellarische Liste mit Versicherungsrubriken und Versicherungen pro Rubrik
+  - Rubrik kann auf- und zugeklappt werden
+  - Bei Klick auf Versicherungsnamen werden auch zugehörige Dateien angezeigt
+
+- Kundenübersicht
+  - Liste mit allen Kunden des Vermittlers
+  - A-Z-Sprungindex
+  - Suche/Filter
+  - Sortier-/Filterbar nach allen Spalten
+
+- Beratung
+  - Alle relevanten Informationen eines Beratungstermins
+  - Datum, Bemerkungen, Dateianhänge, ...

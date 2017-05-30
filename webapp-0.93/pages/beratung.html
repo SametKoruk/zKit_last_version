@@ -1,0 +1,128 @@
+<!-- @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Kundenordner Template" data-structr-meta-name="Kundenordner Template">
+	<!-- @structr:grant(admin,arwd) -->
+	<div>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="table-responsive">
+					<!-- @structr:grant(admin,arwd) -->
+					<table class="table">
+						<!-- @structr:grant(admin,arwd) -->
+						<thead>
+							<!-- @structr:grant(admin,arwd) -->
+							<tr>
+								<!-- @structr:grant(admin,arwd) -->
+								<th><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Datum</th>
+								<!-- @structr:grant(admin,arwd) -->
+								<th><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Bemerkungen</th>
+								<!-- @structr:grant(admin,arwd) -->
+								<th></th>
+							</tr>
+						</thead>
+						<!-- @structr:grant(admin,arwd) -->
+						<tbody>
+							<!-- @structr:grant(admin,arwd) -->
+							<tr data-structr-id="${consultation.id}" data-structr-meta-data-key="consultation" data-structr-meta-function-query="sort(current.client.consultations, 'date')">
+								<!-- @structr:grant(admin,arwd) -->
+								<td data-structr-attr="date" data-structr-edit-class="form-control" data-structr-format="dd.mm.yy" data-structr-type="Date"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(consultation.date, 'dd.MM.yyyy')}</td>
+								<!-- @structr:grant(admin,arwd) -->
+								<td data-structr-attr="comments" data-structr-edit-class="form-control"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${consultation.comments}</td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td class="contains-button-icons"><!-- @structr:grant(admin,arwd) --><a href="javascript:void(0)" data-structr-action="edit:Consultation" data-structr-attributes="date, comments, showOnFrontPage" data-structr-id="${consultation.id}" data-structr-reload="true"><!-- @structr:grant(admin,arwd) --><i class="fa fa-edit"></i></a><!-- @structr:grant(admin,arwd) --><a class="btn btn-md m-l-1" href="javascript:void(0)" data-structr-action="delete:Consultation" data-structr-confirm="true" data-structr-id="${consultation.id}" data-structr-reload="true"><!-- @structr:grant(admin,arwd) --><i class="fa fa-trash"></i></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anhänge</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="table-responsive">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<table class="table">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<thead>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<tr>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Art</th>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name</th>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Datum</th>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anhang</th>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<th><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --></th>
+							</tr>
+						</thead>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<tbody>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<tr data-structr-id="${document.id}" data-structr-meta-data-key="document" data-structr-meta-function-query="current.clientDocuments">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td data-structr-attr="documentType" data-structr-edit-class="form-control" data-structr-raw-value="${document.documentType.id}" data-structr-type="DocumentType"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${document.documentType.name}</td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td data-structr-attr="title" data-structr-edit-class="form-control"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${document.title}</td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(document.lastModifiedDate, 'dd.MM.yyyy HH:mm')}</td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td><!-- @structr:grant(admin,arwd) --><a href="${document.path}${if(eq(document.contentType, 'text/html'), '', concat('?filename=', document.downloadName))}" target="_blank"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${document.name}</a></td>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<td><!-- @structr:grant(admin,arwd) --><a href="javascript:void(0)" data-structr-action="edit:ClientDocument" data-structr-attributes="documentType,title,date" data-structr-id="${document.id}" data-structr-reload="true"><!-- @structr:grant(admin,arwd) --><i class="fa fa-edit"></i></a><!-- @structr:grant(admin,arwd) --><a class="m-l-1" href="javascript:void(0)" data-structr-action="delete:ClientDocument" data-structr-confirm="true" data-structr-id="${document.id}" data-structr-reload="true"><!-- @structr:grant(admin,arwd) --><i class="fa fa-trash"></i></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- @structr:grant(admin,arwd) -->
+				<form class="hidden" action="/structr/upload" enctype="multipart/form-data" method="post">
+					<!-- @structr:grant(admin,arwd) -->
+					<input name="parent" type="hidden" value="${retrieve('clientfolder').id}">
+					<!-- @structr:grant(admin,arwd) -->
+					<input name="type" type="hidden" value="ClientDocument">
+					<!-- @structr:grant(admin,arwd) -->
+					<input name="redirectOnSuccess" type="hidden" value="/beratungen/${retrieve('clientfolder').id}">
+					<!-- @structr:grant(admin,arwd) -->
+					<input name="user" type="hidden" value="${me.id}">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="form-inline">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="input-group">
+							<!-- @structr:grant(admin,arwd) -->
+							<input class="btn btn-default file-button" name="new-file" placeholder="Datei auswählen" type="file"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="input-group-btn">
+								<!-- @structr:grant(admin,arwd) -->
+								<input class="btn btn-default button-blue" type="submit" value="Anhang hinzufügen">
+							</span>
+						</div>
+					</div>
+				</form>
+				<!-- @structr:grant(admin,arwd) -->
+				<structr:component src="Upload-Bereich" data-structr-meta-shared-component-configuration="(store('file-upload-parent-id', retrieve('clientfolder').id),store('file-upload-type', 'ClientDocument'))" data-structr-meta-name="Upload-Bereich">
+				</structr:component><!-- @structr:grant(admin,arwd) --><span id="upload-file-handle"><!-- @structr:grant(admin,arwd) --><i class="fa fa-plus-circle m-r-1"></i><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Anhang hinzufügen</span>
+				<!-- @structr:grant(admin,arwd) -->
+				<script type="text/javascript"><!-- @structr:grant(admin,arwd), @structr:content(text/javascript) -->$(function() {
+	$('#upload-file-handle').on('click', function() {
+		$('#file-upload-container').removeClass('hidden');
+		$('#file-upload').removeClass('hidden');
+		$('#upload-file-handle').addClass('hidden');
+	});
+});</script>
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --><structr:template src="4ccde8fd58fd4d72b7e1284e471d7e2f">
+		</structr:template>
+	
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="ConsultationCreateModal" data-structr-meta-name="ConsultationCreateModal">
+		</structr:component>
+	</div>
+</structr:template>

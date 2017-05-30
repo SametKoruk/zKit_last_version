@@ -1,0 +1,287 @@
+{
+  "New Page 957065": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "pageCreatesRawData": false
+  },
+  "beratung": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "beratungen": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "beratungen-neu": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "beratungsdokument": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "beratungsmappe": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "beratungsmappe-alt": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "beratungsmappe-offline": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "beratungsmappe.appcache": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false
+  },
+  "dateiarchiv": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false
+  },
+  "einstellungen": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "haushaltsalbum": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false
+  },
+  "infos": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "kunde": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "kunden": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "kundenordner": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "login": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "showOnErrorCodes": "404",
+    "visibleToPublicUsers": true
+  },
+  "passwort-geaendert": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "select-version-partial": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "startseite": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "position": 10,
+    "visibleToAuthenticatedUsers": true
+  },
+  "statistiken": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "pageCreatesRawData": false
+  },
+  "userverwaltung": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "vermittler": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "vermittler-backup": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "versicherung": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "versicherungen": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "versicherungsuebersicht": {
+    "contentType": "text/html",
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "pageCreatesRawData": false
+  },
+  "vorlage": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  },
+  "vorlagen": {
+    "dontCache": false,
+    "enableBasicAuth": false,
+    "pageCreatesRawData": false,
+    "visibleToAuthenticatedUsers": true
+  }
+}

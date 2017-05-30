@@ -1,0 +1,20 @@
+@media (min-width: 769px) {
+  .logo {
+    margin: 0 auto;
+    background-image: url("../../../common/img/logo.png");
+    background-position: center;
+    width: 156px;
+    height: 96px;
+  }
+}
+@media (max-width: 768px) {
+  .logo {
+    margin: 0 auto;
+    background-image: url("../../../common/img/logo_small.png");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 133px;
+    height: 32px;
+  }
+}

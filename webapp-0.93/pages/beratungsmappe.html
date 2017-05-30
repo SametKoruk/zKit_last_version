@@ -1,0 +1,294 @@
+<!-- @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<!-- @structr:grant(admin,arwd) -->
+	<div>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:grant(admin,arwd) -->
+		<structr:component src="169025b19983404fb098932a800e8b5f">
+		</structr:component>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row button-row-bottom">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<!-- @structr:grant(admin,arwd) -->
+				<button class="btn btn-danger online-only" data-structr-action="delete:ConsultingFolder" data-structr-confirm="true" data-structr-hide="edit" data-structr-id="${current.id}" data-structr-reload="true" data-structr-return="/kunden" data-structr-meta-show-conditions="eq(current.type, 'ConsultingFolder')" data-structr-meta-hide-conditions="eq(request.presentationMode, &quot;on&quot;)"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Beratungsmappe löschen</button>
+				<!-- @structr:grant(admin,arwd) -->
+				<button class="btn btn-primary online-only" data-target="#modal-archive-consulting-folder" data-toggle="modal" data-structr-meta-show-conditions="eq(current.type, 'ConsultingFolder')" data-structr-meta-hide-conditions="eq(request.presentationMode, &quot;on&quot;)"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Beratungsmappe archivieren</button><!-- @structr:grant(admin,arwd) --><a class="btn btn-default pull-right online-only" href="/startseite"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Zurück zur Übersicht</a>
+			</div>
+		</div>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')">
+		<!-- @structr:grant(admin,arwd) -->
+		<structr:component src="b7b9db89dca3452bae1afb9dc9367b32" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')">
+		</structr:component>
+		<hr data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')">
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="col-sm-8">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Checkliste</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="row" data-structr-meta-show-conditions="empty(current.checklist)">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="col-sm-6">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<select class="form-control" id="checklist-template-select">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<option data-template-id="${template.id}" data-structr-meta-data-key="template" data-structr-meta-function-query="find('ChecklistTemplate')"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${template.name}</option>
+							</select>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="btn btn-default form-control" id="button-create-checklist"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Checkliste auswählen</button>
+						</div>
+					</div>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<table class="table table-hover" data-structr-meta-hide-conditions="empty(current.checklist)">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<tr class="checklist-entry" data-structr-meta-data-key="point" data-structr-meta-function-query="current.checklist.checklistPoints">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input class="checkbox" checked="${if(point.checked, &quot;true&quot;,null)}" type="checkbox" data-checkpoint-id="${point.id}">
+						</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${point.description}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${
+	if (
+		empty(point.checkDate),
+		'--',
+		date_format(point.checkDate, "dd.MM.yyyy")
+	)
+}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span data-structr-meta-hide-conditions="empty(point.checkedBy)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${point.checkedBy.name}</span>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<div class="row" data-structr-meta-show-conditions="empty(point.checkedBy)">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<div class="col-sm-8">
+									<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+									<select class="form-control checklist-assignee-select" data-checklist-point="${point.id}">
+										<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+										<option value="${user.id}" selected="${ 	if( 		empty(point.assignedAgent), 		if( 			eq(user.id, current.consultation.client.agent.id), 			'selected', 			null 		), 		if( 			eq(user.id, point.assignedAgent.id), 			'selected', 			null 		) 	) }" data-structr-meta-data-key="user" data-structr-meta-rest-query="/Agent" data-structr-meta-show-conditions="any(get_outgoing_relationships(user, current, 'SECURITY'), contains(data.allowed, 'write'))"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${user.name}</option>
+									</select>
+								</div>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<div class="col-sm-4">
+									<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+									<button class="btn btn-sm btn-primary checklist-message-button" value="${point.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Mail senden</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->$(function(){
+	$(".checklist-entry input.checkbox").on("click", function () {
+
+		//read checkbox and set checked prop
+		var checked = $(this).prop("checked");
+
+		//extract data for PUT
+		var entryId = $(this).data("checkpoint-id");
+		var checkedDate = checked ? new Date().toISOString() : null;
+		var checkedBy = checked ? "${me.id}" : null;
+
+		$.ajax({
+		  type: "PUT",
+		  url: "/structr/rest/ChecklistPoint/"+entryId,
+		  data: JSON.stringify({
+			checkedBy:checkedBy,
+			checkDate:checkedDate,
+			checked:checked
+		  }),
+		  dataType: "json",
+		  success: function(){
+			window.location.reload();
+		  }
+		});
+
+	});
+
+
+	$("#checklist-template-select").select2();
+
+	$("#button-create-checklist").on("click", function () {
+
+		var selectedElement = $('#checklist-template-select').find('option:selected');
+		
+		var templateId = selectedElement.data('template-id');
+		var consultingFolderId = '${current.id}';
+		
+		$.ajax({
+			type: 'POST',
+			url: '/structr/rest/ChecklistTemplate/'+templateId+'/createChecklist',
+			data: JSON.stringify({
+				folderId:consultingFolderId
+			}),
+			dataType: 'json',
+			success: function(){
+				window.location.reload();
+			}
+		
+		});
+
+	});
+	
+	$(".checklist-assignee-select").on('change', function (e) {
+		var el = $(this);
+		var assignee = el.val();
+		var checklistPoint = el.data('checklist-point');
+		$.ajax({
+			type: 'PUT',
+			url: '/structr/rest/' + checklistPoint,
+			data: JSON.stringify({
+				assignedAgent: assignee
+			}),
+			success: function() {
+				window.location.reload();
+			}
+		});
+	});
+	
+	$(".checklist-message-button").on('click', function (e) {
+		var btn = $(this);
+		var agentId = btn.closest('tr').find('.checklist-assignee-select').val();
+		var senderId = '${me.id}';
+		$.ajax({
+			type: 'POST',
+			url: '/structr/rest/ChecklistPoint/' + btn.val() + '/sendMessage',
+			data: JSON.stringify({
+				agentId: agentId,
+				senderId: senderId
+			}),
+			success: function() {
+			}
+		});
+	});
+});</script>
+			</div>
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<!-- @structr:grant(admin,arwd) -->
+				<form id="client-form" action="javascript:void(0)">
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Name der Beratungsmappe</label>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="input-group" data-structr-meta-show-conditions="eq(current.type, 'ConsultingFolder')" data-structr-meta-hide-conditions="eq(current.type, 'ArchivedConsultingFolder')">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input class="form-control online-only" required="required" type="text" value="${current.name}" data-structr-name="name"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="input-group-btn">
+								<!-- @structr:grant(admin,arwd) -->
+								<button class="btn btn-default online-only" data-structr-action="save:ConsultingFolder" data-structr-append-id="false" data-structr-attributes="name" data-structr-id="${current.id}" data-structr-reload="true" data-structr-meta-hide-conditions="empty(current)"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Speichern</button>
+							</span>
+						</div><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain), @structr:show(eq(current.type, 'ArchivedConsultingFolder')) -->${current.name}
+					
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group" data-structr-meta-show-conditions="eq(current.type, 'ArchivedConsultingFolder')">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Kommentar zur archivierten Beratungsmappe</label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.comments}
+					
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="Zugriffsrechte-Dialog" data-structr-meta-name="Zugriffsrechte-Dialog" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')">
+		</structr:component>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="SectionCreateModal" data-structr-meta-name="SectionCreateModal">
+		</structr:component>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --><structr:template src="f5c0bd582c484c5892c4a2c1055c7cdf">
+		</structr:template>
+	
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="ConsultationCreateModal" data-structr-meta-name="ConsultationCreateModal">
+		</structr:component>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="ArchiveConsultingFolderModal" data-structr-meta-name="ArchiveConsultingFolderModal">
+		</structr:component>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="AssignAgentModal" data-structr-meta-shared-component-configuration="store('AssignAgentModal_Agent', current.agent)" data-structr-meta-name="AssignAgentModal">
+		</structr:component>
+	</div><!-- @structr:owner(admin), @structr:content(text/html) -->&lt;script&gt;
+$(function() {
+
+${{
+
+var page     = Structr.get('page');
+var pageName = page.name + '-offline';
+var current  = Structr.get('current');
+var sections = current.sections;
+
+var url = '/' + pageName + '.appcache/' + current.id;
+Structr.print('window.setTimeout(function() { $.ajax({ method: "GET", url: "' + url + '", async: false }); }, ' + (n*100) + ');\n');
+
+var n = 0;
+sections.forEach(function(s) {
+
+	n++;
+	url = '/' + pageName + '/' + current.id + '?section=' + s.id;
+	Structr.print('window.setTimeout(function() { $.ajax({ method: "GET", url: "' + url + '", async: false }); }, ' + (n*100) + ');\n');
+
+	var t = 0;
+	var documents = s.consultingDocuments;
+	if (documents != null &amp;&amp; documents.length &gt; 0) {
+		documents.forEach(function(d) {
+			t++;
+			Structr.print('window.setTimeout(function() { $.ajax({ method: "GET", url: "'+ url + '&amp;document=' + d.id + '", async: false }); }, ' + (t*20) + ');\n');
+			Structr.print('window.setTimeout(function() { $.ajax({ method: "GET", url: "'+ d.path + '", async: false }); }, ' + (t*20+10) + ');\n');
+
+		});
+	}
+	
+	var subSections = s.subSections;
+	if (subSections != null &amp;&amp; subSections.length &gt; 0) {
+		subSections.forEach(function(sub) {
+
+			Structr.print('/' + pageName + '/' + current.id + '?section=' + sub.id + '\n');
+			
+			var documents = sub.consultingDocuments;
+			if (documents != null &amp;&amp; documents.length &gt; 0) {
+				documents.forEach(function(d) {
+
+					t++;
+					Structr.print('window.setTimeout(function() { $.ajax({ method: "GET", url: "'+ url + '&amp;document=' + d.id + '", async: false }); }, ' + (t*20) + ');\n');
+					Structr.print('window.setTimeout(function() { $.ajax({ method: "GET", url: "'+ d.path + '", async: false }); }, ' + (t*20+10) + ');\n');
+
+				});
+			}
+
+		});
+	}
+
+	Structr.print('\n');
+
+});
+}}
+});
+&lt;/script&gt;
+	
+	<script type="text/javascript"><!-- @structr:content(text/javascript) -->// Speichert die aktuelle Scrollposition in die Localstorage und stellt sie bei einem Reload der Seite wieder her
+$(function() {
+	var currentMap = '${current}';
+	var user = '${me.id}';
+	
+	var oldPos = localStorage.getItem("scrollPosition-" + currentMap + "-" + user);
+	
+	if(oldPos){
+		$(document).scrollTop(oldPos);	
+	}
+	
+	$(document).scroll(function(){
+		var scrollPosition = $(document).scrollTop();
+		localStorage.setItem("scrollPosition-" + currentMap + "-" + user, scrollPosition);	
+	});
+});</script>
+</structr:template>

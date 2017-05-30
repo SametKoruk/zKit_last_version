@@ -1,0 +1,118 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><div class="row hidden" id="permission-controls" data-structr-meta-name="Zugriffsrechte-Dialog">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div data-structr-meta-hide-conditions="empty(current)">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-8">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="form-group">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Zugriffsberechtigte</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<select class="form-control select-user-control" multiple="multiple">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<optgroup label="Global" data-structr-meta-show-conditions="me.isAdmin">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<option value="visibleToAuthenticatedUsers" selected="${if(current.visibleToAuthenticatedUsers, 'selected', null)}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Z-EP</option>
+					</optgroup>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<optgroup label="Gruppen">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<option value="${user.id}" selected="${if(any(get_outgoing_relationships(user, current, 'SECURITY'), contains(data.allowed, 'read')), 'selected', null)}" data-structr-meta-data-key="user" data-structr-meta-rest-query="/Group" data-structr-meta-show-conditions="not(user.isAgencyGroup)" data-structr-meta-hide-conditions="is_allowed(user, current, 'accessControl')"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${user.name}</option>
+					</optgroup>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<optgroup label="Vermittler">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<option value="${user.id}" selected="${if(any(get_outgoing_relationships(user, current, 'SECURITY'), contains(data.allowed, 'read')), 'selected', null)}" data-structr-meta-data-key="user" data-structr-meta-rest-query="/Agent" data-structr-meta-hide-conditions="is_allowed(user, current, 'accessControl')"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${user.name}</option>
+					</optgroup>
+				</select>
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-4">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="form-group">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Besitzer</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<select class="form-control select-owner-control" multiple="multiple">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<option value="${user.id}" selected="${if(or(eq(current.owner, user), any(get_outgoing_relationships(user, current, 'SECURITY'), contains(data.allowed, 'accessControl'))), 'selected', null)}" data-structr-meta-data-key="user" data-structr-meta-rest-query="/Principal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${user.name}</option>
+				</select>
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->$(function() {
+
+	var current = '${current.id}';
+	
+	if (current &amp;&amp; current.length == 32) {
+		
+		// make container visible later to avoid showing unformatted select box
+		$('#permission-controls').removeClass('hidden');
+
+		var userControl  = $('select.select-user-control');
+		var ownerControl = $('select.select-owner-control');
+
+		userControl.select2();
+		ownerControl.select2();
+	
+		userControl.on('select2:select',   function(e) { updatePermissions(current, 'add',    $(e.params.data.element).val(), 'read,write'); });
+		userControl.on('select2:unselect', function(e) { updatePermissions(current, 'remove', $(e.params.data.element).val(), 'read,write'); });
+
+		ownerControl.on('select2:select',   function(e) { updatePermissions(current, 'add',    $(e.params.data.element).val(), 'read,write,delete,accessControl'); });
+		ownerControl.on('select2:unselect', function(e) { updatePermissions(current, 'remove', $(e.params.data.element).val(), 'read,write,delete,accessControl'); });
+		
+	} else {
+	
+		console.log('No current object, cannot activate input elements for owner and permission controls.');
+		
+	}
+
+});
+
+function updatePermissions(target, action, principal, permissions) {
+
+	if (target &amp;&amp; target.length == 32) {
+
+		$.ajax({
+			url: '/structr/rest/Helper/updatePermissions',
+			type: 'POST',
+			method: 'POST',
+			data: JSON.stringify({
+				target: target,
+				action: action,
+				principal: principal,
+				permissions: permissions
+			}),
+			statusCode: {
+				200: function() {
+					window.location.reload();
+				},
+				400: logError,
+				401: logError,
+				403: logError,
+				404: logError,
+				422: logError,
+				500: logError
+			}
+		});
+		
+	} else {
+	
+		console.log('Cannot update permissions, no UUID set.');
+	}
+}
+
+function logError(response) {
+	if (response) {
+	
+		if (response.responseJSON) {
+			alert(JSON.stringify(response.responseJSON));
+		} else {
+			alert(JSON.stringify(response));
+		}
+	}
+	return false;
+}</script>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<!-- @structr:private --><div class="col-sm-3" data-structr-meta-name="MainpageMenu" data-structr-meta-hide-conditions="eq(me.type, 'Client')">
+	<!-- @structr:private -->
+	<div class="dropdown pull-right" data-structr-meta-show-conditions="not(empty(me))">
+		<!-- @structr:private -->
+		<button class="btn btn-default dropdown-toggle online-only" id="dropdownMenu1" type="button" data-toggle="dropdown"><!-- @structr:private --><i class="fa fa-bars"></i><!-- @structr:private --><span class="caret"></span></button>
+		<!-- @structr:private -->
+		<ul class="dropdown-menu">
+			<!-- @structr:private -->
+			<li><!-- @structr:private --><a href="/startseite"><!-- @structr:private, @structr:content(text/plain) -->Startseite</a></li>
+			<!-- @structr:private -->
+			<li><!-- @structr:private --><a href="/kunden"><!-- @structr:private, @structr:content(text/plain) -->Kunden</a></li>
+			<!-- @structr:private, @structr:grant(admin,arwd) -->
+			<li><!-- @structr:private, @structr:grant(admin,arwd) --><a href="/kunde"><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->Neuer Kunde</a></li>
+			<!-- @structr:private -->
+			<li><!-- @structr:private --><a href="/vermittler/${me.id}"><!-- @structr:private, @structr:content(text/plain) -->Vermittlerprofil</a></li>
+			<!-- @structr:private -->
+			<li><!-- @structr:private --><a href="/vorlagen"><!-- @structr:private, @structr:content(text/plain) -->Vorlagen</a></li>
+			<!-- @structr:private -->
+			<li><!-- @structr:private --><a href="/dateiarchiv"><!-- @structr:private, @structr:content(text/plain) -->Dateiarchiv</a></li>
+			<!-- @structr:private -->
+			<li><!-- @structr:private --><a href="/einstellungen"><!-- @structr:private, @structr:content(text/plain) -->Einstellungen</a></li>
+			<!-- @structr:private, @structr:grant(admin,arwd) -->
+			<li><!-- @structr:private, @structr:grant(admin,arwd) --><a href="/infos"><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->Informationen und Hilfe</a></li>
+		</ul>
+	</div>
+</div>

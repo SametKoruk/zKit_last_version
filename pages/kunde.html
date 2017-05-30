@@ -1,0 +1,233 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="CreateConsultingFolderModal" data-structr-meta-name="CreateConsultingFolderModal">
+		</structr:component>
+	</div>
+	<div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group"></div>
+			</div>
+		</div>
+		<form id="client-form" action="javascript:void(0)">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Anrede</label>
+						<select class="form-control" data-structr-name="salutation" data-structr-type="Salutation">
+							<option></option>
+							<option value="${salutationObj.id}" selected="${if(eq(salutationObj.id, current.salutation), 'selected', null)}" data-structr-meta-data-key="salutationObj" data-structr-meta-rest-query="Salutation?sort=name"><!-- @structr:content(text/plain) -->${salutationObj.name}</option>
+						</select>
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Vorname</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" required="required" type="text" value="${current.firstName}" data-structr-name="firstName">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Nachname</label>
+						<input class="form-control" required="required" type="text" value="${current.lastName}" data-structr-name="lastName">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->E-Mail</label>
+						<input class="form-control" required="required" type="email" value="${current.eMail}" data-structr-name="eMail">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Telefon</label>
+						<input class="form-control" type="text" value="${current.phone}" data-structr-name="phone">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Telefax</label>
+						<input class="form-control" type="text" value="${current.fax}" data-structr-name="fax">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Mobil</label>
+						<input class="form-control" type="text" value="${current.mobile}" data-structr-name="mobile">
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Straße</label>
+						<input class="form-control" type="text" value="${current.street}" data-structr-name="street">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Hausnummer</label>
+						<input class="form-control" type="text" value="${current.houseNumber}" data-structr-name="houseNumber">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->PLZ</label>
+						<input class="form-control" type="text" value="${current.zipCode}" data-structr-name="zipCode">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Ort</label>
+						<input class="form-control" type="text" value="${current.city}" data-structr-name="city">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Datum Versicherungscheck (Freitext)</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.insuranceCheck}" data-structr-name="insuranceCheck">
+					</div>
+					<div class="form-group" data-structr-meta-hide-conditions="empty(current)">
+						<label><!-- @structr:content(text/plain) -->Beratungen</label><a href="/beratungen-neu/${current.id}"><i class="fa fa-list"></i></a>
+					</div>
+					<div class="form-group" data-structr-meta-hide-conditions="empty(current)">
+						<label><!-- @structr:content(text/plain) -->Kundenordner</label><a href="/kundenordner/${current.clientFolder.id}" data-structr-meta-hide-conditions="empty(current.clientFolder)"><i class="fa fa-folder-open"></i></a><a href="javascript:void(0)" data-structr-action="create:ClientFolder" data-structr-append-id="true" data-structr-attributes="client" data-structr-id="${current.id}" data-structr-return="/kundenordner/" data-structr-meta-show-conditions="empty(current.clientFolder)"><i class="fa fa-plus"></i></a>
+					</div>
+					<input type="hidden" value="${current.id}" data-structr-id="${client.id}" data-structr-name="client">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="row">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="col-sm-12">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<p data-structr-meta-hide-conditions="empty(current.loginSendDate)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${
+
+	if(
+		not(
+			empty(
+				current.loginSendDate
+			)
+		),
+		concat(
+			"Zugangsdaten versandt am: ",
+			date_format(current.loginSendDate, "dd.MM.yyyy HH:mm")
+		),
+		""
+	) 
+
+}</p>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<p id="consultingFolder-link" data-structr-meta-hide-conditions="empty(current.confirmationKey)"></p>
+						</div>
+					</div>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="row">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="col-sm-5">
+							<button class="btn btn-default" id="send-login-link" title="Zugang kann nur verschickt werden wenn Name und E-Mail gefüllt sind" disabled="true" data-structr-meta-hide-conditions="empty(current)"><!-- @structr:content(text/plain) -->${if(not(empty(current.loginSendDate)), "Erneut versenden", "Zugang versenden")}</button>
+						</div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="col-sm-7">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<p data-structr-meta-hide-conditions="empty(current)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->&lt;label&gt;Initial-Token&lt;/label&gt;
+${
+	if(
+		empty(current.initialToken),
+		"&lt;i&gt;Wird beim nächsten Versenden des Zugangs neu generiert&lt;/i&gt;",
+		current.initialToken
+	) 
+
+}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Bemerkungen</label><textarea class="form-control" rows="5" data-structr-name="comments"><!-- @structr:content(text/plain) -->${current.comments}</textarea>
+					</div>
+				</div>
+			</div>
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-6"></div>
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-sm-6">
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Vermittler</label>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<select class="form-control" data-structr-name="agent" data-structr-type="Agent">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<option value="${agent.id}" selected="${if(eq(me.id, agent), 'selected', null)}" data-structr-meta-data-key="agent" data-structr-meta-function-query="me.agency.agents"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${agent.name}</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group pull-right"><a class="btn btn-default m-r-1" href="/kunden"><!-- @structr:content(text/plain) -->Abbrechen</a>
+						<button class="btn btn-default pull-right button-blue" data-structr-action="create:Client" data-structr-append-id="true" data-structr-attributes="salutation,lastName,firstName,eMail,phone,fax,mobile,street,houseNumber,zipCode,city,comments,insuranceCheck,agent" data-structr-reload="true" data-structr-return="/kunde" data-structr-meta-show-conditions="empty(current)"><!-- @structr:content(text/plain) -->Anlegen</button>
+						<button class="btn btn-default pull-right  button-blue" data-structr-action="save:Client" data-structr-append-id="false" data-structr-attributes="salutation,lastName,firstName,eMail,phone,fax,mobile,street,houseNumber,zipCode,city,comments,insuranceCheck,agent" data-structr-id="${current.id}" data-structr-reload="true" data-structr-return="/kunden" data-structr-meta-hide-conditions="empty(current)"><!-- @structr:content(text/plain) -->Speichern</button>
+					</div>
+					<button class="btn btn-danger" data-structr-action="delete:Client" data-structr-confirm="true" data-structr-hide="edit" data-structr-id="${current.id}" data-structr-reload="true" data-structr-return="/kunden"><!-- @structr:content(text/plain) -->Kunde löschen</button>
+				</div>
+			</div>
+		</form>
+		<script type="text/javascript"><!-- @structr:content(text/javascript) -->$(function() {
+
+	$('#client-form').validate();
+
+
+	if("${current.firstName}".length &gt; 0 &amp;&amp; "${current.lastName}".length &gt; 0 &amp;&amp; "${current.eMail}".length &gt; 0){
+
+		$('#send-login-link').prop('disabled', false).attr('title', '');
+
+	}
+
+
+	$('#send-login-link').on('click', function() {
+		
+		$.post('/structr/rest/Client/${current.id}/sendLoginToken', {params: {}} , function(data){
+			location.reload();
+		});
+
+	});
+	
+	// Setzt den Text für den Link zum Consultingfolder entsprechend des richtigen http protokolls.     
+    var url = ${concat('"//',host,':', port, '/reset-password?key=', current.confirmationKey, '&amp;target=/einstellungen";')};
+    $('#consultingFolder-link').text(location.protocol + url);
+});</script>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<div class="row">
+			<div class="col-sm-3"><span><!-- @structr:content(text/plain) -->Angelegt am: <!-- @structr:content(text/plain) -->${date_format(current.createdDate, 'dd.MM.yyyy')}</span></div>
+			<div class="col-sm-3"><span><!-- @structr:content(text/plain) -->Letzte Änderung: <!-- @structr:content(text/plain) -->${date_format(current.lastModifiedDate, 'dd.MM.yyyy')}</span></div>
+			<div class="col-sm-3"><span><!-- @structr:content(text/plain) -->Passwort gesetzt: <!-- @structr:content(text/plain) -->${if(empty(current.password), 'Ja', 'Nein')}</span></div>
+		</div>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row hidden" id="archivierte-beratungsmappen-versteckt">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Archivierte Beratungsmappen</h3>
+			</div>
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th><!-- @structr:content(text/plain) -->Name</th>
+								<th><!-- @structr:content(text/plain) -->Bemerkung</th>
+								<th><!-- @structr:content(text/plain) -->Datum</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-structr-id="${consultation.id}" data-structr-meta-data-key="oldConsultingFolder" data-structr-meta-function-query="sort(current.archivedConsultingFolders, 'archiveDate', true)">
+								<td><a href="/beratungsmappe/${oldConsultingFolder.id}"><!-- @structr:content(text/plain) -->${oldConsultingFolder.name}</a></td>
+								<td><!-- @structr:content(text/plain) -->${abbr(oldConsultingFolder.comments, 64)}</td>
+								<td><!-- @structr:content(text/plain) -->${date_format(oldConsultingFolder.archiveDate, 'dd-MM-yyyy HH:mm')}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="Zugriffsrechte-Dialog" data-structr-meta-name="Zugriffsrechte-Dialog">
+		</structr:component>
+	</div>
+</structr:template>

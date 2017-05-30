@@ -1,0 +1,80 @@
+<!DOCTYPE html>${call('addLogEvent', 'eventType', 'page', 'context', page.name)}
+<html>
+	<head>
+		<title>${titleize(page.name, '-')}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> 
+		<link href="/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?1" rel="stylesheet">
+		<!--link href="/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css?1" rel="stylesheet"-->
+		<link href="/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/css/datatables.min.css" rel="stylesheet" media="screen" type="text/css">
+		<link href="/css/jquery-ui.css" rel="stylesheet" media="screen" type="text/css">
+		<link href="/css/apple.css?1" rel="stylesheet" media="screen" type="text/css">
+		<link href="/css/zurich.css" rel="stylesheet" media="screen" type="text/css">
+		<link href="/css/zurich-logo.css" rel="stylesheet" media="screen" type="text/css">
+		<link href="/css/custom.css?1" rel="stylesheet" media="screen" type="text/css">
+		<script src="/js/jquery-2.2.4.min.js"></script>
+		<script src="/js/datatables.min.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					${include('Logout Button')}
+				</div>
+			</div>
+			<div class="white small-padding">
+			
+${if(eq(current.type, 'Consultation'), store('clientfolder', current.client.clientFolder), '')}
+${if(eq(current.type, 'ClientFolder'), store('clientfolder', current), '')}
+${if(eq(current.type, 'Insurance'), store('clientfolder', current.clientFolder), '')}
+${if(eq(current.type, 'Client'), store('clientfolder', current.clientFolder), '')}
+${if(empty(request.clientFolder), '', store('clientfolder', find('ClientFolder', request.clientFolder)))}
+
+${if(eq(me.type, 'Client'), store('clientfolder', me.clientFolder), '')}
+
+${store('client', retrieve('clientfolder').client)}
+<!-- Kunde: ${retrieve('client')} Kundenordner: ${retrieve('clientfolder')}-->
+			
+				<div class="row">
+					<div class="col-sm-3"><a href="/startseite" id="zurich-logo"><img src="/img/ZurichLogo.png" width="136"></a></div>
+					<div class="col-sm-9">
+						<div class=" blue-line">
+							<div class="row">
+								<div class="col-sm-9">
+									<h1 class="page-title">${if(empty(current.insuranceType), titleize(page.name, '-'), current.insuranceType.name)}<br><strong>${if(empty(retrieve('client')), '', 'von')} ${retrieve('client').name}</strong></h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-8 consulting-folder-left-col"> ${render(children)}</div>
+					<div class="col-sm-4 consulting-folder-right-col"> ${include('Agent Profile')}</div>
+				</div>
+			</div>
+		</div>
+		<script src="/js/jquery-ui.min.js"></script>
+		<script src="/js/datepicker-de.js"></script>
+		<script src="/js/jquery.validate.min.js"></script>
+		<script src="/js/additional-methods.min.js"></script>
+		<script src="/js/custom.js"></script>
+		<script>
+		$(function() {
+			$('.datatable').DataTable({
+				"language": {
+					"url": "/js/German.json"
+				}
+			});
+
+			$.datepicker.setDefaults( $.datepicker.regional[ "de" ] );
+
+			$('input[data-structr-type="Date"]').datepicker({
+				dateFormat: 'dd.mm.yy'
+			});
+		});
+		</script>
+	</body>
+</html>

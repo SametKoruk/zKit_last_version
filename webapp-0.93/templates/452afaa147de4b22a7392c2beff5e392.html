@@ -1,0 +1,25 @@
+${
+	store(
+		'consultationList',
+		sort(
+			filter(
+				me.consultations,
+				and(
+					eq(data.showOnFrontPage, true),
+					gte(
+						num(data.date),
+						subt(num(now), 86400000)
+					)
+				)
+			),
+			'date'
+		)
+	)
+}
+${
+	if(
+		eq(size(retrieve('consultationList')), 0),
+		'Keine anstehenden Beratungstermine',
+		render(children)
+	)
+}

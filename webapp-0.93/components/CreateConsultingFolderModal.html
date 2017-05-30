@@ -1,0 +1,95 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><div data-structr-meta-name="CreateConsultingFolderModal">
+	<!-- @structr:grant(admin,arwd) -->
+	<script type="text/javascript"><!-- @structr:grant(admin,arwd), @structr:content(text/javascript) -->;$(function() {
+
+	$('#modal-new-consulting-folder').on('shown.bs.modal',function(el) {
+		
+		var a              = $(el.relatedTarget);
+		var consultationId = a.data('consultation-id');
+		var selectEl       = $('#template-select');
+		
+		selectEl.chosen();
+		selectEl.on('change', function () {
+			$('#select-template-button').attr('disabled', null);
+		});
+
+		$('#select-template-button').off('click').on('click', function () {
+			var btn = $(this);
+			
+			var templateId = selectEl.val();
+			btn.attr('disabled', 'disabled').html('&lt;img src="/structr/img/ajax-loader.gif"&gt; Bitte warten');
+			
+			if(templateId.length &gt; 1){
+				// Create new Folder from more than one template
+				$.ajax({
+					url: '/structr/rest/ConsultingFolderTemplate/' + templateId[0] + '/createConsultingFolderFromTemplates',
+					contentType: 'application/json; charset=UTF-8',
+					method: 'POST',
+					data: JSON.stringify({consultationId: consultationId, templates: templateId}),
+					statusCode: {
+						200: function(result) {
+							if (result &amp;&amp; result.result &amp;&amp; result.result.id) {
+								document.location = '/beratungsmappe/' + result.result.id;
+							} else {
+								document.location.reload();
+							}
+						}
+					}
+				});
+			} else {
+				$.ajax({
+					url: '/structr/rest/ConsultingFolderTemplate/' + templateId[0] + '/createConsultingFolderFromTemplate',
+					contentType: 'application/json; charset=UTF-8',
+					method: 'POST',
+					data: JSON.stringify({consultationId: consultationId}),
+					statusCode: {
+						200: function(result) {
+							if (result &amp;&amp; result.result &amp;&amp; result.result.id) {
+								document.location = '/beratungsmappe/' + result.result.id;
+							} else {
+								document.location.reload();
+							}
+						}
+					}
+				});				
+			}			
+		});		
+	});
+});</script>
+	<!-- @structr:grant(admin,arwd) -->
+	<div class="modal fade" id="modal-new-consulting-folder" role="dialog">
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="modal-dialog" role="document">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="modal-content">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="modal-header">
+					<!-- @structr:grant(admin,arwd) -->
+					<button class="close" data-dismiss="modal"><!-- @structr:grant(admin,arwd) --><span><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->X</span></button>
+					<!-- @structr:grant(admin,arwd) -->
+					<h4 class="modal-title" id="newDocumentModalLabel"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Vorlage auswählen</h4>
+				</div>
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="modal-body">
+					<!-- @structr:grant(admin,arwd) -->
+					<div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<select class="form-control" id="template-select" multiple="multiple">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<option value="-1" disabled="disabled" selected="selected"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Template auswählen...</option>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<option value="${template.id}" data-structr-meta-data-key="template" data-structr-meta-function-query="find('ConsultingFolderTemplate', 'type', 'ConsultingFolderTemplate')"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${template.name}</option>
+						</select>
+					</div>
+				</div>
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="modal-footer">
+					<!-- @structr:grant(admin,arwd) -->
+					<button class="btn btn-primary" id="select-template-button" disabled="disabled"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Auswählen</button>
+					<!-- @structr:grant(admin,arwd) -->
+					<button class="btn btn-default" data-dismiss="modal"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Abbrechen</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,2050 @@
+[
+  {
+    "flags": 2,
+    "signature": "/"
+  },
+  {
+    "flags": 0,
+    "signature": "Agency"
+  },
+  {
+    "flags": 0,
+    "signature": "Agency/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "Agency/Agent/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Agency/_Ui"
+  },
+  {
+    "flags": 7,
+    "signature": "Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/Agency"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/Agency/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/ChecklistPoint"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/ChecklistPoint/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/Client/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/Consultation/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/ConsultingFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/ConsultingFolderTemplate/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/DocumentArchive"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/DocumentArchive/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Agent/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ArchivedConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "ArchivedConsultingFolder/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "ArchivedConsultingFolder/Client/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ArchivedConsultingFolder/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "Checklist"
+  },
+  {
+    "flags": 0,
+    "signature": "Checklist/ChecklistPoint"
+  },
+  {
+    "flags": 0,
+    "signature": "Checklist/ChecklistPoint/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Checklist/ChecklistTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "Checklist/ChecklistTemplate/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Checklist/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "Checklist/ConsultingFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Checklist/_Ui"
+  },
+  {
+    "flags": 2,
+    "signature": "ChecklistPoint"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistPoint/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistPoint/Agent/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistPoint/Checklist"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistPoint/Checklist/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "ChecklistPoint/SendMessage"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistPoint/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistTemplate/Checklist"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistTemplate/Checklist/_Ui"
+  },
+  {
+    "flags": 6,
+    "signature": "ChecklistTemplate/CreateChecklist"
+  },
+  {
+    "flags": 0,
+    "signature": "ChecklistTemplate/_Ui"
+  },
+  {
+    "flags": 15,
+    "signature": "Client"
+  },
+  {
+    "flags": 4,
+    "signature": "Client/ActivateAccount"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/Agent/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "Client/AllowAccess"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/ArchivedConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/ArchivedConsultingFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/ClientFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/Consultation/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/ConsultingFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/InventoryItem"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/InventoryItem/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "Client/SendLoginToken"
+  },
+  {
+    "flags": 0,
+    "signature": "Client/_Ui"
+  },
+  {
+    "flags": 15,
+    "signature": "ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/ClientFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/Consultation/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/ConsultingAppointment"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/ConsultingAppointment/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/ConsultingFolderSection/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/DocumentType"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/DocumentType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/DocumentVersion"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/DocumentVersion/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/InsuranceType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientDocument/ReceivedEmail/_Ui"
+  },
+  {
+    "flags": 1,
+    "signature": "ClientDocument/_Ui"
+  },
+  {
+    "flags": 7,
+    "signature": "ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/Client/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/ClientDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/ConsultingFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/InsuranceType/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "ClientFolder/RequestCheck"
+  },
+  {
+    "flags": 0,
+    "signature": "ClientFolder/_Ui"
+  },
+  {
+    "flags": 14,
+    "signature": "Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/Agent/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/Client/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/ClientDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/ConsultingAppointment"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/ConsultingAppointment/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/ConsultingFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Consultation/_Ui"
+  },
+  {
+    "flags": 14,
+    "signature": "ConsultingAppointment"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingAppointment/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingAppointment/ClientDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingAppointment/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingAppointment/Consultation/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingAppointment/_Ui"
+  },
+  {
+    "flags": 10,
+    "signature": "ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/ConsultingFolderSection/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/DocumentArchive"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/DocumentArchive/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/DocumentReference/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/DocumentVersion"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/DocumentVersion/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/File"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/File/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/InsuranceType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/ReceivedEmail/_Ui"
+  },
+  {
+    "flags": 1,
+    "signature": "ConsultingDocument/Version/_Ui"
+  },
+  {
+    "flags": 1,
+    "signature": "ConsultingDocument/_Template"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 15,
+    "signature": "ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/Agent/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolder/ArchiveConsultingFolder"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolder/AssignAgent"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/Checklist"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/Checklist/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/Client/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/ClientFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/Consultation/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/ConsultingFolderSection/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolder/DeleteObject"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolder/_Ui"
+  },
+  {
+    "flags": 7,
+    "signature": "ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ClientDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ConsultingFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ConsultingFolderSection/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/ConsultingFolderTemplate/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolderSection/DeleteObject"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolderSection/DeleteSection"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/DocumentReference/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolderSection/MoveDown"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolderSection/MoveUp"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolderSection/RemoveDocument"
+  },
+  {
+    "flags": 1,
+    "signature": "ConsultingFolderSection/_Template"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderSection/_Ui"
+  },
+  {
+    "flags": 15,
+    "signature": "ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderTemplate/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderTemplate/Agent/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderTemplate/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderTemplate/ConsultingFolderSection/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolderTemplate/CreateConsultingFolderFromTemplate"
+  },
+  {
+    "flags": 4,
+    "signature": "ConsultingFolderTemplate/DeleteObject"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderTemplate/Folder"
+  },
+  {
+    "flags": 0,
+    "signature": "ConsultingFolderTemplate/Folder/_Ui"
+  },
+  {
+    "flags": 1,
+    "signature": "ConsultingFolderTemplate/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DataFeed"
+  },
+  {
+    "flags": 0,
+    "signature": "DataFeed/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentArchive"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentArchive/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentArchive/Agent/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentArchive/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentArchive/ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentArchive/_Ui"
+  },
+  {
+    "flags": 14,
+    "signature": "DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/ConsultingFolderSection/_Ui"
+  },
+  {
+    "flags": 4,
+    "signature": "DocumentReference/CopyToClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/InsuranceType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/ReceivedEmail/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentReference/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentType"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentType/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentType/ClientDocument/_Ui"
+  },
+  {
+    "flags": 1,
+    "signature": "DocumentType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentVersion"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentVersion/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentVersion/ClientDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentVersion/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentVersion/ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentVersion/File"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentVersion/File/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "DocumentVersion/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "FeedItem"
+  },
+  {
+    "flags": 0,
+    "signature": "FeedItem/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "FeedItemContent"
+  },
+  {
+    "flags": 0,
+    "signature": "FeedItemContent/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "FeedItemEnclosure"
+  },
+  {
+    "flags": 0,
+    "signature": "FeedItemEnclosure/_Ui"
+  },
+  {
+    "flags": 10,
+    "signature": "File"
+  },
+  {
+    "flags": 0,
+    "signature": "File/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "File/ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "File/DocumentVersion"
+  },
+  {
+    "flags": 0,
+    "signature": "File/DocumentVersion/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "File/InventoryItem"
+  },
+  {
+    "flags": 0,
+    "signature": "File/InventoryItem/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "File/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "File/ReceivedEmail/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "File/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Folder"
+  },
+  {
+    "flags": 0,
+    "signature": "Folder/ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "Folder/ConsultingFolderTemplate/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Folder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Group"
+  },
+  {
+    "flags": 0,
+    "signature": "Group/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Helper"
+  },
+  {
+    "flags": 4,
+    "signature": "Helper/UpdatePermission"
+  },
+  {
+    "flags": 0,
+    "signature": "Helper/_Ui"
+  },
+  {
+    "flags": 8,
+    "signature": "Image"
+  },
+  {
+    "flags": 0,
+    "signature": "Image/InventoryItem"
+  },
+  {
+    "flags": 0,
+    "signature": "Image/InventoryItem/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Image/User"
+  },
+  {
+    "flags": 0,
+    "signature": "Image/User/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Image/_Ui"
+  },
+  {
+    "flags": 15,
+    "signature": "Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/Client/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/ClientDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/ClientFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 2,
+    "signature": "Insurance/InsuranceCompany"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/InsuranceCompany/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/InsuranceSubType"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/InsuranceSubType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/InsuranceType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/PaymentType"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/PaymentType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceCompany"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceCompany/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceCompany/Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceCompany/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceDataField"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceDataField/InsuranceSubType"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceDataField/InsuranceSubType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceDataField/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceSubType"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceSubType/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceSubType/Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceSubType/InsuranceDataField"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceSubType/InsuranceDataField/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceSubType/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceSubType/InsuranceType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceSubType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/ClientDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/ClientFolder/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/DocumentReference/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/InsuranceSubType"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/InsuranceSubType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InsuranceType/_Ui"
+  },
+  {
+    "flags": 14,
+    "signature": "InventoryItem"
+  },
+  {
+    "flags": 0,
+    "signature": "InventoryItem/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "InventoryItem/Client/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InventoryItem/File"
+  },
+  {
+    "flags": 0,
+    "signature": "InventoryItem/File/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InventoryItem/Image"
+  },
+  {
+    "flags": 0,
+    "signature": "InventoryItem/Image/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "InventoryItem/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "LogEvent"
+  },
+  {
+    "flags": 0,
+    "signature": "LogEvent/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "MailTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "MailTemplate/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ODSExporter"
+  },
+  {
+    "flags": 0,
+    "signature": "ODSExporter/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ODTExporter"
+  },
+  {
+    "flags": 0,
+    "signature": "ODTExporter/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Page"
+  },
+  {
+    "flags": 0,
+    "signature": "Page/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "PaymentItemNode"
+  },
+  {
+    "flags": 0,
+    "signature": "PaymentItemNode/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "PaymentNode"
+  },
+  {
+    "flags": 0,
+    "signature": "PaymentNode/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "PaymentType"
+  },
+  {
+    "flags": 0,
+    "signature": "PaymentType/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "PaymentType/Insurance/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "PaymentType/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/ClientDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/ConsultingDocument/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/DocumentReference/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/File"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/File/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "ReceivedEmail/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Salutation"
+  },
+  {
+    "flags": 0,
+    "signature": "Salutation/User"
+  },
+  {
+    "flags": 0,
+    "signature": "Salutation/User/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Salutation/_Ui"
+  },
+  {
+    "flags": 3,
+    "signature": "User"
+  },
+  {
+    "flags": 4,
+    "signature": "User/DeleteCurrentAvatar"
+  },
+  {
+    "flags": 0,
+    "signature": "User/Image"
+  },
+  {
+    "flags": 0,
+    "signature": "User/Image/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "User/Salutation"
+  },
+  {
+    "flags": 0,
+    "signature": "User/Salutation/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "User/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "VideoFile"
+  },
+  {
+    "flags": 0,
+    "signature": "VideoFile/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "Widget"
+  },
+  {
+    "flags": 0,
+    "signature": "Widget/_Ui"
+  },
+  {
+    "flags": 0,
+    "signature": "XMPPClient"
+  },
+  {
+    "flags": 0,
+    "signature": "XMPPClient/_Ui"
+  },
+  {
+    "flags": 1,
+    "signature": "_env"
+  },
+  {
+    "flags": 64,
+    "signature": "_login"
+  },
+  {
+    "flags": 4,
+    "signature": "_logout"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agency"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agency/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agent/Agency"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agent/ChecklistPoint"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agent/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agent/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agent/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agent/ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Agent/DocumentArchive"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ArchivedConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ArchivedConsultingFolder/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Checklist"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Checklist/ChecklistPoint"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Checklist/ChecklistTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Checklist/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ChecklistPoint"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ChecklistPoint/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ChecklistPoint/Checklist"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ChecklistTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ChecklistTemplate/Checklist"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Client/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Client/ArchivedConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Client/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Client/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Client/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Client/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Client/InventoryItem"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/ConsultingAppointment"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/DocumentType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/DocumentVersion"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientDocument/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientFolder/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientFolder/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientFolder/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientFolder/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ClientFolder/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Consultation/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Consultation/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Consultation/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Consultation/ConsultingAppointment"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Consultation/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingAppointment"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingAppointment/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingAppointment/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/DocumentArchive"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/DocumentVersion"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/File"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingDocument/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolder/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolder/Checklist"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolder/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolder/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolder/Consultation"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolder/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderSection/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderSection/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderSection/ConsultingFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderSection/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderSection/ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderSection/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderTemplate/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderTemplate/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderTemplate/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ConsultingFolderTemplate/Folder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DataFeed"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentArchive"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentArchive/Agent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentArchive/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentReference/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentReference/ConsultingFolderSection"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentReference/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentReference/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentType/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentVersion"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentVersion/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentVersion/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/DocumentVersion/File"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/FeedItem"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/FeedItemContent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/FeedItemEnclosure"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/File"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/File/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/File/DocumentVersion"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/File/InventoryItem"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/File/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Folder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Folder/ConsultingFolderTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Group"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Helper"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Image"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Image/InventoryItem"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Image/User"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance/InsuranceCompany"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance/InsuranceSubType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Insurance/PaymentType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceCompany"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceCompany/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceDataField"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceDataField/InsuranceSubType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceSubType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceSubType/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceSubType/InsuranceDataField"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceSubType/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceType/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceType/ClientFolder"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceType/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceType/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceType/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InsuranceType/InsuranceSubType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InventoryItem"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InventoryItem/Client"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InventoryItem/File"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/InventoryItem/Image"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/LogEvent"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/MailTemplate"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ODSExporter"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ODTExporter"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Page"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/PaymentItemNode"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/PaymentNode"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/PaymentType"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/PaymentType/Insurance"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ReceivedEmail"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ReceivedEmail/ClientDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ReceivedEmail/ConsultingDocument"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ReceivedEmail/DocumentReference"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/ReceivedEmail/File"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Salutation"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Salutation/User"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/User"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/User/Image"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/User/Salutation"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/VideoFile"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/Widget"
+  },
+  {
+    "flags": 0,
+    "signature": "_schema/XMPPClient"
+  },
+  {
+    "flags": 2,
+    "signature": "me"
+  }
+]

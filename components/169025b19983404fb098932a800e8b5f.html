@@ -1,0 +1,364 @@
+<!-- @structr:grant(admin,arwd) --><div class="row" id="consulting-sections"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${if(
+	empty(request.section),
+	'',
+	store('section', find('ConsultingFolderSection', request.section))
+)}
+
+${if(
+	empty(request.document),
+	'',
+	store('document', find('ConsultingDocument', request.document))
+)}
+	
+	<!-- @structr:grant(admin,arwd) -->
+	<div class="col-sm-4">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<ul class="list-group document-list" id="section-list">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<li class="list-group-item${if(eq(section.id, request.section), ' active', '')}" data-section-id="${section.id}" data-structr-meta-data-key="section" data-structr-meta-function-query="sort(current.sections, &quot;position&quot;)">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<form class="inline" data-structr-id="${section.id}">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="row">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="col-sm-7 section-title-container"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-caret-right m-r-05"></i><!-- @structr:grant(admin,arwd) --><a class="consulting-folder-section" href="?section=${section.id}${if(eq(request.presentationMode, &quot;on&quot;), &quot;&amp;presentationMode=on&quot;, &quot;&quot;)}" data-structr-attr="name" data-structr-edit-class="form-control"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${section.name}</a></div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="col-sm-5"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="actions pull-right" data-structr-meta-hide-conditions="eq(current.type, 'ArchivedConsultingFolder')"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="m-r-05 online-only" data-structr-action="edit:ConsultingFolderSection" data-structr-attributes="name" data-structr-edit-class="btn btn-xs btn-default m-r-1" data-structr-id="${section.id}" data-structr-reload="true" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-pencil"></i></a><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="m-r-05 online-only" data-structr-action="delete:ConsultingFolderSection" data-structr-confirm="true" data-structr-id="${section.id}" data-structr-reload="true" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-trash"></i></a><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="list-group-item-action" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="online-only" data-structr-action="moveDown:ConsultingFolderSection" data-structr-id="${section.id}" data-structr-reload="true" data-structr-meta-hide-conditions="section.isLast"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-caret-down"></i></a></span><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="list-group-item-action" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="online-only" data-structr-action="moveUp:ConsultingFolderSection" data-structr-id="${section.id}" data-structr-reload="true" data-structr-meta-hide-conditions="section.isFirst"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-caret-up"></i></a></span></span></div>
+					</div>
+				</form>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<ul class="list-group document-list" id="sub-section-list" data-structr-meta-show-conditions="or(eq(request.section, section.id), contains(section.sections, retrieve('section')))" data-structr-meta-hide-conditions="eq(0, size(section.sections))">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<li class="list-group-item${if(eq(subSection.id, request.section), ' active', '')}" data-section-id="${subSection.id}" data-structr-meta-data-key="subSection" data-structr-meta-function-query="sort(section.sections, &quot;position&quot;)">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<form class="inline" data-structr-id="${subSection.id}">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<div class="row">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<div class="col-sm-7 section-title-container"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-caret-right m-r-05"></i><!-- @structr:grant(admin,arwd) --><a class="consulting-folder-section" href="?section=${subSection.id}${if(eq(request.presentationMode, &quot;on&quot;), &quot;&amp;presentationMode=on&quot;, &quot;&quot;)}" data-structr-attr="name" data-structr-edit-class="form-control"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${subSection.name}</a></div>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<div class="col-sm-5"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="actions pull-right" data-structr-meta-hide-conditions="(eq(current.type, 'ArchivedConsultingFolder'))"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="m-r-05 online-only" data-structr-action="edit:ConsultingFolderSection" data-structr-attributes="name" data-structr-edit-class="btn btn-xs btn-default m-r-1" data-structr-id="${subSection.id}" data-structr-reload="true" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-pencil"></i></a><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="m-r-05 online-only" data-structr-action="deleteObject:ConsultingFolderSection" data-structr-confirm="true" data-structr-id="${subSection.id}" data-structr-reload="true" data-structr-meta-hide-conditions="eq(request.presentationMode, 'on')"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-trash"></i></a><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="list-group-item-action"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="m-r-05 online-only" data-structr-action="moveDown:ConsultingFolderSection" data-structr-id="${subSection.id}" data-structr-reload="true" data-structr-meta-hide-conditions="subSection.isLast"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-caret-down"></i></a></span><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="list-group-item-action"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="m-r-05 online-only" data-structr-action="moveUp:ConsultingFolderSection" data-structr-id="${subSection.id}" data-structr-reload="true" data-structr-meta-hide-conditions="subSection.isFirst"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-caret-up"></i></a></span></span></div>
+							</div>
+						</form>
+					</li>
+				</ul>
+			</li>
+		</ul><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="online-only" data-target="#modal-new-section" data-toggle="modal" data-structr-meta-hide-conditions="eq(current.type, 'ArchivedConsultingFolder')"><!-- @structr:owner(admin) --><i class="fa fa-plus-circle m-r-1 m-l-2" title="Kategorie anlegen"></i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Kategorie hinzufügen</span>
+	</div>
+	<!-- @structr:grant(admin,arwd) -->
+	<div class="col-sm-8 right-col">
+		<h3 class="section-name" data-structr-meta-show-conditions="or(empty(retrieve('section')), eq(current.type, 'ArchivedConsultingFolder'))"><!-- @structr:content(text/plain) -->Keine Kategorie ausgewählt.</h3>
+		<!-- @structr:grant(admin,arwd) -->
+		<h3 class="section-name"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${retrieve('section').name}</h3>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="table-responsive">
+			<!-- @structr:grant(admin,arwd) -->
+			<table class="table">
+				<!-- @structr:grant(admin,arwd) -->
+				<tbody class="section-documents">
+					<!-- @structr:grant(admin,arwd) -->
+					<tr data-structr-id="${reference.id}" data-structr-meta-data-key="reference" data-structr-meta-function-query="sort(retrieve('section').documentReferences, 'title')">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td style="width: 30px;"><!-- @structr:grant(admin,arwd) --><i class="${document.iconClass}"></i></td>
+						<!-- @structr:grant(admin,arwd) -->
+						<td><!-- @structr:grant(admin,arwd) --><a class="bold" href="/${reference.documentVersion.file.id}${if(eq(reference.documentVersion.file.contentType, 'text/html'), '', concat('?filename=', reference.downloadName))}" target="_blank" data-structr-attr="title" data-structr-edit-class="form-control inline"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${if(and(not(eq(request.reference, reference.id)), empty(reference.title)), '(Kein Titel - zur Bearbeitung hier klicken)', reference.title)}</a><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="pull-right open-version-dialog" style="cursor:pointer; margin-left: 1em; color: #000; ${if(empty(reference.version), 'font-weight: bold;', '')}" title="${if(empty(reference.version), 'Aktuelle Version', concat('Version ', reference.version, '.0'))}" href="javascript:void(0);" data-reference-id="${reference.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->v${reference.documentVersion.version}.0</a>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="btn btn-default btn-xs pull-right online-only" id="${if(empty(reference.consultingDocument.insuranceType),null,'automatic-copy-to-client-folder')}" data-insurance-type="${reference.consultingDocument.insuranceType}" data-reference-id="${reference.id}" data-structr-hide="edit" data-target="${if(empty(reference.consultingDocument.insuranceType),'#modal-copy-to-client-folder',null)}" data-toggle="modal" data-structr-meta-show-conditions="eq(page.name, 'beratungsmappe')" data-structr-meta-hide-conditions="eq(current.type, 'ArchivedConsultingFolder')"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->In Kundenordner kopieren</button>
+							<!-- @structr:grant(admin,arwd) -->
+							<div class="m-t-1" data-structr-meta-show-conditions="eq(request.reference, reference.id)">
+								<!-- @structr:grant(admin,arwd) -->
+								<p data-structr-attr="description" data-structr-edit-class="form-control inline" data-structr-type="String multi-line"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${reference.description}</p>
+								<!-- @structr:grant(admin,arwd) -->
+								<p><!-- @structr:grant(admin,arwd), @structr:content(text/html) -->Stand: ${date_format(reference.documentVersion.lastModifiedDate, 'dd.MM.yyyy')}&amp;nbsp;&amp;nbsp;&amp;nbsp;Größe: ${reference.documentVersion.file.size} Bytes&amp;nbsp;&amp;nbsp;&amp;nbsp;Format: ${reference.documentVersion.file.contentType}</p>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<div class="pull-left"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/${reference.documentVersion.file.id}${if(eq(reference.documentVersion.file.contentType, 'text/html'), '', concat('?filename=', reference.downloadName))}" target="_blank"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${reference.documentVersion.file.name}</a></div>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<div class="pull-right" data-structr-meta-hide-conditions="eq(current.type, 'ArchivedConsultingFolder')"><!-- @structr:grant(admin,arwd) --><a class="btn online-only" title="Referenz bearbeiten" href="javascript:void(0)" data-structr-action="edit:DocumentReference" data-structr-attributes="name, title, description" data-structr-confirm="true" data-structr-edit-class="btn btn-xs" data-structr-id="${reference.id}" data-structr-reload="true" data-structr-return="/${page.name}/${current.id}?section=${retrieve('section').id}" data-structr-meta-hide-conditions="eq(request.presentationMode, &quot;on&quot;)"><!-- @structr:grant(admin,arwd) --><i class="fa fa-pencil"></i></a><!-- @structr:grant(admin,arwd) --><a class="btn online-only" title="Dokument aus Beratungmappe entfernen" href="javascript:void(0)" data-structr-action="delete:DocumentReference" data-structr-confirm="true" data-structr-id="${reference.id}" data-structr-reload="true" data-structr-meta-hide-conditions="eq(request.presentationMode, &quot;on&quot;)"><!-- @structr:grant(admin,arwd) --><i class="fa fa-trash-o"></i></a></div>
+							</div>
+						</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td style="width: 20px;"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="online-only" href="${if(not(eq(request.reference, reference.id)), concat(&quot;?section=&quot;, ${retrieve('section').id}, &quot;&amp;reference=&quot;, ${reference.id}), concat(&quot;?section=&quot;, ${retrieve('section').id}))}${if(eq(request.presentationMode, &quot;on&quot;), &quot;&amp;presentationMode=on&quot;, &quot;&quot;)}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-info-circle"></i></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row" data-structr-meta-hide-conditions="or(empty(retrieve('section')), eq(current.type, 'ArchivedConsultingFolder'))">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-4"><!-- @structr:grant(admin,arwd) --><span class="online-only" id="upload-file-handle"><!-- @structr:grant(admin,arwd) --><i class="fa fa-plus-circle m-r-1"></i><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Neue Datei hochladen</span>
+				<div class="hidden" id="file-upload-container"><!-- @structr:content(text/html) -->${(store('file-upload-parent-id', me.homeDirectory.id),store('file-upload-type', 'File'),store('file-upload-section-id', retrieve('section').id))}
+${include('Upload-Bereich')}</div>
+			</div>
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-4"><!-- @structr:grant(admin,arwd) --><span class="online-only" id="add-file-handle" data-target="#modal-new-file" data-toggle="modal"><!-- @structr:grant(admin,arwd) --><i class="fa fa-plus-circle m-r-1"></i><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Datei aus Archiv hinzufügen</span></div>
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-4"><!-- @structr:grant(admin,arwd) --><span class="online-only" id="add-sub-section" data-target="#modal-add-sub-section" data-toggle="modal" data-structr-meta-show-conditions="empty(retrieve('section').parentSection)"><!-- @structr:grant(admin,arwd) --><i class="fa fa-plus-circle m-r-1"></i><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Unterkategorie hinzufügen</span>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal fade" id="modal-add-sub-section">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-dialog" role="document">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="modal-content" data-structr-id="${current.id}">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<div class="modal-header">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<button class="close" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</span></button>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<h4 class="modal-title"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Neue Unterkategorie</h4>
+							</div>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<div class="modal-body">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<input class="filesystem-parent" type="hidden" value="${retrieve('section')}" data-structr-name="parent">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<input class="application-parent" type="hidden" value="${retrieve('section')}" data-structr-name="parentSection">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<div class="form-group">
+									<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+									<label for="exampleInputPassword1"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name</label>
+									<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+									<input class="form-control" autofocus="autofocus" data-structr-name="name">
+								</div>
+							</div>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<div class="modal-footer">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<button class="btn btn-default" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Abbrechen</button>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<button class="btn btn-primary" type="button" data-structr-action="create:ConsultingFolderSection" data-structr-attributes="name, parent" data-structr-id="${current.id}" data-structr-reload="true"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anlegen</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="modal fade" id="modal-copy-to-client-folder" data-structr-meta-show-conditions="eq(page.name, 'beratungsmappe')">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->;$(function() {
+
+	$('#modal-copy-to-client-folder').on('show.bs.modal',function(button) {
+
+		if (button &amp;&amp; button.relatedTarget) {
+
+			var referenceId = $(button.relatedTarget).data('referenceId');
+
+			if (referenceId) {
+
+				$('.insurance-type-list .list-group-item').on('click', function() {
+
+					var insuranceType = $(this);
+					insuranceType.addClass('active');
+
+					$.ajax({
+						url: '/structr/rest/DocumentReference/' + referenceId + '/copyToClientFolder',
+						contentType: 'application/json; charset=UTF-8',
+						method: 'POST',
+						data: JSON.stringify({
+							client: '${current.consultation.client}',
+							insuranceType: insuranceType.data('insurance-type-id')
+						}),
+						statusCode: {
+							200: function() {
+								document.location.reload();
+							}
+						}
+
+					});
+				});
+				
+				$('.insurance-list-for-type .list-group-item').on('click', function(e) {
+
+					e.stopPropagation();
+					var insurance = $(this);
+					insurance.addClass('active');
+
+					$.ajax({
+						url: '/structr/rest/DocumentReference/' + referenceId + '/copyToClientFolder',
+						contentType: 'application/json; charset=UTF-8',
+						method: 'POST',
+						data: JSON.stringify({
+							client: '${current.consultation.client}',
+							insurance: insurance.data('insurance-id')
+						}),
+						statusCode: {
+							200: function() {
+								document.location.reload();
+							}
+						}
+
+					});
+				});
+				
+			}
+
+		}
+
+	});	
+	
+	$('#automatic-copy-to-client-folder').on('click', function(e) {
+
+		e.stopPropagation();
+		var button = $(this);
+		var refId = button.data('referenceId');
+		var insuranceTypeId = button.data('insuranceType');
+
+		$.ajax({
+			url: '/structr/rest/DocumentReference/' + refId + '/copyToClientFolder',
+			contentType: 'application/json; charset=UTF-8',
+			method: 'POST',
+			data: JSON.stringify({
+				client: '${current.consultation.client}',
+				insuranceType: insuranceTypeId
+			}),
+			statusCode: {
+				200: function() {
+					document.location.reload();
+				}
+			}
+
+		});
+	});
+	
+});</script>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="modal-dialog">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-content">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-header">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="close" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->X</span></button>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<h4 class="modal-title" id="newDocumentModalLabel"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Rubrik auswählen</h4>
+					</div>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-body">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<ul class="list-group insurance-type-list">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<li class="list-group-item" data-insurance-type-id="${insuranceType.id}" data-structr-meta-data-key="insuranceType" data-structr-meta-function-query="find('InsuranceType')">
+									<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+									<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${insuranceType.name}</label>
+									<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+									<ul class="list-group insurance-list-for-type" data-structr-meta-hide-conditions="empty(filter(current.consultation.client.clientFolder.insurances, equal(data.insuranceType, insuranceType)))">
+										<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+										<li class="list-group-item" data-insurance-id="${insurance.id}" data-structr-meta-data-key="insurance" data-structr-meta-function-query="filter(current.consultation.client.clientFolder.insurances, equal(data.insuranceType, insuranceType))"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->${{
+	
+	var insurance = Structr.get("insurance");
+	Structr.print(insurance.subType.name + " " + insurance.company.name + " Nr.: " + (insurance.insuranceNo &gt;= 0 ? insurance.insuranceNo : "-") );
+
+}}</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-footer">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="btn btn-default online-only" id="button-copy-document"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Hinzufügen</button>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="btn btn-default online-only" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Abbrechen</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="modal fade" id="modal-select-version">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="modal-dialog">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-content">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-header">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="close" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->X</span></button>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<h4 class="modal-title" id="newDocumentModalLabel"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Version auswählen</h4>
+					</div>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-body">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div id="select-version-partial-container"></div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="row">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<div class="col-sm-12">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<div class="form-group">
+									<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+									<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Neue Version anlegen</label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->${(
+store('file-upload-parent-id', me.homeDirectory.id),
+store('file-upload-type', 'File'),
+store('file-upload-prefix', 'select-version'),
+store('file-upload-visible', true),
+store('file-upload-max-files', 1),
+store('file-upload-new-version', reference.id),
+)}
+${include('Upload-Bereich')}
+								
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-footer">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="btn btn-default online-only" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Schließen</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- @structr:grant(admin,arwd) -->
+	<script type="text/javascript"><!-- @structr:grant(admin,arwd), @structr:content(text/javascript) -->$(function() {
+
+	$('[data-structr-attr="title"]').each(function(i, el) {
+
+		var el = $(el);
+		if (!el.text() || el.text() === '') {
+
+			//console.log('empty title');
+			el.closest('td').find('[data-structr-action="edit:ConsultingDocument"]').click();
+
+		}
+
+	});
+
+	$('#upload-file-handle').on('click', function() {
+		//console.log('clicked');
+		$('#file-upload-container').removeClass('hidden');
+		$('#file-upload').removeClass('hidden');
+		$('#upload-file-handle').addClass('hidden');
+
+	});
+
+	$('a.open-version-dialog').on('click', function(e) {
+		
+		var elem        = e.currentTarget;
+		var referenceId = $(elem).data('referenceId');
+		if (referenceId &amp;&amp; referenceId.length) {
+			$.ajax({
+				url: '/select-version-partial/' + referenceId,
+				statusCode: {
+					200: function(data) {
+						if (data &amp;&amp; data.length) {
+							// fill modal with data
+							$('#select-version-partial-container').empty();
+							$('#select-version-partial-container').append(data);
+							// open modal
+							$('#modal-select-version').modal();
+							$('#modal-select-version').data('referenceId', referenceId);
+						}
+					}
+				}
+			});
+		} else {
+			console.log(referenceId);
+		}
+	});
+});</script>
+</div>

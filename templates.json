@@ -1,0 +1,134 @@
+{
+  "4ccde8fd58fd4d72b7e1284e471d7e2f": {
+    "contentType": "text/plain",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "shared": "false",
+    "visibleToAuthenticatedUsers": true
+  },
+  "7bfbf354ba8a4d77b2c7f4fe8bc7b07a": {
+    "contentType": "text/html",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "shared": "false",
+    "visibleToAuthenticatedUsers": true
+  },
+  "7d666930f1bc49cba7696b41890c6c34": {
+    "contentType": "text/html",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "shared": "false",
+    "visibleToAuthenticatedUsers": true
+  },
+  "Agent Profile": {
+    "contentType": "text/html",
+    "shared": "true",
+    "visibleToAuthenticatedUsers": true
+  },
+  "Kundenordner Template": {
+    "contentType": "text/html",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "shared": "true",
+    "visibleToAuthenticatedUsers": true
+  },
+  "Main Menu": {
+    "contentType": "text/html",
+    "shared": "true",
+    "visibleToAuthenticatedUsers": true
+  },
+  "Main Page Template": {
+    "contentType": "text/html",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "shared": "true"
+  },
+  "Option-Repeater": {
+    "contentType": "text/html",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "shared": "false",
+    "visibleToAuthenticatedUsers": true
+  },
+  "b82be059045c41da97a2a7018a8c7d0f": {
+    "contentType": "text/html",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "shared": "false"
+  },
+  "e010ca5cb9a64035bc631f29dbb70539": {
+    "contentType": "text/plain",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "shared": "false",
+    "visibleToAuthenticatedUsers": true
+  },
+  "ebd4d8051b1b4182a1f802ed5ca08c17": {
+    "contentType": "text/plain",
+    "shared": "false"
+  },
+  "f5c0bd582c484c5892c4a2c1055c7cdf": {
+    "contentType": "text/plain",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "shared": "false",
+    "visibleToAuthenticatedUsers": true
+  }
+}

@@ -1,0 +1,151 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group"></div>
+			</div>
+		</div>
+		<form class="hidden" action="/structr/upload" enctype="multipart/form-data" method="post">
+			<input name="parent" type="hidden" value="${first(find('Folder', 'name', me.id))}">
+			<input name="redirectOnSuccess" type="hidden" value="/vermittler/${me.id}">
+			<input name="user" type="hidden" value="${me.id}">
+			<input name="new-file" placeholder="Bild auswählen" type="file">
+			<input type="submit" value="Foto hochladen">
+		</form>
+		<form id="client-form" action="javascript:void(0)">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Titel/Agentur</label>
+						<input class="form-control" type="text" value="${current.title}" data-structr-name="title">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Name</label>
+						<input class="form-control" required="required" type="text" value="${current.lastName}" data-structr-name="lastName">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Vorname</label>
+						<input class="form-control" required="required" type="text" value="${current.firstName}" data-structr-name="firstName">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->E-Mail</label>
+						<input class="form-control" required="required" type="email" value="${current.eMail}" data-structr-name="eMail">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Straße</label>
+						<input class="form-control" type="text" value="${current.street}" data-structr-name="street">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->PLZ</label>
+						<input class="form-control" type="text" value="${current.zipCode}" data-structr-name="zipCode">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Ort</label>
+						<input class="form-control" type="text" value="${current.city}" data-structr-name="city">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Telefon</label>
+						<input class="form-control" type="text" value="${current.phone}" data-structr-name="phone">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Telefax</label>
+						<input class="form-control" type="text" value="${current.fax}" data-structr-name="fax">
+					</div>
+					<div class="form-group">
+						<label><!-- @structr:content(text/plain) -->Mobil</label>
+						<input class="form-control" type="text" value="${current.mobile}" data-structr-name="mobile">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Whatsapp</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.whatsapp}" data-structr-name="whatsapp">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Homepage</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.homepage}" data-structr-name="homepage">
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Facebook</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" type="text" value="${current.facebook}" data-structr-name="facebook">
+					</div>
+				</div>
+				<div class="col-lg-5 col-lg-offset-1">
+					<div class="form-group text-center">
+						<label><!-- @structr:private, @structr:content(text/plain) -->Bild</label>
+						<div class="m-b-1"><img src="${if(empty(me.img), '/img/default_avatar.png', me.img.path)}"></div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<button class="btn btn-default upload-handle" id="upload-image-handle" data-structr-action="save:Agent" data-structr-attributes="title,lastName,firstName,eMail,phone,fax,mobile,street,zipCode,city,comments" data-structr-id="${current.id}"><span><i class="fa fa-plus-circle m-r-1"></i><!-- @structr:content(text/plain) -->Bild hochladen</span></button>
+						<input type="hidden" value="${current.id}" data-structr-id="${client.id}" data-structr-name="client">
+						<script type="text/javascript"><!-- @structr:content(text/javascript) -->;$(function() {
+
+	$('#upload-image-handle').on('click', function() {
+		//console.log('clicked');
+		$('#file-upload').removeClass('hidden');
+		$('#upload-image-handle').addClass('hidden');
+		
+	});
+});</script>
+					</div>
+					<structr:component src="Upload-Bereich" data-structr-meta-shared-component-configuration="(store('file-upload-parent-id', first( find('Folder', 'name', concat(me.name, '_', me.id))).id), store('file-upload-type', 'Image'),store('file-upload-isAvatar','true'))" data-structr-meta-name="Upload-Bereich">
+					</structr:component>
+					<div class="form-group m-t-2">
+						<label><!-- @structr:content(text/plain) -->E-Mail Signatur (Text)</label><textarea class="form-control" role="" rows="4" cols="" data-structr-name="signatureText"><!-- @structr:content(text/plain) -->${current.signatureText}</textarea>
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group m-t-1">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->E-Mail Signatur (HTML)</label><!-- @structr:grant(admin,arwd) --><textarea class="form-control trumbo-html" role="" rows="4" cols="" data-structr-name="signatureHtml"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.signatureHtml}</textarea>
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group m-t-2">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Bemerkungen</label><!-- @structr:grant(admin,arwd) --><textarea class="form-control" role="" rows="10" cols="" data-structr-name="comments"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.comments}</textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group pull-right">
+						<button class="btn btn-default pull-right button-blue" data-structr-action="create:Agent" data-structr-append-id="true" data-structr-attributes="title,lastName,firstName,eMail,phone,fax,mobile,street,zipCode,city,facebook,homepage,whatsapp,signatureText,signatureHtml,comments" data-structr-reload="true" data-structr-return="/vermittler" data-structr-meta-show-conditions="empty(current)"><!-- @structr:content(text/plain) -->Anlegen</button>
+						<button class="btn btn-default pull-right button-blue" data-structr-action="save:Agent" data-structr-append-id="false" data-structr-attributes="title,lastName,firstName,eMail,phone,fax,mobile,street,zipCode,city,homepage,facebook,whatsapp,signatureText,signatureHtml,comments" data-structr-id="${current.id}" data-structr-reload="true" data-structr-return="/startseite" data-structr-meta-hide-conditions="empty(current)"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Speichern</button><a class="btn btn-default pull-left m-r-1" href="/startseite"><!-- @structr:content(text/plain) -->Zurück zur Startseite</a>
+					</div>
+				</div>
+			</div>
+		</form>
+		<hr>
+		<script type="text/javascript"><!-- @structr:content(text/javascript) -->;$(function() {
+	$('#client-form').validate();
+
+	$('.trumbo-html').trumbowyg({
+		btns: [
+			['viewHTML'],
+			['formatting'],
+			'btnGrp-semantic',
+			['superscript', 'subscript'],
+			['link'],
+			'btnGrp-justify',
+			'btnGrp-lists',
+			['horizontalRule'],
+			['removeformat'],
+			['fullscreen']
+		]
+	});
+});</script>
+		<div class="row">
+			<div class="col-sm-3"><span><!-- @structr:content(text/plain) -->Angelegt am: <!-- @structr:content(text/plain) -->${date_format(current.createdDate, 'dd.MM.yyyy')}</span></div>
+			<div class="col-sm-3"><span><!-- @structr:content(text/plain) -->Letzte Änderung: <!-- @structr:content(text/plain) -->${date_format(current.lastModifiedDate, 'dd.MM.yyyy')}</span></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12"></div>
+		</div>
+		<hr>
+	</div>
+</structr:template>

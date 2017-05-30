@@ -1,0 +1,86 @@
+[
+  {
+    "locale": "de",
+    "name": "assignAgentMail-html",
+    "text": "\u003cp\u003eDie \u003ca href\u003d\"${concat(\u0027https://\u0027, application.host, \":\", application.http.port, \u0027/beratungsmappe/\u0027, this.id)}\"\u003eBeratungsmappe\u003c/a\u003e für den Kunden ${this.client} wurde Ihnen zugewiesen.\u003c/p\u003e\n${if(not(empty(this.comment)),concat( \u0027\u003cp\u003eInformationen:\u003c/p\u003e\u003cp\u003e\u0027,this.comment,\u0027\u003c/p\u003e\u0027), \u0027\u0027)}",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "assignAgentMail-senderMail",
+    "text": "noreply@${application.host}",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "assignAgentMail-text",
+    "text": "Die Beratungsmappe für den Kunden ${this.client} wurde Ihnen zugewiesen.\n\nSie können diese unter ${concat(\u0027https://\u0027, application.host, \":\", application.http.port, \u0027/beratungsmappe/\u0027, this.id)} einsehen.\n\n${if(not(empty(this.comment)), \u0027Informationen:\u0027, \u0027\u0027)}\n${if(not(empty(this.comment)), this.comment, \u0027\u0027)}",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "checklistPoint-Reminder-html",
+    "text": "\u003cdiv\u003e\u003cp\u003eSehr geehrter Herr/Frau ${this.lastName},\u003c/p\u003e\n\n\u003cp\u003e${retrieve(\u0027sender-name\u0027)} erinnert Sie an die Aufgabe \"${retrieve(\u0027checklist-name\u0027)}\" in\u003cbr\u003e\nder Beratungsmappe \"${retrieve(\u0027consultingfolder-name\u0027)}\".\u003c/p\u003e\n\n\u003cp\u003eBitte klicken Sie \u003ca href\u003d\"${retrieve(\u0027link\u0027)}\"\u003ediesen Link\u003c/a\u003e, um den Beratungsordner zu öffnen.\u003cbr/\u003e\u003c/p\u003e\n\u003cbr/\u003e\n${retrieve(\u0027signatureHtml\u0027)}\u003c/div\u003e",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "checklistPoint-Reminder-subject",
+    "text": "Erinnerung an Checklisten-Aufgabe",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "checklistPoint-Reminder-text",
+    "text": "Sehr geehrter Herr/Frau ${this.lastName},\n\n${retrieve(\u0027sender-name\u0027)} erinnert Sie an die Aufgabe \"${retrieve(\u0027checklist-name\u0027)}\" in\nder Beratungsmappe \"${retrieve(\u0027consultingfolder-name\u0027)}\".\n\nBitte klicken Sie den folgenden Link, um den Beratungsordner zu öffnen.\n${retrieve(\u0027link\u0027)}\n\n\n\n${retrieve(\u0027signatureText\u0027)}",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "clientLoginMail-html",
+    "text": "\u003cdiv\u003e\u003cp\u003eSehr geehrter Herr/Frau ${this.lastName},\u003c/p\u003e\n\u003cp\u003emit dem Z-Kit bieten wir Ihnen die Möglichkeit, Ihre Versicherungsverträge\u003cbr/\u003e\nund versicherungsrelevanten Unterlagen einfach, übersichtlich und sicher\u003cbr/\u003e\nonline zu verwalten.\u003c/p\u003e\n\u003cp\u003eMit dieser E-Mail erhalten Sie Zugang zu Ihrem persönlichen Kundenordner.\u003c/p\u003e\n\u003cp\u003eBitte nutzen Sie \u003ca href\u003d\u0027${retrieve(\u0027link\u0027)}\u0027\u003ediesen Link\u003c/a\u003e um sich anzumelden.\u003cbr/\u003e\u003c/p\u003e\n\u003cbr\u003e${retrieve(\u0027signatureHtml\u0027)}\n\u003c/div\u003e",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "clientLoginMail-linkBase",
+    "text": "${concat(\"http://\", application.host, \":\", application.http.port)}",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "clientLoginMail-sender",
+    "text": "Zurich Kundenservice",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "clientLoginMail-senderAddress",
+    "text": "kundenservice@z-kit.de",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "clientLoginMail-subject",
+    "text": "Ihr Zurich Kundenzugang",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  },
+  {
+    "locale": "de",
+    "name": "clientLoginMail-text",
+    "text": "Sehr geehrter Herr/Frau ${this.lastName},\n\nmit dem Z-Kit bieten wir Ihnen die Möglichkeit, Ihre Versicherungsverträge\nund versicherungsrelevanten Unterlagen einfach, übersichtlich und sicher\nonline zu verwalten.\n\nMit dieser E-Mail erhalten Sie Zugang zu Ihrem persönlichen Kundenordner.\n\nBitte klicken Sie den folgenden Link, um sich anzumelden.\n${retrieve(\u0027link\u0027)}\n\n${retrieve(\u0027signatureText\u0027)}",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": false
+  }
+]

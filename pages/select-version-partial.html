@@ -1,0 +1,65 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="7d666930f1bc49cba7696b41890c6c34">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-12 text-justify"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span data-structr-meta-show-conditions="empty(current.version)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Dieses Referenz ist nicht auf eine Version festgelegt. Zum Festlegen einer bestimmen Version in dieser Referenz bitte in der Tabelle unten eine Version auswählen.</span><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span data-structr-meta-hide-conditions="empty(current.version)"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Diese Referenz ist festgelegt auf Version ${current.version}.0. Zum Aufheben dieser Festlegung verwenden Sie bitte den folgenden Button. Die Referenz wird dann immer die neuste Version des Dokuments enthalten.</span></div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row" data-structr-meta-show-conditions="not(empty(current.version))">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-12 text-right">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<form>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input type="hidden" data-structr-name="version">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<button class="btn btn-sm btn-primary" data-structr-action="save:DocumentReference" data-structr-attributes="version" data-structr-id="${current.id}" data-structr-reload="true"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Festlegung aufheben</button>
+			</form>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row" style="margin-top: 2em;">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-12">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<table class="table">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<thead>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<tr>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Version</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Datum</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Besitzer</th>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<th></th>
+					</tr>
+				</thead>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<tbody>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<tr style="${if(eq(current.version, version.version), 'font-weight: bold;', null)}" data-structr-meta-data-key="version" data-structr-meta-function-query="sort(current.consultingDocument.versions, 'version')">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->v${version.version}.0</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(version.createdDate, 'dd.MM.yyyy, HH:mm')}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${version.owner.name}</td>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<td class="text-right">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<form>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<input type="hidden" value="${version.version}" data-structr-name="version">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<button class="btn btn-xs btn-default" data-structr-action="save:DocumentReference" data-structr-attributes="version" data-structr-id="${current.id}" data-structr-reload="true"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Auswählen</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</structr:template>

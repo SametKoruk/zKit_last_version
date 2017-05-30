@@ -1,0 +1,39 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><div class="modal fade" id="modal-new-section" tabindex="-1" role="dialog" data-structr-meta-name="SectionCreateModal">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="modal-dialog" role="document">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<form action="javascript:void(0);">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="modal-content" data-structr-id="${current.id}">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-header">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="close" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</span></button>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<h4 class="modal-title"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Neue Kategorie</h4>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-body">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<input class="filesystem-parent" type="hidden" value="${current.id}" data-structr-name="parent">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<input class="application-parent" type="hidden" value="${current.id}" data-structr-name="${if(eq(current.type, 'ConsultingFolderTemplate'), 'template', 'consultingFolder')}">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<label for="exampleInputPassword1"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name</label>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<input class="form-control" autofocus="autofocus" data-structr-name="name">
+					</div>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-footer">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="btn btn-default" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Abbrechen</button>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="btn btn-primary online-only" type="button" data-structr-action="create:ConsultingFolderSection" data-structr-attributes="name, parent" data-structr-id="${current.id}" data-structr-reload="true"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anlegen</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

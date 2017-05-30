@@ -1,0 +1,1383 @@
+[
+	{
+		"name": "Basisrentenversicherung",
+		"availableSubTypes": [
+			{
+				"name": "Basisrentenversicherung",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Baufinanzierung",
+		"availableSubTypes": [
+			{
+				"name": "Baufinanzierung",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Bausparen",
+		"availableSubTypes": [
+			{
+				"name": "Bausparen",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Berufs- und Erwerbsunfähigkeitsversicherung",
+		"availableSubTypes": [
+			{
+				"name": "Berufsunfähigkeit",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "sumInsured",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Deckungssumme"
+					},
+					{
+						"attrName": "sickPay",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Krankengeld"
+					},
+					{
+						"attrName": "specialCoverage",
+						"unit": null,
+						"comment": "Bedeutung unklar",
+						"inputType": "input[type=checkbox]",
+						"dataType": "Boolean",
+						"auxType": null,
+						"name": "Besondere Deckung"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Betriebliche Altersversorgung",
+		"availableSubTypes": [
+			{
+				"name": "Betriebliche Altersversorgung",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Kapitalanlage/Investmentfonds",
+		"availableSubTypes": [
+			{
+				"name": "Kapitalanlage/Investmentfonds",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Kraftfahrversicherung",
+		"availableSubTypes": [
+			{
+				"name": "KfZ",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "yearOfManufacture",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "Integer",
+						"auxType": null,
+						"name": "Baujahr"
+					},
+					{
+						"attrName": "specialCoverage",
+						"unit": null,
+						"comment": "Bedeutung unklar",
+						"inputType": "input[type=checkbox]",
+						"dataType": "Boolean",
+						"auxType": null,
+						"name": "Besondere Deckung"
+					},
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "vehicleType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "VehicleType",
+						"auxType": null,
+						"name": "Fahrzeugtyp"
+					},
+					{
+						"attrName": "productionNumber",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Herstellernummer"
+					},
+					{
+						"attrName": "manufacturerKeyNumber",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Typ-Schlüssel-Nummer"
+					},
+					{
+						"attrName": "comprehensivePartialCoverage",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Kasko/Teilkasko"
+					},
+					{
+						"attrName": "typeClasses",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Typklassen"
+					},
+					{
+						"attrName": null,
+						"unit": "kW",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "Integer",
+						"auxType": null,
+						"name": "Leistung (kW)"
+					},
+					{
+						"attrName": "garage",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=checkbox]",
+						"dataType": "Boolean",
+						"auxType": null,
+						"name": "Garage"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Krankenversicherung",
+		"availableSubTypes": [
+			{
+				"name": "Krankenversicherung",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "MultiPlus",
+		"availableSubTypes": [
+			{
+				"name": "Haftpflicht",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					},
+					{
+						"attrName": "sumInsured",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Versicherungssumme"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					}
+				]
+			},
+			{
+				"name": "Hausrat, Glas, Wohngebäude",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "risks",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Gefahren"
+					},
+					{
+						"attrName": "livingArea",
+						"unit": "m²",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Wohnfläche"
+					},
+					{
+						"attrName": "yearOfManufacture",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "Integer",
+						"auxType": null,
+						"name": "Baujahr"
+					},
+					{
+						"attrName": "floors",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "Integer",
+						"auxType": null,
+						"name": "Geschosse"
+					},
+					{
+						"attrName": "reconstructrion",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=checkbox]",
+						"dataType": "Boolean",
+						"auxType": null,
+						"name": "Gebäude im Bau/Umbau"
+					},
+					{
+						"attrName": "deductible",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Selbstbeteiligung"
+					}
+				]
+			},
+			{
+				"name": "Rechtsschutz",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "sumInsured",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Versicherungssumme"
+					}
+				]
+			},
+			{
+				"name": "Unfall",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "baseSum",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Grundsumme"
+					},
+					{
+						"attrName": "pension",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Rente"
+					},
+					{
+						"attrName": "insuredSumOnDeath",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Todesfallsumme"
+					},
+					{
+						"attrName": "hospitalAllowance",
+						"unit": "€",
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Krankenhaustagegeld"
+					},
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Pflegeversicherung",
+		"availableSubTypes": [
+			{
+				"name": "Pflegeversicherung",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Private Rentenversicherung",
+		"availableSubTypes": [
+			{
+				"name": "Private Rentenversicherung",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "tariff",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Tarif"
+					},
+					{
+						"attrName": "startDate",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Beginn"
+					},
+					{
+						"attrName": "endDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit expiryDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ende"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Private kapitalbildende Lebensversicherung",
+		"availableSubTypes": [
+			{
+				"name": "Private kapitalbildende Lebensversicherung",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Riester-Rentenversicherung",
+		"availableSubTypes": [
+			{
+				"name": "Riester-Rentenversicherung",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Risiko-Lebensversicherung",
+		"availableSubTypes": [
+			{
+				"name": "Risiko-Lebensversicherung",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Sonstiges",
+		"availableSubTypes": [
+			{
+				"name": "Sonstiges",
+				"fields": [
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Sterbegeld und Bestattungsvorsorge",
+		"availableSubTypes": [
+			{
+				"name": "Sterbegeld und Bestattungsvorsorge",
+				"fields": [
+					{
+						"attrName": "company",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "InsuranceCompany",
+						"auxType": null,
+						"name": "Versicherer"
+					},
+					{
+						"attrName": "expiryDate",
+						"unit": null,
+						"comment": "Gleichbedeutend mit endDate?",
+						"inputType": "input[type=text]",
+						"dataType": "Date",
+						"auxType": null,
+						"name": "Ablauf"
+					},
+					{
+						"attrName": "amount",
+						"unit": "€",
+						"comment": "Versicherungsbeitrag in EUR, zahlbar siehe Zahlweise",
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": "currency",
+						"name": "Beitrag"
+					},
+					{
+						"attrName": "paymentType",
+						"unit": null,
+						"comment": null,
+						"inputType": "select",
+						"dataType": "PaymentType",
+						"auxType": null,
+						"name": "Zahlweise"
+					},
+					{
+						"attrName": "insuranceNo",
+						"unit": null,
+						"comment": null,
+						"inputType": "input[type=text]",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Nummer"
+					},
+					{
+						"attrName": "comments",
+						"unit": null,
+						"comment": null,
+						"inputType": "textarea",
+						"dataType": "String",
+						"auxType": null,
+						"name": "Bemerkungen"
+					}
+				]
+			}
+		]
+	}
+]

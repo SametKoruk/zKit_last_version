@@ -1,0 +1,9 @@
+[
+  {
+    "comment": "increments a log type event if it exists.\nif it does not exist, it is created with count \u003d 1",
+    "name": "addLogEvent",
+    "source": "{\n\n\tvar eventConfig \u003d {\n\t\teventType: Structr.retrieve(\u0027eventType\u0027),\n\t\tcontext: Structr.retrieve(\u0027context\u0027)\n\t};\n\n\tvar events \u003d Structr.find(\u0027LogEvent\u0027, eventConfig);\n\n\tif ( events \u0026\u0026 events.length \u003e 0) {\n\t\tvar firstEvent \u003d events[0];\n\t\tfirstEvent.count++;\n\t} else {\n\n\t\teventConfig.count \u003d 1;\n\t\tStructr.create(\u0027LogEvent\u0027, eventConfig);\n\n\t}\n}",
+    "visibleToAuthenticatedUsers": false,
+    "visibleToPublicUsers": false
+  }
+]

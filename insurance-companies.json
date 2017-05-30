@@ -1,0 +1,662 @@
+[
+	{
+		"name": "A & O Autoversichung AG"
+	},
+	{
+		"name": "ACE European Group Limited"
+	},
+	{
+		"name": "ACE Ltd. (Cigna)"
+	},
+	{
+		"name": "ADAC Autoversicherung AG"
+	},
+	{
+		"name": "ADAC-Rechtsschutz Vers.-AG"
+	},
+	{
+		"name": "ADAC-Schutzbrief Vers.-AG"
+	},
+	{
+		"name": "AIG Europe (vormals UNAT)"
+	},
+	{
+		"name": "AIOI Insurance Company o.E."
+	},
+	{
+		"name": "ARAG Allgem. Vers.-AG"
+	},
+	{
+		"name": "ARAG Rechtsschutz-Vers.-AG"
+	},
+	{
+		"name": "ASSTEL"
+	},
+	{
+		"name": "AXA / DBV"
+	},
+	{
+		"name": "AXA / DBV-WinSelect"
+	},
+	{
+		"name": "AXA / DBV-Winterthur"
+	},
+	{
+		"name": "AXA Corporate Solutions"
+	},
+	{
+		"name": "AXA Versicherung AG"
+	},
+	{
+		"name": "Aachener u. Münchener Vers.AG"
+	},
+	{
+		"name": "Abeille Assurances"
+	},
+	{
+		"name": "Adler Feuerversicherung AG"
+	},
+	{
+		"name": "Advo Card Rechtsschutzvers. AG"
+	},
+	{
+		"name": "AllSecure"
+	},
+	{
+		"name": "Allg.Vers.-AG d.HUK-Coburg"
+	},
+	{
+		"name": "Allgem.Vers.Commerzbk.+Partner"
+	},
+	{
+		"name": "Allianz Global & Specialty"
+	},
+	{
+		"name": "Allianz Versicherung"
+	},
+	{
+		"name": "AllianzRSS"
+	},
+	{
+		"name": "Allrecht RS"
+	},
+	{
+		"name": "Alte Leipziger Vers AG"
+	},
+	{
+		"name": "Ancora Vers AG"
+	},
+	{
+		"name": "Andere (als Bemerkung erfassen)"
+	},
+	{
+		"name": "Auxilia"
+	},
+	{
+		"name": "Baden-Badener VersicherungsAG"
+	},
+	{
+		"name": "Badische Allg. Vers. AG"
+	},
+	{
+		"name": "Badischer Gem.Vers-Verband"
+	},
+	{
+		"name": "Barmenia Allg.Vers.AG"
+	},
+	{
+		"name": "Basler Securitas Versicherung"
+	},
+	{
+		"name": "Basler Vers.ges. Dir.f.Deuts"
+	},
+	{
+		"name": "Bayerische Beamtenversicherung"
+	},
+	{
+		"name": "Bayerische Hausbesitzer Vers."
+	},
+	{
+		"name": "Bayerische Landesbrandvers.AG"
+	},
+	{
+		"name": "Bayerischer Vers.Verband"
+	},
+	{
+		"name": "Berlin-Kölnische Sachvers."
+	},
+	{
+		"name": "Berliner Versicherung AG"
+	},
+	{
+		"name": "British American Ins Agencies"
+	},
+	{
+		"name": "Bruderhilfe Sachversicherung"
+	},
+	{
+		"name": "Bruderhilfe Sachversicherung"
+	},
+	{
+		"name": "CNA Insurance Comp.(Europe)"
+	},
+	{
+		"name": "Chartis Europe (vormals WüBa)"
+	},
+	{
+		"name": "Chubb Insurance"
+	},
+	{
+		"name": "CiV Versicherung AG"
+	},
+	{
+		"name": "Concordia Rechtsschutz AG"
+	},
+	{
+		"name": "Concordia Vers-Ges AG"
+	},
+	{
+		"name": "Condor Allg.Vers.AG"
+	},
+	{
+		"name": "Continentale Sachvers.AG"
+	},
+	{
+		"name": "Cordial Versicherung AG"
+	},
+	{
+		"name": "Cornhill Insurance"
+	},
+	{
+		"name": "Cosmos Vers.AG"
+	},
+	{
+		"name": "D.A.S Rechtsschutz-Vers.-AG"
+	},
+	{
+		"name": "D.A.S."
+	},
+	{
+		"name": "DARAG"
+	},
+	{
+		"name": "DEBEKA Allgemeine Versicherung"
+	},
+	{
+		"name": "DEURAG"
+	},
+	{
+		"name": "DEVK Allg.Vers.AG"
+	},
+	{
+		"name": "DKV"
+	},
+	{
+		"name": "DMB Rechtsschutz-Versicherung"
+	},
+	{
+		"name": "DOCURA Brandkasse"
+	},
+	{
+		"name": "Delvag AG"
+	},
+	{
+		"name": "Deutsche Allgemeine Vers.-AG"
+	},
+	{
+		"name": "Deutsche Eisenbahn Vers."
+	},
+	{
+		"name": "Deutsche Versicherungs-AG"
+	},
+	{
+		"name": "Deutscher Ring Sachvers.AG"
+	},
+	{
+		"name": "Direct Line Versicherung AG"
+	},
+	{
+		"name": "EA Rechtsschutz"
+	},
+	{
+		"name": "ERGO/Hamburg-Mannheimer"
+	},
+	{
+		"name": "Elvia Vers."
+	},
+	{
+		"name": "Ergo Direkt Versicherung AG"
+	},
+	{
+		"name": "Europa Sachvers"
+	},
+	{
+		"name": "Europäische Reiseversicherung"
+	},
+	{
+		"name": "Extremus Versicherungs-AG"
+	},
+	{
+		"name": "Fahrlehrervers.Verein AG"
+	},
+	{
+		"name": "Federal Insurance Company"
+	},
+	{
+		"name": "Feuersozietät Berlin"
+	},
+	{
+		"name": "Freudenberg Versicherungs-AG"
+	},
+	{
+		"name": "GVV Kommunalbediensteten AG"
+	},
+	{
+		"name": "GVV-Kommunalversicherung VVaG"
+	},
+	{
+		"name": "Garanta Versicherungs-AG"
+	},
+	{
+		"name": "Gebäudevers. Baden AG"
+	},
+	{
+		"name": "Gegenseitigkeit Versicherung"
+	},
+	{
+		"name": "General Accident"
+	},
+	{
+		"name": "Generali Versicherung AG"
+	},
+	{
+		"name": "Generali Versicherung AG"
+	},
+	{
+		"name": "Gerling G & A Vers.AG"
+	},
+	{
+		"name": "Gerling Speziale Kreditvers."
+	},
+	{
+		"name": "Gerling-Konzern Rechtsschutz"
+	},
+	{
+		"name": "Glacier Insurance NfD"
+	},
+	{
+		"name": "Gothaer Allgemeine Vers. AG"
+	},
+	{
+		"name": "Gothaer-Namur Kreditvers. AG"
+	},
+	{
+		"name": "Grundeigentümer Vers. VVaG"
+	},
+	{
+		"name": "HDI Direkt Versicherung AG"
+	},
+	{
+		"name": "HDI-Gerling Industrie Vers. AG"
+	},
+	{
+		"name": "HDI-Gerling Industrie Vers. AG"
+	},
+	{
+		"name": "HDI-Gerling Rechtsschutz"
+	},
+	{
+		"name": "HISCOX Insurance Company"
+	},
+	{
+		"name": "HUK 24"
+	},
+	{
+		"name": "HUK-Coburg-Rechtsschutz-Vers."
+	},
+	{
+		"name": "Haftgem. Dt. Nahverkehrund"
+	},
+	{
+		"name": "Haftpfl.Unterst.Kasse"
+	},
+	{
+		"name": "Haftpflichtkasse Darmstdt"
+	},
+	{
+		"name": "Hamburg-Mannheimer RSV"
+	},
+	{
+		"name": "Hamburger Feuerkasse"
+	},
+	{
+		"name": "Hamburger Hof Vers. AG"
+	},
+	{
+		"name": "Hampden Insurance Company"
+	},
+	{
+		"name": "Hannoverische Direkt Vers. AG"
+	},
+	{
+		"name": "Hanse-Marine Vers. AG"
+	},
+	{
+		"name": "Hanse-Merkur Allg.Vers.AG"
+	},
+	{
+		"name": "Heddington Ins. (U.K.) Ltd."
+	},
+	{
+		"name": "Helvetia International"
+	},
+	{
+		"name": "Helvetia Schweizer. Vers. Ges."
+	},
+	{
+		"name": "Hoechst Vers. AG"
+	},
+	{
+		"name": "IF Schadenversicherung AG"
+	},
+	{
+		"name": "INTER Allgemeine Versicherung"
+	},
+	{
+		"name": "INTERRISK Vers. AG"
+	},
+	{
+		"name": "Ideal Vers. AG"
+	},
+	{
+		"name": "Interunfall Allg. Vers. AG"
+	},
+	{
+		"name": "Itzehoer Vers.-Verein"
+	},
+	{
+		"name": "Janitos Versicherung AG"
+	},
+	{
+		"name": "Jurpartner Rechtschutz"
+	},
+	{
+		"name": "KOA Insurance Company"
+	},
+	{
+		"name": "KRAVAG-ALLGEMEINE"
+	},
+	{
+		"name": "KRAVAG-LOGISTIC Vers.AG"
+	},
+	{
+		"name": "KS Kraftfahrer-Schutz"
+	},
+	{
+		"name": "Karlsruher Beamten Vers. AG"
+	},
+	{
+		"name": "Karlsruher Rechtsschutz"
+	},
+	{
+		"name": "Karlsruher Versicherung AG"
+	},
+	{
+		"name": "LF Versicherung AG Stockholm"
+	},
+	{
+		"name": "Landesschadenhilfe Vers."
+	},
+	{
+		"name": "Landsch. Brandkasse Hannover"
+	},
+	{
+		"name": "Landwirtschaftl.RS"
+	},
+	{
+		"name": "Ldw.Vers.-Verein AG"
+	},
+	{
+		"name": "Liberty Mutual Insurance"
+	},
+	{
+		"name": "Lloyds Vers. London/Baia"
+	},
+	{
+		"name": "Mannheimer Versicherung"
+	},
+	{
+		"name": "Mannheimer Versicherung AG"
+	},
+	{
+		"name": "Mecklenburgische RS"
+	},
+	{
+		"name": "Mecklenburgische Vers.-Ges."
+	},
+	{
+		"name": "Medien Versicherung"
+	},
+	{
+		"name": "Mitsui Sumitomo Insurance"
+	},
+	{
+		"name": "Münchener Verein Allg.Vers.AG"
+	},
+	{
+		"name": "Nassau Versicherungen"
+	},
+	{
+		"name": "Neckermann Versicherungen"
+	},
+	{
+		"name": "Neu Rotterdam Vers.AG"
+	},
+	{
+		"name": "Neue Rechtsschutz"
+	},
+	{
+		"name": "Nippon Insurance Company"
+	},
+	{
+		"name": "Nürnberger Allgem. Vers.-AG"
+	},
+	{
+		"name": "Nürnberger Beamten Allg. Vers."
+	},
+	{
+		"name": "OERAG Rechtsschutz"
+	},
+	{
+		"name": "OKV Ostdeutsche Kommunalversic"
+	},
+	{
+		"name": "OVAG Ostdeutsche Ver.-AG"
+	},
+	{
+		"name": "Ontos Vers. AG"
+	},
+	{
+		"name": "Optima Vers.-AG"
+	},
+	{
+		"name": "Ostangler Brandgilde"
+	},
+	{
+		"name": "PB Versicherung AG (Postbank)"
+	},
+	{
+		"name": "PLUS Allgemeine Vers.AG"
+	},
+	{
+		"name": "Pallas Versicherungs-AG"
+	},
+	{
+		"name": "Pohjola Versicherungs AG"
+	},
+	{
+		"name": "Provinzial Brandkasse"
+	},
+	{
+		"name": "Provinzial Rheinland Vers. AG"
+	},
+	{
+		"name": "R + V Allgemeine Versicherung"
+	},
+	{
+		"name": "Rechtsschutz Union"
+	},
+	{
+		"name": "Reliance International Insuran"
+	},
+	{
+		"name": "Rheinland Versicherung AG"
+	},
+	{
+		"name": "Roland Rechtsschutz"
+	},
+	{
+		"name": "Roland Verk. Serv."
+	},
+	{
+		"name": "SASA (Hohmann)"
+	},
+	{
+		"name": "SHB"
+	},
+	{
+		"name": "SIGNAL IDUNA Allgemeine"
+	},
+	{
+		"name": "SOVAG Vers.AG"
+	},
+	{
+		"name": "SV Sparkassenvers. Geb. vers."
+	},
+	{
+		"name": "Saarland Feuerversicherung AG"
+	},
+	{
+		"name": "Schleswiger VVaG"
+	},
+	{
+		"name": "Schweizer National Vers.AG"
+	},
+	{
+		"name": "Securitas Bremer Allg.Vers.AG"
+	},
+	{
+		"name": "Skandia International Vers.AG"
+	},
+	{
+		"name": "Skandia Vers AG"
+	},
+	{
+		"name": "Sparkassen Versicherung"
+	},
+	{
+		"name": "Sparkassen-Direkt Vers. AG"
+	},
+	{
+		"name": "Sparkassen-Vers. Sachsen"
+	},
+	{
+		"name": "Sparkassen-Versicherung AG"
+	},
+	{
+		"name": "Stuttgarter Allgemeine Vers."
+	},
+	{
+		"name": "Swiss Mobiliar International"
+	},
+	{
+		"name": "Tellit Direct Vers. AG"
+	},
+	{
+		"name": "The Northern Ass.Comp.London"
+	},
+	{
+		"name": "The Tokio Marine and Fire"
+	},
+	{
+		"name": "Uelzener Allg.Vers.-Gesellsch."
+	},
+	{
+		"name": "Union Actien-Ges."
+	},
+	{
+		"name": "United Services Autom. Ass."
+	},
+	{
+		"name": "Universa Allg. Vers. AG"
+	},
+	{
+		"name": "VHV Allgemeine Versicherung"
+	},
+	{
+		"name": "VHV Autoversicherungs-AG"
+	},
+	{
+		"name": "VPV Allgemeine Versicherung"
+	},
+	{
+		"name": "Vers.-Verband Dt. Eisenbahnen"
+	},
+	{
+		"name": "Versicherungskammer Bayern"
+	},
+	{
+		"name": "Victoria Feuer-Vers.-AG"
+	},
+	{
+		"name": "Volkswohl-Bund Sachvers.AG"
+	},
+	{
+		"name": "VÖDAG Versicherung für den"
+	},
+	{
+		"name": "WGV Schwäbische Allg.Vers.AG"
+	},
+	{
+		"name": "WWK Allgemeine Vers.AG"
+	},
+	{
+		"name": "Waldenburger Versicherung"
+	},
+	{
+		"name": "Westfälische Provinzial"
+	},
+	{
+		"name": "Württ.Gem.Rechtsschutz"
+	},
+	{
+		"name": "Württ.Gemeinde Vers."
+	},
+	{
+		"name": "Württembergische Vers. AG"
+	},
+	{
+		"name": "Württenb.Rechtsschutz"
+	},
+	{
+		"name": "XL Insurance Company Limited"
+	},
+	{
+		"name": "XL Winterthur International"
+	},
+	{
+		"name": "Zurich Insurance plc NfD"
+	},
+	{
+		"name": "deutsche internet vers. Ag"
+	},
+	{
+		"name": "neue leben Unfallversicherung"
+	},
+	{
+		"name": "--- Andere (bitte bei Bemerkungen vermerken) ---"
+	},
+	{
+		"name": "Öffentl.Vers.Anstalt"
+	}
+]

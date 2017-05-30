@@ -1,0 +1,88 @@
+<!-- @structr:private --><div style="margin-top: 1em;" data-structr-meta-name="Upload-Bereich">
+	<!-- @structr:private, @structr:link(/js/dropzone.js) -->
+	<script src="${link.path}" type="text/javascript"></script>
+	<!-- @structr:private, @structr:link(/css/file-upload.css) -->
+	<link href="${link.path}" rel="stylesheet" type="text/css">
+	<!-- @structr:private -->
+	<div class="file-upload-area ${if(retrieve('file-upload-visible'), null, 'hidden')}" id="${retrieve('file-upload-prefix')}file-upload"><!-- @structr:private --><span class="dz-message"><!-- @structr:private, @structr:content(text/plain) -->${if(equal(retrieve('file-upload-max-files'), 1), 'Datei', 'Dateien')} hier ablegen</span></div>
+	<!-- @structr:private -->
+	<script type="text/javascript"><!-- @structr:private, @structr:content(text/javascript) -->$(function() {
+	var count = 0;
+	var num   = 0;
+    var dz = $('#${retrieve('file-upload-prefix')}file-upload').dropzone({
+        url: '/structr/upload',
+		createImageThumbnails: false,
+		previewTemplate : '&lt;div style="display:none"&gt;&lt;/div&gt;',
+		maxFiles: ${if(empty(retrieve('file-upload-max-files')), 100, retrieve('file-upload-max-files'))},
+		init: function() {
+			this.on('addedfile', function(e, data) {
+				num++;
+				displayProgress('#${retrieve('file-upload-prefix')}file-upload', count, num);
+			});
+			this.on('sending', function(file, xhr, formData){
+				if ("${retrieve('file-upload-inventory-image-item')}".length &gt; 0) { formData.append('inventoryImageItem', '${retrieve("file-upload-inventory-image-item")}'); }
+				if ("${retrieve('file-upload-inventory-file-item')}".length &gt; 0) { formData.append('inventoryFileItem', '${retrieve("file-upload-inventory-file-item")}'); }
+				if ("${retrieve('file-upload-parent-id')}".length &gt; 0) { formData.append('parent', '${retrieve("file-upload-parent-id")}'); }
+				if ("${retrieve('file-upload-section-id')}".length &gt; 0) { formData.append('consultingFolderSection', '${retrieve("file-upload-section-id")}'); }
+				if ("${retrieve('file-upload-insurance-id')}".length &gt; 0) { formData.append('insurance', '${retrieve("file-upload-insurance-id")}'); }
+				
+				var referenceId = $('#modal-select-version').data('referenceId');
+				if (referenceId &amp;&amp; referenceId.length === 32) { formData.append('newVersionRequested', referenceId); }
+				
+				formData.append('type', '${retrieve("file-upload-type")}');
+				formData.append('user', '${me.id}');
+				
+				if("${retrieve('file-upload-isAvatar')}".length &gt; 0){
+				
+					var fileExt = file.name.split('.')[1];
+					var avatarName = 'avatar.'+fileExt;
+					
+					formData.append('name', avatarName);
+					formData.append('visibleToAuthenticatedUsers', true);
+					
+					$.ajax({
+					  type: 'POST',
+					  url: '/structr/rest/User/${me.id}/deleteCurrentAvatar',
+					  async:false
+					});		
+					
+				}
+				
+				
+				//if('${retrieve("file-upload-type")}' == "ConsultingDocument"){
+				//	var filenameSplit = file.name.split('.');
+				//	formData.append('title', filenameSplit[0]);
+				//}
+			});
+			this.on('complete', function(e, data) {
+				count++;
+				displayProgress('#${retrieve('file-upload-prefix')}file-upload', count, num);
+			});
+			this.on('queuecomplete', function(e, data) {
+				window.location.reload();
+			});
+		}
+    });
+});
+
+function displayProgress(id, count, num) {
+	$(id).empty();
+	$(id).append('&lt;span class="dz-message"&gt;' + count + ' / ' + num + ' Dateien hochgeladen&lt;/span&gt;');
+}
+
+/* reset parameters for next component
+${(
+store('file-upload-inventory-image-item', ''),
+store('file-upload-inventory-file-item', ''),
+store('file-upload-parent-id', ''),
+store('file-upload-type', ''),
+store('file-upload-section-id', ''),
+store('file-upload-insurance-id', ''),
+store('file-upload-prefix', ''),
+store('file-upload-visible', ''),
+store('file-upload-max-files', ''),
+store('file-upload-new-version', ''),
+store('file-upload-isAvatar', '')
+)}
+*/</script>
+</div>

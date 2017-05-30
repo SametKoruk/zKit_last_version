@@ -1,0 +1,95 @@
+<!-- @structr:private --><div class="row">
+	<!-- @structr:private, @structr:grant(admin,arwd) -->
+	<div class="col-sm-3"><!-- @structr:private, @structr:grant(admin,arwd) --><span><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->Angelegt am: <!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(current.createdDate, 'dd.MM.yyyy')}</span></div>
+	<!-- @structr:private, @structr:grant(admin,arwd) -->
+	<div class="col-sm-3"><!-- @structr:private, @structr:grant(admin,arwd) --><span><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->Letzte Änderung: <!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(current.lastModifiedDate, 'dd.MM.yyyy')}</span></div>
+	<!-- @structr:private, @structr:grant(admin,arwd) -->
+	<div class="col-sm-3">
+		<!-- @structr:private, @structr:grant(admin,arwd) -->
+		<div>
+			<!-- @structr:private, @structr:grant(admin,arwd) -->
+			<script type="text/javascript"><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/javascript) -->var selectedDocuments = [];
+
+$(function() {
+
+	$('#modal-new-file').on('show.bs.modal',function() {
+
+		$('.document-list .list-group-item').on('click', function() {
+
+			var doc = $(this);
+			doc.addClass('active');
+			selectedDocuments.push(doc.data('doc-id'));
+
+		});
+
+
+	});
+
+	$('#button-save-document').on('click', function() {
+
+		console.log(selectedDocuments);
+
+		var section = '${retrieve('section')}';
+		var num     = selectedDocuments.length;
+		var count   = 0;
+
+		selectedDocuments.forEach(function(id) {
+
+			$.ajax({
+				url: '/structr/rest/DocumentReference',
+				method: 'POST',
+				contentType: 'application/json; charset=UTF-8',
+				data: JSON.stringify({
+					consultingFolderSection: section,
+					consultingDocument: id
+				}),
+				statusCode: {
+
+					201: function(data) {
+						if (++count == num) {
+							window.location.reload();
+						}
+					}
+				}
+			});
+		});
+	});
+
+});</script>
+			<!-- @structr:private, @structr:grant(admin,arwd) -->
+			<div class="modal fade" id="modal-new-file" role="dialog">
+				<!-- @structr:private, @structr:grant(admin,arwd) -->
+				<div class="modal-dialog" role="document">
+					<!-- @structr:private, @structr:grant(admin,arwd) -->
+					<div class="modal-content">
+						<!-- @structr:private, @structr:grant(admin,arwd) -->
+						<div class="modal-header">
+							<!-- @structr:private, @structr:grant(admin,arwd) -->
+							<button class="close" data-dismiss="modal"><!-- @structr:private, @structr:grant(admin,arwd) --><span><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->X</span></button>
+							<!-- @structr:private, @structr:grant(admin,arwd) -->
+							<h4 class="modal-title" id="newDocumentModalLabel"><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->Dokumente zu ${retrieve('section').name} hinzufügen</h4>
+						</div>
+						<!-- @structr:private, @structr:grant(admin,arwd) -->
+						<div class="modal-body">
+							<!-- @structr:private, @structr:grant(admin,arwd) -->
+							<div>
+								<!-- @structr:private, @structr:grant(admin,arwd) -->
+								<ul class="list-group document-list">
+									<!-- @structr:private, @structr:grant(admin,arwd) -->
+									<li class="list-group-item" data-doc-id="${document.id}" data-structr-meta-data-key="document" data-structr-meta-function-query="extract(extract(find('File', 'parent', me.homeDirectory), 'documentVersionFileReference'), 'consultingDocument')"><!-- @structr:private, @structr:grant(admin,arwd) --><i class="fa fa-file-o m-r-1"></i><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->${document.name} (aktuelle Version)</li>
+								</ul>
+							</div>
+						</div>
+						<!-- @structr:private, @structr:grant(admin,arwd) -->
+						<div class="modal-footer">
+							<!-- @structr:private, @structr:grant(admin,arwd) -->
+							<button class="btn btn-default" id="button-save-document"><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->Hinzufügen</button>
+							<!-- @structr:private, @structr:grant(admin,arwd) -->
+							<button class="btn btn-default" data-dismiss="modal"><!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/plain) -->Abbrechen</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

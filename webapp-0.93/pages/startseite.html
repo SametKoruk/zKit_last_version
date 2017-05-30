@@ -1,0 +1,189 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<structr:component src="CreateConsultingFolderModal" data-structr-meta-name="CreateConsultingFolderModal">
+	</structr:component>
+	<div>
+		<div class="client-home" data-structr-meta-show-conditions="eq(me.type, 'Client')">
+			<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<div class="col-sm-12">
+					<div>
+						<ul class="nav nav-pills" data-toggle="tabs">
+							<li data-structr-meta-hide-conditions="empty(me.clientFolder)"><a href="/kundenordner/${me.clientFolder.id}"><!-- @structr:content(text/plain) -->Kundenordner</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-sm-8 consulting-folder-left-col">
+					<div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-6 col-lg-offset-3">
+								<div class="text-center"><a href="/versicherungen"><i class="fa fa-list-alt" style="font-size: 10em; color: #003399"></i></a><a href="/versicherungen">
+										<h4><!-- @structr:content(text/plain) -->Versicherungsübersicht</h4>
+									</a></div>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-6 col-lg-offset-3">
+								<div class="text-center"><a href="/beratungen"><i class="fa fa-handshake-o" style="font-size: 10em; color: #003399"></i></a><a href="/beratungen">
+										<h4><!-- @structr:content(text/plain) -->Beratungen</h4>
+									</a></div>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-6 col-lg-offset-3">
+								<div class="text-center"><a href="/haushaltsalbum"><i class="fa fa-check-square-o" style="font-size: 10em; color: #003399"></i></a><a href="/beratungen/${retrieve('clientfolder').id}">
+										<h4><!-- @structr:content(text/plain) -->Haushaltsalbum</h4>
+									</a></div>
+							</div>
+						</div>
+						<hr>
+					</div><!-- @structr:grant(admin,arwd) --><a class="btn btn-default" href="/einstellungen"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Einstellungen</a>
+				</div>
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-sm-4 consulting-folder-right-col"><!-- @structr:content(text/html) -->${store('client', me)}
+${include('Agent Profile')}</div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="modal modal-fade" id="modal-check-allow-access">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-dialog">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="modal-content">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="modal-header">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="close" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->x</span></button>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<h4 class="modal-title"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Dateneinsicht erlauben</h4>
+						</div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="modal-body">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<p><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Die persönliche Situation rund um Ihre Absicherung kann von einem Experten mitunter deutlich optimiert werden. Gerne unterstütze ich Sie und checke Ihren Versicherungsschutz. 
+
+Hierfür benötige ich Ihre Zustimmung zur Dateneinsicht. Dies können Sie jederzeit wiederrufen, indem Sie unten rechts die Checkbox ausschalten. 
+
+Vielen Dank. 
+Ihr ${retrieve('client').agent.firstName} ${retrieve('client').agent.lastName}</p>
+						</div>
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="modal-footer">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="btn btn-primary" id="check-modal-btn-allow-access" type="button"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Dateneinsicht erlauben</button>
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="btn btn-default" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Nicht erlauben</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->$(function() {
+	var timeout;	
+	var checkbox = $('#allow-access');
+	var checkModal = $('#modal-check-allow-access');	
+	
+	function openModal() {
+		checkModal.modal("show");
+	}
+	
+	function allowAccess() {
+		var clientId = checkbox.data('client-id');		
+		if (clientId) {
+			var data = {
+				accessAllowed: true
+			};
+			$.ajax({
+				url: '/structr/rest/Client/' + clientId + '/allowAccess',
+				method: 'POST',
+				dataType: "json",
+				contentType:"application/json; charset=utf-8",
+				data: JSON.stringify(data),
+				success: function() {
+					document.location.reload();
+				}
+			});
+		}		
+	}
+	
+	if(!checkbox.prop("checked")) {
+		timeout = window.setTimeout(openModal, 3000)
+	}
+	
+	$('#check-modal-btn-allow-access').click(allowAccess);
+});</script>
+		</div>
+		<div class="agent-home" data-structr-meta-show-conditions="eq(me.type, 'Agent')">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row form-header">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-8">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<h4 data-structr-meta-name="h4"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Kunden</h4>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<form class="form-inline" action="/kunden">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="input-group">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input class="form-control" autofocus="autofocus" name="client" type="text"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span class="input-group-btn">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<button class="btn btn-default" type="submit"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Suche</button>
+							</span>
+						</div>
+					</form>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-4"><!-- @structr:grant(admin,arwd) --><a class="btn btn-primary pull-right" href="/kunden"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Alle Kunden anzeigen</a></div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<hr>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-12">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Aktuelle Beratungstermine</h3>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="7bfbf354ba8a4d77b2c7f4fe8bc7b07a">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="table-responsive">
+							<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<table class="table">
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<thead></thead>
+								<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<tbody>
+									<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+									<tr data-structr-id="${consultation.id}" data-structr-meta-data-key="appointment" data-structr-meta-function-query="retrieve('consultationList')">
+										<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+										<td><a style="margin-right: 24px;" title="Beratungsmappe anzeigen" href="/beratungsmappe/${appointment.consultation.consultingFolder.id}" data-structr-meta-hide-conditions="empty(appointment.consultation.consultingFolder.id)"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="fa fa-list"></i></a><!-- @structr:grant(admin,arwd) --><a id="create-consulting-folder" style="margin-right: 24px;" title="Beratungsmappe anlegen" href="javascript:void(0)" data-consultation-id="${appointment.consultation.id}" data-structr-append-id="true" data-target="#modal-new-consulting-folder" data-toggle="modal" data-structr-meta-show-conditions="empty(appointment.consultation.consultingFolder.id)"><!-- @structr:grant(admin,arwd) --><i class="fa fa-plus"></i></a><a style="margin-right: 1.5em;" title="Kundenordner anzeigen" href="/kundenordner/${appointment.consultation.client.clientFolder.id}" data-structr-meta-hide-conditions="empty(appointment.consultation.client.clientFolder)"><!-- @structr:owner(admin) --><i class="fa fa-folder-open"></i></a></td>
+										<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+										<td><!-- @structr:grant(admin,arwd) --><a href="/kunde/${appointment.consultation.client.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) --> ${appointment.consultation.client.name}</a></td>
+										<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+										<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(appointment.date, 'dd.MM.yyyy')}</td>
+										<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+										<td><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${appointment.comments}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</structr:template>
+				
+				</div>
+			</div>
+		</div>
+		<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="admin-home" data-structr-meta-show-conditions="me.isAdmin">
+			<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="row">
+				<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="col-sm-12"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/userverwaltung"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Benutzerverwaltung</a></div>
+			</div>
+		</div>
+	</div>
+</structr:template>

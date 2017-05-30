@@ -1,0 +1,64 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><div class="row" data-structr-meta-name="AccountAktivierenMitInitialToken">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div data-structr-meta-hide-conditions="empty(me.initialToken)">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<form id="activate-account-form" action="javascript:void(0)">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="col-sm-offset-1 col-sm-8">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Zugang per Initialtoken aktivieren</h2>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Token</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="form-group">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<input class="form-control" id="initial-token-input" required="required">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<p><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Bevor Sie das Z-Kit nutzen können, muss Ihr Zugang mittels Initialtoken verifiziert werden.
+Zu Ihrer Sicherheit teilt Ihnen Ihr Berater dieses Token telefonisch mit.</p>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div id="activate-account-feedback"></div>
+				</div>
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="form-group pull-right">
+					<!-- @structr:grant(admin,arwd) -->
+					<button class="btn btn-default button-blue" id="activate-account-button" data-structr-append-id="false" data-structr-reload="true"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Zugang aktivieren</button>
+				</div>
+			</div>
+		</form>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->$('#activate-account-button').click(function (e) {
+	e.preventDefault();
+
+	var token = $('#initial-token-input').val();
+
+	if (token.trim() === '') {
+
+		$('#activate-account-feedback').text('Bitten geben Sie das Token ein, das Ihr Berater Ihnen genannt hat').addClass('text-danger');
+
+	} else {
+
+		$.ajax({
+			method: 'POST',
+			url: '/structr/rest/Client/${me.id}/activateAccount',
+			data: JSON.stringify({initialToken: token}),
+			success: function () {
+				$('#activate-account-feedback').text('Ihr Zugang wurde aktiviert.').addClass('text-success');
+				location.reload();
+			},
+			error: function (data) {
+				var errors = data.responseJSON.errors.map(function (e) { return e.token; }).join('&lt;br&gt;');
+				$('#activate-account-feedback').html(errors).addClass('text-danger');
+			}
+		})
+
+	}
+});</script>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="col-sm-offset-1 col-sm-8" data-structr-meta-show-conditions="empty(me.initialToken)">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Zugang per Initialtoken aktivieren</h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->Ihr Zugang wurde bereits per Initialtoken freigeschaltet. Sie können das &lt;a href="/"&gt;Z-Kit&lt;/a&gt; regulär benutzen.
+	
+	</div>
+</div>

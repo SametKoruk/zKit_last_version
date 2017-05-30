@@ -1,0 +1,125 @@
+CACHE MANIFEST
+## ${page.lastModifiedDate}
+## v${page.version}
+
+CACHE:
+
+${{
+
+	var request = Structr.get('request');
+	var requestedPage = request.page;
+
+	var page     = Structr.get('page');
+	var current  = Structr.get('current');
+
+	if (current == null) {
+		return;
+	}
+
+	var sections = current.sections;
+
+	var pageName = page.name;
+
+	var url = '/' + requestedPage + '/' + current.id;
+	Structr.print(url + '\n');
+
+
+	var handleSection = function (s) {
+
+		var subSections = s.sections;
+		if (subSections != null && subSections.length > 0) {
+			subSections.forEach(function(s) {
+				handleSection(s);
+			})
+		}
+
+		url = '/' + requestedPage + '/' + current.id + '?section=' + s.id;
+		Structr.print(url + '\n');
+
+		var documents = s.consultingDocuments;
+		if (documents != null && documents.length > 0) {
+			documents.forEach(function(d) {
+
+				Structr.print(url, '&document=', d.id, '\n');
+
+				var path = d.path.replace(/ /g, '%20');
+
+                if (d.contentType !== 'text/html') {
+					path += '?filename=' + d.downloadName;
+				}
+				
+				Structr.print(path.replace(/ /g, '%20') + '\n');
+
+			});
+		}
+
+	};
+
+	if (sections != null && sections.length > 0) {
+		sections.forEach(function(s) {
+			handleSection(s);
+		});
+	}
+
+}}
+
+
+/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?1
+/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css?1
+/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js?1
+/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
+
+/fonts/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff
+/fonts/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff
+/fonts/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff
+
+/css/open-sans.css
+/css/select2.min.css
+/css/font-awesome-4.7.0/css/font-awesome.min.css
+/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0 
+/css/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0
+/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0
+/css/datatables.min.css
+/css/jquery-ui.css
+/css/apple.css?1
+/css/zurich.css
+/css/custom.css?1
+/css/file-upload.css 
+
+/js/jquery-3.1.1.min.js
+/js/jquery-ui.min.js
+/js/jquery.validate.min.js
+/js/additional-methods.min.js
+/js/datepicker-de.js
+/js/datatables.min.js
+#/js/jquery.dataTables.min.js
+/js/dropzone.js
+/js/select2.min.js
+/js/custom.js?1
+/js/custom.js
+/js/offline.js
+
+/img/ZurichLogo.png
+
+/structr/js/lib/jquery-1.11.1.min.js
+/structr/js/lib/jquery-ui-1.11.0.custom.min.js
+/structr/css/lib/images/ui-bg_flat_75_ffffff_40x100.png
+/structr/css/lib/chosen.min.css
+/structr/css/lib/jquery-ui-1.10.3.custom.min.css
+/structr/js/structr-app.js
+/structr/js/lib/jquery-ui-timepicker-addon.min.js
+/structr/js/lib/moment.min.js
+
+https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2
+https://fonts.googleapis.com/css?family=Open+Sans:300,400,700
+
+NETWORK:
+#*
+/login
+/startseite
+/watchdog
+/structr/rest/me
+
+#FALLBACK:
+#/beratungsmappe /beratungsmappe.html
+#

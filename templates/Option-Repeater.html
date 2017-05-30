@@ -1,0 +1,32 @@
+${{
+
+	// Aufgrund von Anforderungen aus Issue 1480 wurde der "einfache" Repeater durch ein etwas komplexeres Skript zur Sortierung der Options ersetzt.
+
+	var field = Structr.get('field');
+	var current = Structr.get('current');
+	
+	var options = Structr.find(field.dataType);
+	
+	options = Structr.sort(options, 'name');
+	
+	var printOption = function (o) {
+		var selected = (current != null && current[field.attrName].id === o.id) ? ' selected' : '';
+		
+		Structr.print('<option value="' + o.id + '"' + selected + '>' + o.name + '</option>');
+	};
+	
+	var appendAtEnd = [];
+
+	options.forEach(function(o) {
+		if (o.name.indexOf('---') === 0) {
+			appendAtEnd.push(o);
+		} else {
+			printOption(o);
+		}
+	});
+	
+	appendAtEnd.forEach(function(o) {
+		printOption(o);
+	});
+
+}}

@@ -1,0 +1,45 @@
+<!-- @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<!-- @structr:grant(admin,arwd) -->
+	<div>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:grant(admin,arwd) -->
+			<div class="col-sm-12">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="form-group"><!-- @structr:grant(admin,arwd) --><a class="btn btn-default pull-left" href="/"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Zurück zur Startseite</a></div>
+			</div>
+		</div>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:grant(admin,arwd) -->
+			<form id="settings-form" action="javascript:void(0)" data-structr-id="${me.id}">
+				<!-- @structr:grant(admin,arwd) -->
+				<div class="col-sm-offset-1 col-sm-8">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Passwort ändern</h2>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:grant(admin,arwd) -->
+						<label><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Neues Passwort</label>
+						<!-- @structr:grant(admin,arwd) -->
+						<input class="form-control" required="required" type="password" data-structr-name="password">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<p><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Das neue Passwort ist sofort wirksam, d.h. beim nächsten Login müssen Sie das neue Passwort verwenden.</p>
+					</div>
+					<!-- @structr:grant(admin,arwd) -->
+					<div class="form-group pull-right">
+						<!-- @structr:grant(admin,arwd) -->
+						<button class="btn btn-default button-blue" data-structr-action="save:${me.type}" data-structr-append-id="false" data-structr-attributes="password" data-structr-id="${me.id}" data-structr-reload="true" data-structr-return="/passwort-geaendert"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Passwort speichern</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- @structr:grant(admin,arwd) -->
+		<hr>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="AccountAktivierenMitInitialToken" data-structr-meta-name="AccountAktivierenMitInitialToken">
+		</structr:component>
+	</div>
+</structr:template>

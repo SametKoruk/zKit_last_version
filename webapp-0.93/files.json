@@ -1,0 +1,3088 @@
+{
+  "/css": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/apple.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/custom.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/da-direkt-logo.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/da-direkt.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/datatables-old.min.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/datatables.min.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false
+  },
+  "/css/file-upload.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false
+  },
+  "/css/font-awesome-4.3.0": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0.zip": {
+    "contentType": "application/zip",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/css/font-awesome-4.3.0/HELP-US-OUT.txt": {
+    "contentType": "text/plain",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/css": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/css/font-awesome.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/css/font-awesome.min.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/fonts": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/fonts/FontAwesome.otf": {
+    "contentType": "application/x-font-otf",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/fonts/fontawesome-webfont.eot": {
+    "contentType": "application/vnd.ms-fontobject",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/fonts/fontawesome-webfont.svg": {
+    "contentType": "image/svg+xml",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/fonts/fontawesome-webfont.ttf": {
+    "contentType": "application/x-font-ttf",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/fonts/fontawesome-webfont.woff": {
+    "contentType": "application/font-woff",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/fonts/fontawesome-webfont.woff2": {
+    "contentType": "application/octet-stream",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/animated.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/bordered-pulled.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/core.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/fixed-width.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/font-awesome.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/icons.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/larger.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/list.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/mixins.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/path.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/rotated-flipped.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/stacked.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/less/variables.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_animated.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_bordered-pulled.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_core.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_fixed-width.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_icons.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_larger.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_list.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_mixins.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_path.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_rotated-flipped.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_stacked.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/_variables.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.3.0/scss/font-awesome.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0.zip": {
+    "contentType": "application/zip",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/css/font-awesome-4.7.0/HELP-US-OUT.txt": {
+    "contentType": "text/plain",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/css": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/css/font-awesome.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/css/font-awesome.min.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/fonts": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/fonts/FontAwesome.otf": {
+    "contentType": "application/x-font-otf",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/fonts/fontawesome-webfont.eot": {
+    "contentType": "application/vnd.ms-fontobject",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/fonts/fontawesome-webfont.svg": {
+    "contentType": "image/svg+xml",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf": {
+    "contentType": "application/x-font-ttf",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff": {
+    "contentType": "application/font-woff",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2": {
+    "contentType": "application/octet-stream",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/animated.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/bordered-pulled.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/core.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/fixed-width.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/font-awesome.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/icons.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/larger.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/list.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/mixins.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/path.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/rotated-flipped.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/screen-reader.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/stacked.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/less/variables.less": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_animated.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_bordered-pulled.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_core.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_fixed-width.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_icons.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_larger.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_list.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_mixins.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_path.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_rotated-flipped.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_screen-reader.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_stacked.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/_variables.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/font-awesome-4.7.0/scss/font-awesome.scss": {
+    "contentType": "text/x-csrc",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/jquery-ui.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/jquery.dataTables.min.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/open-sans.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false
+  },
+  "/css/select2.min.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/zurich-logo.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/css/zurich.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/fonts": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false
+  },
+  "/img": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/img/210114610_Check-Siegel_final_1408.jpg": {
+    "contentType": "image/jpeg",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 780,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 780
+  },
+  "/img/210114610_Check-Siegel_final_1408.jpg_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 100
+  },
+  "/img/210114610_Check-Siegel_final_1408.jpg_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Basisrentenversicherung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Basisrentenversicherung/Basisrentenversicherung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Basisrentenversicherung/Basisrentenversicherung.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Basisrentenversicherung/Basisrentenversicherung.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Baufinazierung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Baufinazierung/Baufinanzierung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Baufinazierung/Baufinanzierung.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Baufinazierung/Baufinanzierung.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Bausparen": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Bausparen/Bausparen.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Bausparen/Bausparen.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Bausparen/Bausparen.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Berufs- und Erwerbsunfähigkeit": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Berufs- und Erwerbsunfähigkeit/Berufs und Erwerbsunfahigkeit.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Berufs- und Erwerbsunfähigkeit/Berufs und Erwerbsunfahigkeit.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Berufs- und Erwerbsunfähigkeit/Berufs und Erwerbsunfahigkeit.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Betriebliche Altersversorgung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Betriebliche Altersversorgung/Betriebliche Alterversorgung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Betriebliche Altersversorgung/Betriebliche Alterversorgung.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Betriebliche Altersversorgung/Betriebliche Alterversorgung.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Kapitalanlage und Investmentfonds": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Kapitalanlage und Investmentfonds/Kapitalanlage Investmentfonds.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Kapitalanlage und Investmentfonds/Kapitalanlage Investmentfonds.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Kapitalanlage und Investmentfonds/Kapitalanlage Investmentfonds.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Kraftfahrtversicherung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Kraftfahrtversicherung/Kraftfahrtversicherung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 307,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 305
+  },
+  "/img/Versicherungsübersicht Icons/Kraftfahrtversicherung/Kraftfahrtversicherung.png_thumb_298x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 298
+  },
+  "/img/Versicherungsübersicht Icons/Kraftfahrtversicherung/Kraftfahrtversicherung.png_thumb_99x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 99
+  },
+  "/img/Versicherungsübersicht Icons/Krankenversicherung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Krankenversicherung/Krankenversicherung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Krankenversicherung/Krankenversicherung.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Krankenversicherung/Krankenversicherung.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Multiplus": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Multiplus/Multiplus.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Multiplus/Multiplus.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Multiplus/Multiplus.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Pflegeversicherung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Pflegeversicherung/Pflegeversicherung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Pflegeversicherung/Pflegeversicherung.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Pflegeversicherung/Pflegeversicherung.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Private Rentenversicherung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Private Rentenversicherung/Private Rentenversicherung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Private Rentenversicherung/Private Rentenversicherung.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Private Rentenversicherung/Private Rentenversicherung.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Private kapitalbildende Lebensversicherung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Private kapitalbildende Lebensversicherung/Private kapitalbindende Lebensversicherung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Private kapitalbildende Lebensversicherung/Private kapitalbindende Lebensversicherung.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Private kapitalbildende Lebensversicherung/Private kapitalbindende Lebensversicherung.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Riesterrente": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Riesterrente/Riesterrente.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Riesterrente/Riesterrente.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Riesterrente/Riesterrente.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Risikolebensversicherung": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Risikolebensversicherung/Risiko- Lebensversicherung.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Risikolebensversicherung/Risiko- Lebensversicherung.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Risikolebensversicherung/Risiko- Lebensversicherung.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Sonstiges": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Sonstiges/Sonstiges.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 304,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 305
+  },
+  "/img/Versicherungsübersicht Icons/Sonstiges/Sonstiges.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Sonstiges/Sonstiges.png_thumb_300x299": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 299,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Sterbegeld und Bestattungsvorsorge": {
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false
+  },
+  "/img/Versicherungsübersicht Icons/Sterbegeld und Bestattungsvorsorge/Sterbegeld und Bestattungsvorsorge.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/Versicherungsübersicht Icons/Sterbegeld und Bestattungsvorsorge/Sterbegeld und Bestattungsvorsorge.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 100
+  },
+  "/img/Versicherungsübersicht Icons/Sterbegeld und Bestattungsvorsorge/Sterbegeld und Bestattungsvorsorge.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "width": 300
+  },
+  "/img/ZurichLogo.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "height": 189,
+    "isImage": true,
+    "isThumbnail": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 309
+  },
+  "/img/ZurichLogo.png_thumb_100x61": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "height": 61,
+    "isImage": true,
+    "isThumbnail": true,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 100
+  },
+  "/img/ZurichLogo.png_thumb_300x183": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "height": 183,
+    "isImage": true,
+    "isThumbnail": true,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 300
+  },
+  "/img/default_avatar.png": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 512,
+    "isImage": true,
+    "isThumbnail": false,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 512
+  },
+  "/img/default_avatar.png_thumb_100x100": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 100,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 100
+  },
+  "/img/default_avatar.png_thumb_300x300": {
+    "contentType": "image/png",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "height": 300,
+    "isImage": true,
+    "isThumbnail": true,
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true,
+    "width": 300
+  },
+  "/js": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/German.json": {
+    "contentType": "application/json",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/additional-methods.min.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/backend-helper.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": true,
+    "visibleToAuthenticatedUsers": true
+  },
+  "/js/custom.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/datatables.min.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/datepicker-de.js": {
+    "contentType": "text/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/dropzone.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false
+  },
+  "/js/helper.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/jquery-2.2.4.min.js": {
+    "contentType": "text/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/jquery-3.1.1.min.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/jquery-3.1.1.min.map": {
+    "contentType": "",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/jquery-ui.min.js": {
+    "contentType": "text/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/jquery.dataTables.min.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/jquery.validate.min.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/jquery_validate_messages_de.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/offline.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/js/query.fileupload.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false
+  },
+  "/js/select2.min.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css": {
+    "contentType": "text/css",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot": {
+    "contentType": "application/vnd.ms-fontobject",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot_#iefix": {
+    "contentType": "application/octet-stream",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular": {
+    "contentType": "image/svg+xml",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.ttf": {
+    "contentType": "application/x-font-ttf",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff": {
+    "contentType": "application/font-woff",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff2": {
+    "contentType": "application/octet-stream",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js": {
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js": {
+    "contentType": "application/javascript",
+    "enableBasicAuth": false,
+    "useAsJavascriptLibrary": false,
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  }
+}

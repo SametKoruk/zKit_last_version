@@ -1,0 +1,146 @@
+{
+  "169025b19983404fb098932a800e8b5f": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "visibleToAuthenticatedUsers": true
+  },
+  "AccountAktivierenMitInitialToken": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "visibleToAuthenticatedUsers": true
+  },
+  "Agent Profile": {
+    "contentType": "text/html",
+    "shared": "true",
+    "visibleToAuthenticatedUsers": true
+  },
+  "ArchiveConsultingFolderModal": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "visibleToAuthenticatedUsers": true
+  },
+  "AssignAgentModal": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "visibleToAuthenticatedUsers": true
+  },
+  "Beratungsliste": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "visibleToAuthenticatedUsers": true
+  },
+  "ConsultationCreateModal": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "visibleToAuthenticatedUsers": true
+  },
+  "CreateConsultingFolderModal": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "visibleToAuthenticatedUsers": true
+  },
+  "Kundenordner Template": {
+    "contentType": "text/html",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "shared": "true",
+    "visibleToAuthenticatedUsers": true
+  },
+  "Logout Button": {
+    "visibleToAuthenticatedUsers": true
+  },
+  "Main Menu": {
+    "contentType": "text/html",
+    "shared": "true",
+    "visibleToAuthenticatedUsers": true
+  },
+  "Main Page Template": {
+    "contentType": "text/html",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "shared": "true"
+  },
+  "MainpageMenu": {},
+  "Neue Datei Hochladen - Knopf": {},
+  "Neue Datei Hochladen - Script": {},
+  "SectionCreateModal": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "visibleToAuthenticatedUsers": true
+  },
+  "Upload-Bereich": {},
+  "Zugriffsrechte-Dialog": {
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "owner": {
+      "name": "admin"
+    },
+    "visibleToAuthenticatedUsers": true
+  },
+  "b7b9db89dca3452bae1afb9dc9367b32": {}
+}

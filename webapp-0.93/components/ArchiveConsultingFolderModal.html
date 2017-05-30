@@ -1,0 +1,35 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><div class="modal modal-fade" id="modal-archive-consulting-folder" data-structr-meta-name="ArchiveConsultingFolderModal">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="modal-dialog" role="document">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<form>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="modal-content" data-structr-id="${current.id}">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-header">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="close" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><span><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</span></button>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<h4 class="modal-title"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Beratungsmappe archivieren</h4>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-body">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<input type="hidden" value="${retrieve('ConsultationCreateModal_Client')}" data-structr-name="client">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="form-group">
+						<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<label for="exampleInputFile"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Beschreibung</label><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><textarea class="form-control" data-structr-name="comments"></textarea>
+					</div>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="modal-footer">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="btn btn-default" type="button" data-dismiss="modal"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Abbrechen</button>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<button class="btn btn-primary" type="button" data-structr-action="archiveConsultingFolder:ConsultingFolder" data-structr-attributes="comments" data-structr-id="${current.id}" data-structr-reload="true"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Archivieren</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

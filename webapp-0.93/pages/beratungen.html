@@ -1,0 +1,19 @@
+<!-- @structr:content(text/html) --><structr:template src="Kundenordner Template" data-structr-meta-name="Kundenordner Template">
+	<div>
+		<div class="row">
+			<div class="col-sm-12">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<structr:component src="Beratungsliste" data-structr-meta-name="Beratungsliste">
+				</structr:component>
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="row">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="col-sm-12"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn btn-default" href="/"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Zurück</a></div>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<structr:component src="CreateConsultingFolderModal" data-structr-meta-name="CreateConsultingFolderModal">
+	</structr:component>
+</structr:template>

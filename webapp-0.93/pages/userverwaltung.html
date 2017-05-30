@@ -1,0 +1,101 @@
+<!-- @structr:private, @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="row">
+		<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-4">
+			<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h3><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Agenturen</h3>
+			<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<ul>
+				<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<li data-structr-meta-data-key="agency" data-structr-meta-rest-query="Agency?sort=name"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${agency.name}</li>
+			</ul>
+		</div>
+		<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col-sm-8">
+			<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<form>
+				<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="panel panel-default">
+					<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="panel-heading"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Neue Agentur anlegen</div>
+					<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="panel-body">
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<label><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name </label>
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input class="form-control" type="text" data-structr-name="name">
+						</div>
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="btn btn-default" data-structr-action="create:Agency" data-structr-attributes="name" data-structr-reload="true"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anlegen</button>
+						</div>
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="alert alert-success alert-dismissable info-box success hidden" data-structr-dialog="success">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="close" type="button" data-dismiss="alert"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</button>
+						</div>
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="alert alert-warning alert-dismissable info-box error hidden" data-structr-dialog="error">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="close" type="button" data-dismiss="alert"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</button>
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<form>
+				<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="panel panel-default">
+					<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="panel-heading"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Neuen Vermittler anlegen</div>
+					<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="panel-body">
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<label><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Agentur</label>
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<select class="form-control" data-structr-name="agency">
+								<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+								<option value="${agency.id}" data-structr-meta-data-key="agency" data-structr-meta-rest-query="Agency"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${agency.name}</option>
+							</select>
+						</div>
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<label><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name </label>
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input class="form-control" type="text" data-structr-name="name">
+						</div>
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<label><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Passwort</label>
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<input class="form-control" type="password" data-structr-name="password">
+						</div>
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="form-group">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="btn btn-default" data-structr-action="create:Agent" data-structr-attributes="name, agency, password" data-structr-reload="true"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Anlegen</button>
+						</div>
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="alert alert-success alert-dismissable info-box success hidden" data-structr-dialog="success">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="close" type="button" data-dismiss="alert"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</button>
+						</div>
+						<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+						<div class="alert alert-warning alert-dismissable info-box error hidden" data-structr-dialog="error">
+							<!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd) -->
+							<button class="close" type="button" data-dismiss="alert"><!-- @structr:private, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->×</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</structr:template>

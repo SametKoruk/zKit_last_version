@@ -1,0 +1,10 @@
+${{
+
+	var pageEvents = Structr.sort(Structr.find('LogEvent', 'eventType', 'page'), 'count', true);
+	
+	pageEvents.forEach(function(pageEvent) {
+		Structr.setDetailsObject(pageEvent);
+		Structr.render(Structr.get('children'));
+	});
+
+}}

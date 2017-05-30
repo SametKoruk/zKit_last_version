@@ -1,0 +1,22 @@
+<!-- @structr:content(text/html) --><structr:template src="Main Page Template" data-structr-meta-name="Main Page Template">
+	<div></div>
+	<div class="table-responsive">
+		<table class="table table-bordered datatable">
+			<thead>
+				<tr>
+					<th><!-- @structr:content(text/plain) -->Name</th>
+					<th><!-- @structr:content(text/plain) -->Angelegt am</th>
+					<th><!-- @structr:content(text/plain) -->Aktionen</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-structr-id="${client.id}" data-structr-meta-data-key="template" data-structr-meta-function-query="sort(filter(find(&quot;ConsultingFolderTemplate&quot;),equal(data.type,&quot;ConsultingFolderTemplate&quot;)),&quot;name&quot;)">
+					<td><a href="/vorlage/${template.id}"><!-- @structr:content(text/plain) -->${template.name}</a></td>
+					<td><!-- @structr:content(text/plain) -->${date_format(template.createdDate, 'dd.MM.yyyy')}</td>
+					<td><a href="/vorlage/${template.id}"><i class="fa fa-edit"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div><a class="btn btn-primary" href="/vorlage"><!-- @structr:content(text/plain) -->Neue Vorlage</a><!-- @structr:grant(admin,arwd) --><a class="btn btn-default pull-right" href="/startseite"><!-- @structr:grant(admin,arwd), @structr:content(text/plain) -->Zurück zur Übersicht</a></div>
+</structr:template>
